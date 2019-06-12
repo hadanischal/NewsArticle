@@ -132,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				AFC9725B22AE424A006BE3DB /* .gitignore */,
+				AFC9726322AE500D006BE3DB /* .swiftlint.yml */,
 				AFC9722022AE3ECD006BE3DB /* NewsArticle */,
 				AFC9723822AE3ECF006BE3DB /* NewsArticleTests */,
 				AFC9724322AE3ECF006BE3DB /* NewsArticleUITests */,
@@ -154,7 +155,6 @@
 		AFC9722022AE3ECD006BE3DB /* NewsArticle */ = {
 			isa = PBXGroup;
 			children = (
-				AFC9726322AE500D006BE3DB /* .swiftlint.yml */,
 				AFC9725D22AE4C88006BE3DB /* Extensions */,
 				AFC9725322AE3FA7006BE3DB /* Cells */,
 				AFC9725222AE3F98006BE3DB /* Models */,

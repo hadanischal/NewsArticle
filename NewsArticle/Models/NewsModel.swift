@@ -9,6 +9,6 @@
 import Foundation
 
 struct NewsModel: Decodable {
-    let title: String
-    let description: String
+    let title: String?
+    let description: String?
 }
