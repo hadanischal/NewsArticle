@@ -1,5 +1,5 @@
 //
-//  NewsViewController.swift
+//  NewsListViewController.swift
 //  NewsArticle
 //
 //  Created by Nischal Hada on 6/10/19.
@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class NewsViewController: UITableViewController {
+class NewsListViewController: UITableViewController {
 
     private let disposeBag = DisposeBag()
     private var newsList = [NewsModel]()

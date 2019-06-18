@@ -17,7 +17,7 @@
 		AFC9722F22AE3ECF006BE3DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC9722D22AE3ECF006BE3DB /* LaunchScreen.storyboard */; };
 		AFC9723A22AE3ECF006BE3DB /* NewsArticleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9723922AE3ECF006BE3DB /* NewsArticleTests.swift */; };
 		AFC9724522AE3ECF006BE3DB /* NewsArticleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9724422AE3ECF006BE3DB /* NewsArticleUITests.swift */; };
-		AFC9725622AE403E006BE3DB /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9725522AE403E006BE3DB /* NewsViewController.swift */; };
+		AFC9725622AE403E006BE3DB /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9725522AE403E006BE3DB /* NewsListViewController.swift */; };
 		AFC9725822AE4053006BE3DB /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9725722AE4053006BE3DB /* NewsModel.swift */; };
 		AFC9725A22AE4066006BE3DB /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9725922AE4066006BE3DB /* NewsTableViewCell.swift */; };
 		AFC9725C22AE424A006BE3DB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AFC9725B22AE424A006BE3DB /* .gitignore */; };
@@ -66,7 +66,7 @@
 		AFC9724022AE3ECF006BE3DB /* NewsArticleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsArticleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC9724422AE3ECF006BE3DB /* NewsArticleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleUITests.swift; sourceTree = "<group>"; };
 		AFC9724622AE3ECF006BE3DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFC9725522AE403E006BE3DB /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		AFC9725522AE403E006BE3DB /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		AFC9725722AE4053006BE3DB /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		AFC9725922AE4066006BE3DB /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		AFC9725B22AE424A006BE3DB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -128,6 +128,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AFAA5C8222B9169F00C3B885 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		AFC9721522AE3ECD006BE3DB = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +165,8 @@
 				AFC9725D22AE4C88006BE3DB /* Extensions */,
 				AFC9725322AE3FA7006BE3DB /* Cells */,
 				AFC9725222AE3F98006BE3DB /* Models */,
-				AFC9725422AE3FFE006BE3DB /* Views */,
+				AFAA5C8222B9169F00C3B885 /* ViewModel */,
+				AFC9725422AE3FFE006BE3DB /* ViewController */,
 				AFC9722122AE3ECD006BE3DB /* AppDelegate.swift */,
 				AFC9722322AE3ECD006BE3DB /* ViewController.swift */,
 				AFC9722522AE3ECD006BE3DB /* Main.storyboard */,
@@ -205,12 +213,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		AFC9725422AE3FFE006BE3DB /* Views */ = {
+		AFC9725422AE3FFE006BE3DB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AFC9725522AE403E006BE3DB /* NewsViewController.swift */,
+				AFC9725522AE403E006BE3DB /* NewsListViewController.swift */,
 			);
-			path = Views;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		AFC9725D22AE4C88006BE3DB /* Extensions */ = {
@@ -450,7 +458,7 @@
 				AFC9725A22AE4066006BE3DB /* NewsTableViewCell.swift in Sources */,
 				AFC9722222AE3ECD006BE3DB /* AppDelegate.swift in Sources */,
 				AFC9725F22AE4CA0006BE3DB /* URLRequest+Extensions.swift in Sources */,
-				AFC9725622AE403E006BE3DB /* NewsViewController.swift in Sources */,
+				AFC9725622AE403E006BE3DB /* NewsListViewController.swift in Sources */,
 				AFC9725822AE4053006BE3DB /* NewsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
