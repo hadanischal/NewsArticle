@@ -11,9 +11,7 @@ import RxSwift
 import RxCocoa
 
 class GetNewsHandler: GetNewsHandlerProtocol {
-    init() {
-        
-    }
+    init() {}
     
     func populateNews() -> Observable<ArticlesList?> {
         return URLRequest.load(resource: ArticlesList.resource)
