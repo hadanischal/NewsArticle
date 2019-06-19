@@ -139,8 +139,8 @@
 		AFAA5C8222B9169F00C3B885 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				AFAA5C8322B9188200C3B885 /* NewsListViewModel.swift */,
 				AFAA5C8522B918C300C3B885 /* NewsListViewModelProtocol.swift */,
+				AFAA5C8322B9188200C3B885 /* NewsListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
