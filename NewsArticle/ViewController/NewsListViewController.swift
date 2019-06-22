@@ -27,7 +27,6 @@ class NewsListViewController: UITableViewController {
                 }
             })
             .disposed(by: disposeBag)
-        viewModel.viewDidStart()
     }
 
     // MARK: - Table view data source

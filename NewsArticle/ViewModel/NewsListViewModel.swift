@@ -20,9 +20,19 @@ class NewsListViewModel: NewsListViewModelProtocol {
     init(withGetNews getNews: GetNewsHandlerProtocol = GetNewsHandler()) {
         self.getNews = getNews
         self.newsList = newsListSubject.asObserver()
+        self.populateNews()
+        self.addScheduler()
     }
     
-    func viewDidStart() {
+    private func addScheduler() {
+        let scheduler = SerialDispatchQueueScheduler(qos: .default)
+        Observable<Int>.interval(.seconds(20), scheduler: scheduler)
+            .subscribe { [weak self] event in
+                self?.populateNews()
+         }.disposed(by: disposeBag)
+    }
+    
+   private func populateNews() {
         getNews.populateNews()
             .subscribe(onNext: { [weak self] result in
                 if let result = result {
