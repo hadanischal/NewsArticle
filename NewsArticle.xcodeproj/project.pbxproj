@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0425F229230C0E6300D7A44D /* NewsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425F228230C0E6300D7A44D /* NewsListViewModelTests.swift */; };
+		0425F22B230C0E8200D7A44D /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425F22A230C0E8200D7A44D /* GeneratedMocks.swift */; };
+		0425F22D230C0EC300D7A44D /* Cuckoo-GeneratedMocks.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0425F22C230C0EC300D7A44D /* Cuckoo-GeneratedMocks.sh */; };
 		38E3CA25A4D8434017F2C7EF /* Pods_NewsArticleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF021286C87F4E018247CB6 /* Pods_NewsArticleUITests.framework */; };
 		5835BECDCDB48FF9080B5732 /* Pods_NewsArticle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54741232D6DB8A32A755BD01 /* Pods_NewsArticle.framework */; };
 		AFAA5C8422B9188200C3B885 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAA5C8322B9188200C3B885 /* NewsListViewModel.swift */; };
@@ -49,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0425F228230C0E6300D7A44D /* NewsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModelTests.swift; sourceTree = "<group>"; };
+		0425F22A230C0E8200D7A44D /* GeneratedMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		0425F22C230C0EC300D7A44D /* Cuckoo-GeneratedMocks.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Cuckoo-GeneratedMocks.sh"; sourceTree = "<group>"; };
 		087F2601A2528A0BF956D39B /* Pods-NewsArticleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsArticleUITests.debug.xcconfig"; path = "Target Support Files/Pods-NewsArticleUITests/Pods-NewsArticleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		54741232D6DB8A32A755BD01 /* Pods_NewsArticle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsArticle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A185FAE8E8F6A10BD97768 /* Pods-NewsArticleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsArticleTests.debug.xcconfig"; path = "Target Support Files/Pods-NewsArticleTests/Pods-NewsArticleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 			children = (
 				AFC9725B22AE424A006BE3DB /* .gitignore */,
 				AFC9726322AE500D006BE3DB /* .swiftlint.yml */,
+				0425F22C230C0EC300D7A44D /* Cuckoo-GeneratedMocks.sh */,
 				AFC9722022AE3ECD006BE3DB /* NewsArticle */,
 				AFC9723822AE3ECF006BE3DB /* NewsArticleTests */,
 				AFC9724322AE3ECF006BE3DB /* NewsArticleUITests */,
@@ -201,6 +208,8 @@
 		AFC9723822AE3ECF006BE3DB /* NewsArticleTests */ = {
 			isa = PBXGroup;
 			children = (
+				0425F22A230C0E8200D7A44D /* GeneratedMocks.swift */,
+				0425F228230C0E6300D7A44D /* NewsListViewModelTests.swift */,
 				AFC9723922AE3ECF006BE3DB /* NewsArticleTests.swift */,
 				AFC9723B22AE3ECF006BE3DB /* Info.plist */,
 			);
@@ -279,6 +288,7 @@
 				AFC9723122AE3ECF006BE3DB /* Sources */,
 				AFC9723222AE3ECF006BE3DB /* Frameworks */,
 				AFC9723322AE3ECF006BE3DB /* Resources */,
+				42D35886039C5F38716D0232 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,6 +308,7 @@
 				AFC9723C22AE3ECF006BE3DB /* Sources */,
 				AFC9723D22AE3ECF006BE3DB /* Frameworks */,
 				AFC9723E22AE3ECF006BE3DB /* Resources */,
+				2483158DDBAE88DBD690E441 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -369,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0425F22D230C0EC300D7A44D /* Cuckoo-GeneratedMocks.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +394,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2483158DDBAE88DBD690E441 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewsArticleUITests/Pods-NewsArticleUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewsArticleUITests/Pods-NewsArticleUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NewsArticle/Pods-NewsArticle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42D35886039C5F38716D0232 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewsArticleTests/Pods-NewsArticleTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewsArticleTests/Pods-NewsArticleTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NewsArticleTests/Pods-NewsArticleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5FFA765660D90D27339964DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -492,6 +538,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFC9723A22AE3ECF006BE3DB /* NewsArticleTests.swift in Sources */,
+				0425F22B230C0E8200D7A44D /* GeneratedMocks.swift in Sources */,
+				0425F229230C0E6300D7A44D /* NewsListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

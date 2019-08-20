@@ -15,7 +15,7 @@ class NewsListViewController: UITableViewController {
     private let disposeBag = DisposeBag()
     private var newsList = [NewsModel]()
     var viewModel: NewsListViewModelProtocol = NewsListViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "News"
@@ -49,4 +49,3 @@ class NewsListViewController: UITableViewController {
     }
 
 }
-

@@ -12,14 +12,13 @@ import RxCocoa
 
 class GetNewsHandler: GetNewsHandlerProtocol {
     init() {}
-    
+
     func populateNews() -> Observable<ArticlesList?> {
         return URLRequest.load(resource: ArticlesList.resource)
-            .map{ article -> ArticlesList? in
+            .map { article -> ArticlesList? in
                 return article
             }.asObservable()
             .retry(2)
     }
-    
-}
 
+}
