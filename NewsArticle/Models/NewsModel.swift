@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NewsModel: Decodable {
+struct NewsModel: Decodable, Equatable {
     let title: String?
     let description: String?
 }
