@@ -18,7 +18,21 @@ class NewsListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupUI()
+        self.setupViewModel()
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    func setupUI() {
         self.title = "News"
+        self.navigationController?.setCustomStyle()
+        self.tableView.hideEmptyCells()
+    }
+
+    func setupViewModel() {
         viewModel.newsList
             .subscribe(onNext: { [weak self] chores in
                 self?.newsList = chores
@@ -27,8 +41,8 @@ class NewsListViewController: UITableViewController {
                 }
             })
             .disposed(by: disposeBag)
-    }
 
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

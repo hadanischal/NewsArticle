@@ -41,5 +41,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>UIAppFonts</key>
+    <array>
+        <string>ApexRounded-Medium.otf</string>
+        <string>ApexRounded-Heavy.otf</string>
+        <string>ApexRounded-Book.otf</string>
+    </array>
+    <key>UIViewControllerBasedStatusBarAppearance</key>
+    <true/>
 </dict>
 </plist>
