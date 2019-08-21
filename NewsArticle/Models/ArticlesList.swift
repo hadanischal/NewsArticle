@@ -15,17 +15,7 @@ struct ArticlesList: Decodable {
 extension ArticlesList {
     //let resource = Resource<ArticlesList>(url: url)
     static var resource: Resource<ArticlesList> = {
-        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=au&apiKey=\(ApiKey.appId)")!
+        let url = URL.topHeadlinesUrl()!
         return Resource(url: url)
     }()
 }
-
-struct ApiKey {
-    static let appId = "8fa8303737ca441d9417e52672307439"
-}
-
-//struct ApiConstant {
-//    static let baseServerURL = "https://newsapi.org/v2/"
-//    static let topHeadlines = "top-headlines?country=au"
-//    static let apiKey = "&apiKey=\(ApiKey.appId)"
-//}
