@@ -25,7 +25,7 @@ class NewsListViewController: UITableViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
     func setupUI() {
         self.title = "News"
         self.navigationController?.setCustomStyle()
@@ -42,6 +42,8 @@ class NewsListViewController: UITableViewController {
             })
             .disposed(by: disposeBag)
 
+        viewModel.populateNews()
+
     }
     // MARK: - Table view data source
 
@@ -57,8 +59,7 @@ class NewsListViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as? NewsTableViewCell else {
             fatalError("NewsTableViewCell does not exist")
         }
-        cell.titleLabel.text = self.newsList[indexPath.row].title
-        cell.descriptionLabel.text = self.newsList[indexPath.row].description
+        cell.newsInfo = self.newsList[indexPath.row]
         return cell
     }
 

@@ -26,7 +26,7 @@ class NewsListViewModel: NewsListViewModelProtocol {
 
     private func addScheduler() {
         let scheduler = SerialDispatchQueueScheduler(qos: .default)
-        Observable<Int>.interval(.seconds(20), scheduler: scheduler)
+        Observable<Int>.interval(.seconds(300), scheduler: scheduler)
             .subscribe { [weak self] _ in
                 self?.populateNews()
          }.disposed(by: disposeBag)

@@ -12,6 +12,7 @@ import RxCocoa
 
 struct Resource<T: Decodable> {
     let url: URL
+    let parameter: [String: String]?
 }
 
 extension URLRequest {
@@ -19,7 +20,8 @@ extension URLRequest {
 
         return Observable.just(resource.url)
             .flatMap { url -> Observable<(response: HTTPURLResponse, data: Data)> in
-                let request = URLRequest(url: url)
+//                let request = URLRequest(url: url)
+                let request = URLRequest(url: self.loadURL(resource: resource) ?? url)
                 return URLSession.shared.rx.response(request: request)
             }.map { response, data -> T in
 
@@ -32,6 +34,24 @@ extension URLRequest {
             }.asObservable()
 
     }
+
+    static func loadURL<T>(resource: Resource<T>) -> URL? {
+        if
+            let parameters = resource.parameter,
+            let urlComponents = URLComponents(url: resource.url, resolvingAgainstBaseURL: false)
+        {
+            var components = urlComponents
+            components.queryItems = parameters.map { (arg) -> URLQueryItem in
+                let (key, value) = arg
+                return URLQueryItem(name: key, value: value)
+            }
+            components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+            return components.url
+        }
+        return nil
+    }
+
+//    static func
 
 //    static func load<T>(resource: Resource<T>) -> Observable<T?> {
 //
