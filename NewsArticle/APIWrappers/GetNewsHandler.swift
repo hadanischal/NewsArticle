@@ -13,8 +13,16 @@ import RxCocoa
 class GetNewsHandler: GetNewsHandlerProtocol {
     init() {}
 
+    var resource: Resource<ArticlesList> = {
+        let url = URL.topHeadlinesUrl()!
+        let param: [String: String] = ["country": ApiKey.countryGB,
+                                       "category": ApiKey.categorySports,
+                                    "apiKey": ApiKey.appId]
+        return Resource(url: url, parameter: param)
+    }()
+
     func populateNews() -> Observable<ArticlesList?> {
-        return URLRequest.load(resource: ArticlesList.resource)
+        return URLRequest.load(resource: resource)
             .map { article -> ArticlesList? in
                 return article
             }.asObservable()

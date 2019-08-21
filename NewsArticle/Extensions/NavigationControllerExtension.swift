@@ -14,7 +14,7 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         setCustomStyle()
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

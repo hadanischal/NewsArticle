@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct SourceModel: Codable {
+    let id: String?
+    let name: String?
+}

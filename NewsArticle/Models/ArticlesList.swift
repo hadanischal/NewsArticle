@@ -10,12 +10,13 @@ import Foundation
 
 struct ArticlesList: Decodable {
     let articles: [NewsModel]
+    let totalResults: Int?
 }
 
-extension ArticlesList {
-    //let resource = Resource<ArticlesList>(url: url)
-    static var resource: Resource<ArticlesList> = {
-        let url = URL.topHeadlinesUrl()!
-        return Resource(url: url)
-    }()
-}
+//extension ArticlesList {
+//    //let resource = Resource<ArticlesList>(url: url)
+//    static var resource: Resource<ArticlesList> = {
+//        let url = URL.topHeadlinesUrl()!
+//        return Resource(url: url, parameter: nil)
+//    }()
+//}
