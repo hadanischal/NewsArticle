@@ -8,6 +8,7 @@ target 'NewsArticle' do
   # Pods for NewsArticle
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
+  pod 'Kingfisher', '~> 5.0'
   pod 'SwiftLint'
 
   target 'NewsArticleTests' do
