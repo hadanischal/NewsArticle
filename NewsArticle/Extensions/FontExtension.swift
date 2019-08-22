@@ -30,13 +30,16 @@ extension UIFont {
     static var heading1: UIFont {
         return .regularFont(size: 25)
     }
-    static var body1: UIFont { //city list view
+    static var heading2: UIFont {
+        return .boldFont(size: 25)
+    }
+    static var body1: UIFont {
         return .regularFont(size: 20)
     }
-    static var body2: UIFont { //city search
+    static var body2: UIFont {
         return .lightFont(size: 20)
     }
-    static var body3: UIFont { //city search
+    static var body3: UIFont {  
         return .regularFont(size: 18)
     }
     static var detailTitle: UIFont {
