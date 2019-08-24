@@ -7,41 +7,62 @@
 //
 
 import UIKit
-import SafariServices
+import RxSwift
+import RxCocoa
 
 class DetailTableViewController: UITableViewController {
-    
+
+    private let disposeBag = DisposeBag()
+    private var newsList = [NewsModel]()
+    var viewModel: DetailDataSource!
+
     var newsInfo: NewsModel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        self.setupViewModel()
     }
-    
-    
+
     func setupUI() {
-        title = newsInfo.title
         navigationController?.setCustomStyle()
         tableView.hideEmptyCells()
         tableView.reloadData()
         tableView.separatorStyle = .none
     }
+
+    func setupViewModel() {
+        viewModel = DetailViewModel(withNewsModel: newsInfo)
+
+        viewModel.newsList
+        .asDriver(onErrorJustReturn: [])
+            .drive(onNext: { [weak self] list in
+                self?.newsList = list
+                self?.tableView.reloadData()
+            }).disposed(by: disposeBag)
+
+        viewModel.title.bind(to: navigationItem.rx.title).disposed(by: disposeBag)
+
+    }
     // MARK: - Table view data source
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return newsList.count
+        }
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableViewCell", for: indexPath) as? DetailsTableViewCell else {
                 fatalError("DetailsTableViewCell does not exist")
             }
-            cell.newsInfo = newsInfo
+            cell.newsInfo = newsList[indexPath.row]
             cell.selectionStyle = .none
             return cell
         } else {
@@ -52,25 +73,14 @@ class DetailTableViewController: UITableViewController {
             return cell
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1,
-            let urlString = newsInfo.url {
-            displayPrivacyPolicy(withUrl: urlString)
+            let urlString = newsList[indexPath.row].url,
+            let webUrl = URL(string: urlString) {
+            presentSafariViewController(for: webUrl)
         }
 
     }
-    
-    private func displayPrivacyPolicy(withUrl urlString: String) {
-        
-        guard let privacyPolicyUrl = URL(string: urlString) else {
-            return
-        }
-        
-        let safariVC = SFSafariViewController(url: privacyPolicyUrl)
-        safariVC.preferredControlTintColor = .barTintColor
-        safariVC.preferredBarTintColor = .white
-        self.present(safariVC, animated: true, completion: nil)
-    }
-    
+
 }

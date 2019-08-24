@@ -22,8 +22,8 @@ class NewsListViewModelTests: QuickSpec {
         var testViewModel: NewsListViewModel!
         var mockGetNewsHandler: MockGetNewsHandlerProtocol!
         var testScheduler: TestScheduler!
-         let mockNews = NewsModel(title: "title news", description: "description news")
-         let mockArtcile = ArticlesList(articles: [mockNews])
+        let mockArtcile = MockData().stubArticlesList()
+        let mockNews = mockArtcile?.articles
 
         describe("BaseViewModel") {
             beforeEach {
@@ -52,8 +52,13 @@ class NewsListViewModelTests: QuickSpec {
                         })
                         let res = testScheduler.start { testViewModel.newsList.asObservable() }
                         expect(res.events.count).to(equal(1))
-                        let correctResult = [Recorded.next(300, mockArtcile.articles)]
-                        expect(res.events).to(equal(correctResult))
+                        if let articles = mockNews {
+                            let correctResult = [Recorded.next(300, articles)]
+                            expect(res.events).to(equal(correctResult))
+                        } else {
+                            XCTAssert(false, "nil mock value")
+                        }
+
                      })
                 })
 

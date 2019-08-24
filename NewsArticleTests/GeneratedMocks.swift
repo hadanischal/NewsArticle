@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetNewsHandler.swift at 2019-08-20 11:21:46 +0000
+// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetNewsHandler.swift at 2019-08-23 12:25:49 +0000
 
 //
 //  GetNewsHandler.swift
@@ -31,6 +31,28 @@ import UIKit
         cuckoo_manager.enableDefaultStubImplementation()
     }
 
+     override var resource: Resource<ArticlesList> {
+        get {
+            return cuckoo_manager.getter("resource",
+                superclassCall:
+
+                    super.resource
+                    ,
+                defaultCall: __defaultImplStub!.resource)
+        }
+
+        set {
+            cuckoo_manager.setter("resource",
+                value: newValue,
+                superclassCall:
+
+                    super.resource = newValue
+                    ,
+                defaultCall: __defaultImplStub!.resource = newValue)
+        }
+
+    }
+
      override func populateNews() -> Observable<ArticlesList?> {
 
     return cuckoo_manager.call("populateNews() -> Observable<ArticlesList?>",
@@ -51,6 +73,10 @@ import UIKit
 	        self.cuckoo_manager = manager
 	    }
 
+	    var resource: Cuckoo.ClassToBeStubbedProperty<MockGetNewsHandler, Resource<ArticlesList>> {
+	        return .init(manager: cuckoo_manager, name: "resource")
+	    }
+
 	    func populateNews() -> Cuckoo.ClassStubFunction<(), Observable<ArticlesList?>> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return .init(stub: cuckoo_manager.createStub(for: MockGetNewsHandler.self, method: "populateNews() -> Observable<ArticlesList?>", parameterMatchers: matchers))
@@ -69,6 +95,10 @@ import UIKit
 	        self.sourceLocation = sourceLocation
 	    }
 
+	    var resource: Cuckoo.VerifyProperty<Resource<ArticlesList>> {
+	        return .init(manager: cuckoo_manager, name: "resource", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+
 	    @discardableResult
 	    func populateNews() -> Cuckoo.__DoNotUse<(), Observable<ArticlesList?>> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
@@ -80,13 +110,22 @@ import UIKit
 
  class GetNewsHandlerStub: GetNewsHandler {
 
+     override var resource: Resource<ArticlesList> {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (Resource<ArticlesList>).self)
+        }
+
+        set { }
+
+    }
+
      override func populateNews() -> Observable<ArticlesList?> {
         return DefaultValueRegistry.defaultValue(for: (Observable<ArticlesList?>).self)
     }
 
 }
 
-// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetNewsHandlerProtocol.swift at 2019-08-20 11:21:46 +0000
+// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetNewsHandlerProtocol.swift at 2019-08-23 12:25:49 +0000
 
 //
 //  GetNewsHandlerProtocol.swift
