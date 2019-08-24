@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SafariServices
 
 extension UIViewController {
     public func alert(title: String?,
@@ -34,3 +35,25 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+extension UIViewController {
+
+    func presentSafariViewController(for url: URL) {
+        let safariController = SFSafariViewController(url: url)
+        if #available(iOS 10, *) {
+            safariController.preferredControlTintColor = .barTintColor
+        } else {
+            safariController.view.tintColor = .barTintColor
+        }
+        safariController.preferredBarTintColor = .white
+        safariController.modalPresentationStyle = .overFullScreen
+
+        present(safariController, animated: true, completion: nil)
+    }
+}
+
+//let safariVC = SFSafariViewController(url: privacyPolicyUrl)
+//safariVC.preferredControlTintColor = .barTintColor
+//safariVC.preferredBarTintColor = .white
+//self.present(safariVC, animated: true, completion: nil)
+//

@@ -62,7 +62,7 @@ class NewsListViewController: UITableViewController {
         cell.newsInfo = self.newsList[indexPath.row]
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "segueDetails", sender: indexPath)
     }
@@ -70,9 +70,9 @@ class NewsListViewController: UITableViewController {
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         if segue.identifier == "segueDetails" {
-            
+
             guard let detailVC = segue.destination as? DetailTableViewController else {
                 fatalError("Segue destination is not found")
             }
@@ -81,6 +81,6 @@ class NewsListViewController: UITableViewController {
             }
             detailVC.newsInfo = newsList[indexPath.row]
         }
-        
+
     }
 }

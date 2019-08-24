@@ -39,7 +39,7 @@ extension UIFont {
     static var body2: UIFont {
         return .lightFont(size: 20)
     }
-    static var body3: UIFont {  
+    static var body3: UIFont {
         return .regularFont(size: 18)
     }
     static var detailTitle: UIFont {

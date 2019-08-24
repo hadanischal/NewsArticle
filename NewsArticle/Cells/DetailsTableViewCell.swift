@@ -12,7 +12,7 @@ class DetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var thumbnailImage: UIImageView!
-    
+
     var newsInfo: NewsModel? {
         didSet {
             guard let data = newsInfo else {
@@ -27,7 +27,7 @@ class DetailsTableViewCell: UITableViewCell {
             }
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         //self.contentView.backgroundColor = .viewBackgroundColor
