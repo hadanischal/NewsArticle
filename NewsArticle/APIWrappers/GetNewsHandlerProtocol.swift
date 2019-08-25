@@ -9,5 +9,5 @@
 import RxSwift
 
 protocol GetNewsHandlerProtocol {
-    func populateNews() -> Observable<ArticlesList?>
+    func populateNews(withCategory category: String) -> Observable<ArticlesList?>
 }

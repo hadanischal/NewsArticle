@@ -14,11 +14,10 @@ struct FileManagerResource<T> {
 }
 
 class FileManagerHandler: FileManagerHandlerProtocol {
-    init() {}
-    
+
     func load<T: Decodable>(resource: FileManagerResource<T>) -> Observable<T> {
         return Observable<T>.create { observer in
-            
+
             if let url = Bundle.main.url(forResource: resource.fileName, withExtension: "json") {
                 do {
                     let data = try Data(contentsOf: url)

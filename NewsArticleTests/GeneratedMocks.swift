@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetNewsHandler.swift at 2019-08-25 03:24:51 +0000
+// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetNewsHandler.swift at 2019-08-25 09:09:02 +0000
 
 //
 //  GetNewsHandler.swift
@@ -14,142 +14,78 @@ import Cuckoo
 import RxSwift
 import UIKit
 
-
  class MockGetNewsHandler: GetNewsHandler, Cuckoo.ClassMock {
-    
+
      typealias MocksType = GetNewsHandler
-    
+
      typealias Stubbing = __StubbingProxy_GetNewsHandler
      typealias Verification = __VerificationProxy_GetNewsHandler
 
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
-    
     private var __defaultImplStub: GetNewsHandler?
 
      func enableDefaultImplementation(_ stub: GetNewsHandler) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
-    
 
-    
-    
-    
-     override var resource: Resource<ArticlesList> {
-        get {
-            return cuckoo_manager.getter("resource",
-                superclassCall:
-                    
-                    super.resource
-                    ,
-                defaultCall: __defaultImplStub!.resource)
-        }
-        
-        set {
-            cuckoo_manager.setter("resource",
-                value: newValue,
-                superclassCall:
-                    
-                    super.resource = newValue
-                    ,
-                defaultCall: __defaultImplStub!.resource = newValue)
-        }
-        
-    }
-    
+     override func populateNews(withCategory category: String) -> Observable<ArticlesList?> {
 
-    
-
-    
-    
-    
-     override func populateNews() -> Observable<ArticlesList?> {
-        
-    return cuckoo_manager.call("populateNews() -> Observable<ArticlesList?>",
-            parameters: (),
-            escapingParameters: (),
+    return cuckoo_manager.call("populateNews(withCategory: String) -> Observable<ArticlesList?>",
+            parameters: (category),
+            escapingParameters: (category),
             superclassCall:
-                
-                super.populateNews()
+
+                super.populateNews(withCategory: category)
                 ,
-            defaultCall: __defaultImplStub!.populateNews())
-        
+            defaultCall: __defaultImplStub!.populateNews(withCategory: category))
+
     }
-    
 
 	 struct __StubbingProxy_GetNewsHandler: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
-	
+
 	     init(manager: Cuckoo.MockManager) {
 	        self.cuckoo_manager = manager
 	    }
-	    
-	    
-	    var resource: Cuckoo.ClassToBeStubbedProperty<MockGetNewsHandler, Resource<ArticlesList>> {
-	        return .init(manager: cuckoo_manager, name: "resource")
+
+	    func populateNews<M1: Cuckoo.Matchable>(withCategory category: M1) -> Cuckoo.ClassStubFunction<(String), Observable<ArticlesList?>> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: category) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockGetNewsHandler.self, method: "populateNews(withCategory: String) -> Observable<ArticlesList?>", parameterMatchers: matchers))
 	    }
-	    
-	    
-	    func populateNews() -> Cuckoo.ClassStubFunction<(), Observable<ArticlesList?>> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockGetNewsHandler.self, method: "populateNews() -> Observable<ArticlesList?>", parameterMatchers: matchers))
-	    }
-	    
+
 	}
 
 	 struct __VerificationProxy_GetNewsHandler: Cuckoo.VerificationProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
 	    private let callMatcher: Cuckoo.CallMatcher
 	    private let sourceLocation: Cuckoo.SourceLocation
-	
+
 	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
 	        self.cuckoo_manager = manager
 	        self.callMatcher = callMatcher
 	        self.sourceLocation = sourceLocation
 	    }
-	
-	    
-	    
-	    var resource: Cuckoo.VerifyProperty<Resource<ArticlesList>> {
-	        return .init(manager: cuckoo_manager, name: "resource", callMatcher: callMatcher, sourceLocation: sourceLocation)
-	    }
-	    
-	
-	    
+
 	    @discardableResult
-	    func populateNews() -> Cuckoo.__DoNotUse<(), Observable<ArticlesList?>> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("populateNews() -> Observable<ArticlesList?>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func populateNews<M1: Cuckoo.Matchable>(withCategory category: M1) -> Cuckoo.__DoNotUse<(String), Observable<ArticlesList?>> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: category) { $0 }]
+	        return cuckoo_manager.verify("populateNews(withCategory: String) -> Observable<ArticlesList?>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
-	    
+
 	}
 }
 
  class GetNewsHandlerStub: GetNewsHandler {
-    
-    
-     override var resource: Resource<ArticlesList> {
-        get {
-            return DefaultValueRegistry.defaultValue(for: (Resource<ArticlesList>).self)
-        }
-        
-        set { }
-        
-    }
-    
 
-    
-
-    
-     override func populateNews() -> Observable<ArticlesList?>  {
+     override func populateNews(withCategory category: String) -> Observable<ArticlesList?> {
         return DefaultValueRegistry.defaultValue(for: (Observable<ArticlesList?>).self)
     }
-    
+
 }
 
-
-// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetNewsHandlerProtocol.swift at 2019-08-25 03:24:51 +0000
+// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetNewsHandlerProtocol.swift at 2019-08-25 09:09:02 +0000
 
 //
 //  GetNewsHandlerProtocol.swift
@@ -164,98 +100,78 @@ import Cuckoo
 
 import RxSwift
 
-
  class MockGetNewsHandlerProtocol: GetNewsHandlerProtocol, Cuckoo.ProtocolMock {
-    
+
      typealias MocksType = GetNewsHandlerProtocol
-    
+
      typealias Stubbing = __StubbingProxy_GetNewsHandlerProtocol
      typealias Verification = __VerificationProxy_GetNewsHandlerProtocol
 
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
 
-    
     private var __defaultImplStub: GetNewsHandlerProtocol?
 
      func enableDefaultImplementation(_ stub: GetNewsHandlerProtocol) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
-    
 
-    
+     func populateNews(withCategory category: String) -> Observable<ArticlesList?> {
 
-    
-
-    
-    
-    
-     func populateNews() -> Observable<ArticlesList?> {
-        
-    return cuckoo_manager.call("populateNews() -> Observable<ArticlesList?>",
-            parameters: (),
-            escapingParameters: (),
+    return cuckoo_manager.call("populateNews(withCategory: String) -> Observable<ArticlesList?>",
+            parameters: (category),
+            escapingParameters: (category),
             superclassCall:
-                
+
                 Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                 ,
-            defaultCall: __defaultImplStub!.populateNews())
-        
+            defaultCall: __defaultImplStub!.populateNews(withCategory: category))
+
     }
-    
 
 	 struct __StubbingProxy_GetNewsHandlerProtocol: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
-	
+
 	     init(manager: Cuckoo.MockManager) {
 	        self.cuckoo_manager = manager
 	    }
-	    
-	    
-	    func populateNews() -> Cuckoo.ProtocolStubFunction<(), Observable<ArticlesList?>> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockGetNewsHandlerProtocol.self, method: "populateNews() -> Observable<ArticlesList?>", parameterMatchers: matchers))
+
+	    func populateNews<M1: Cuckoo.Matchable>(withCategory category: M1) -> Cuckoo.ProtocolStubFunction<(String), Observable<ArticlesList?>> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: category) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockGetNewsHandlerProtocol.self, method: "populateNews(withCategory: String) -> Observable<ArticlesList?>", parameterMatchers: matchers))
 	    }
-	    
+
 	}
 
 	 struct __VerificationProxy_GetNewsHandlerProtocol: Cuckoo.VerificationProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
 	    private let callMatcher: Cuckoo.CallMatcher
 	    private let sourceLocation: Cuckoo.SourceLocation
-	
+
 	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
 	        self.cuckoo_manager = manager
 	        self.callMatcher = callMatcher
 	        self.sourceLocation = sourceLocation
 	    }
-	
-	    
-	
-	    
+
 	    @discardableResult
-	    func populateNews() -> Cuckoo.__DoNotUse<(), Observable<ArticlesList?>> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("populateNews() -> Observable<ArticlesList?>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func populateNews<M1: Cuckoo.Matchable>(withCategory category: M1) -> Cuckoo.__DoNotUse<(String), Observable<ArticlesList?>> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: category) { $0 }]
+	        return cuckoo_manager.verify("populateNews(withCategory: String) -> Observable<ArticlesList?>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
-	    
+
 	}
 }
 
  class GetNewsHandlerProtocolStub: GetNewsHandlerProtocol {
-    
 
-    
-
-    
-     func populateNews() -> Observable<ArticlesList?>  {
+     func populateNews(withCategory category: String) -> Observable<ArticlesList?> {
         return DefaultValueRegistry.defaultValue(for: (Observable<ArticlesList?>).self)
     }
-    
+
 }
 
-
-// MARK: - Mocks generated from file: NewsArticle/FileManagerHandler/CategoriesHandlerProtocol.swift at 2019-08-25 03:24:51 +0000
+// MARK: - Mocks generated from file: NewsArticle/FileManagerHandler/CategoriesHandlerProtocol.swift at 2019-08-25 09:09:02 +0000
 
 //
 //  CategoriesHandlerProtocol.swift
@@ -270,93 +186,159 @@ import Cuckoo
 
 import RxSwift
 
-
  class MockCategoriesHandlerProtocol: CategoriesHandlerProtocol, Cuckoo.ProtocolMock {
-    
+
      typealias MocksType = CategoriesHandlerProtocol
-    
+
      typealias Stubbing = __StubbingProxy_CategoriesHandlerProtocol
      typealias Verification = __VerificationProxy_CategoriesHandlerProtocol
 
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
 
-    
     private var __defaultImplStub: CategoriesHandlerProtocol?
 
      func enableDefaultImplementation(_ stub: CategoriesHandlerProtocol) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
-    
 
-    
-
-    
-
-    
-    
-    
      func getCategories() -> Observable<CategoriesModel> {
-        
+
     return cuckoo_manager.call("getCategories() -> Observable<CategoriesModel>",
             parameters: (),
             escapingParameters: (),
             superclassCall:
-                
+
                 Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                 ,
             defaultCall: __defaultImplStub!.getCategories())
-        
+
     }
-    
 
 	 struct __StubbingProxy_CategoriesHandlerProtocol: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
-	
+
 	     init(manager: Cuckoo.MockManager) {
 	        self.cuckoo_manager = manager
 	    }
-	    
-	    
+
 	    func getCategories() -> Cuckoo.ProtocolStubFunction<(), Observable<CategoriesModel>> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return .init(stub: cuckoo_manager.createStub(for: MockCategoriesHandlerProtocol.self, method: "getCategories() -> Observable<CategoriesModel>", parameterMatchers: matchers))
 	    }
-	    
+
 	}
 
 	 struct __VerificationProxy_CategoriesHandlerProtocol: Cuckoo.VerificationProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
 	    private let callMatcher: Cuckoo.CallMatcher
 	    private let sourceLocation: Cuckoo.SourceLocation
-	
+
 	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
 	        self.cuckoo_manager = manager
 	        self.callMatcher = callMatcher
 	        self.sourceLocation = sourceLocation
 	    }
-	
-	    
-	
-	    
+
 	    @discardableResult
 	    func getCategories() -> Cuckoo.__DoNotUse<(), Observable<CategoriesModel>> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return cuckoo_manager.verify("getCategories() -> Observable<CategoriesModel>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
-	    
+
 	}
 }
 
  class CategoriesHandlerProtocolStub: CategoriesHandlerProtocol {
-    
 
-    
-
-    
-     func getCategories() -> Observable<CategoriesModel>  {
+     func getCategories() -> Observable<CategoriesModel> {
         return DefaultValueRegistry.defaultValue(for: (Observable<CategoriesModel>).self)
     }
-    
+
 }
 
+// MARK: - Mocks generated from file: NewsArticle/FileManagerHandler/FileManagerHandlerProtocol.swift at 2019-08-25 09:09:02 +0000
+
+//
+//  FileManagerHandlerProtocol.swift
+//  NewsArticle
+//
+//  Created by Nischal Hada on 25/8/19.
+//  Copyright © 2019 NischalHada. All rights reserved.
+//
+
+import Cuckoo
+@testable import NewsArticle
+
+import RxSwift
+
+ class MockFileManagerHandlerProtocol: FileManagerHandlerProtocol, Cuckoo.ProtocolMock {
+
+     typealias MocksType = FileManagerHandlerProtocol
+
+     typealias Stubbing = __StubbingProxy_FileManagerHandlerProtocol
+     typealias Verification = __VerificationProxy_FileManagerHandlerProtocol
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    private var __defaultImplStub: FileManagerHandlerProtocol?
+
+     func enableDefaultImplementation(_ stub: FileManagerHandlerProtocol) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+
+     func load<T: Decodable>(resource: FileManagerResource<T>) -> Observable<T> {
+
+    return cuckoo_manager.call("load(resource: FileManagerResource<T>) -> Observable<T>",
+            parameters: (resource),
+            escapingParameters: (resource),
+            superclassCall:
+
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.load(resource: resource))
+
+    }
+
+	 struct __StubbingProxy_FileManagerHandlerProtocol: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+
+	    func load<M1: Cuckoo.Matchable, T: Decodable>(resource: M1) -> Cuckoo.ProtocolStubFunction<(FileManagerResource<T>), Observable<T>> where M1.MatchedType == FileManagerResource<T> {
+	        let matchers: [Cuckoo.ParameterMatcher<(FileManagerResource<T>)>] = [wrap(matchable: resource) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockFileManagerHandlerProtocol.self, method: "load(resource: FileManagerResource<T>) -> Observable<T>", parameterMatchers: matchers))
+	    }
+
+	}
+
+	 struct __VerificationProxy_FileManagerHandlerProtocol: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+
+	    @discardableResult
+	    func load<M1: Cuckoo.Matchable, T: Decodable>(resource: M1) -> Cuckoo.__DoNotUse<(FileManagerResource<T>), Observable<T>> where M1.MatchedType == FileManagerResource<T> {
+	        let matchers: [Cuckoo.ParameterMatcher<(FileManagerResource<T>)>] = [wrap(matchable: resource) { $0 }]
+	        return cuckoo_manager.verify("load(resource: FileManagerResource<T>) -> Observable<T>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+
+	}
+}
+
+ class FileManagerHandlerProtocolStub: FileManagerHandlerProtocol {
+
+     func load<T: Decodable>(resource: FileManagerResource<T>) -> Observable<T> {
+        return DefaultValueRegistry.defaultValue(for: (Observable<T>).self)
+    }
+
+}

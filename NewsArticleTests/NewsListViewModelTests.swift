@@ -30,7 +30,7 @@ class NewsListViewModelTests: QuickSpec {
                 testScheduler = TestScheduler(initialClock: 0)
                 mockGetNewsHandler = MockGetNewsHandlerProtocol()
                 stub(mockGetNewsHandler, block: { stub in
-                    when(stub.populateNews()).thenReturn(Observable.empty())
+                    when(stub.populateNews(withCategory: any())).thenReturn(Observable.empty())
                 })
                 testViewModel = NewsListViewModel(withGetNews: mockGetNewsHandler)
             }
@@ -40,11 +40,11 @@ class NewsListViewModelTests: QuickSpec {
                 context("when get news succeed ", {
                     beforeEach {
                         stub(mockGetNewsHandler, block: { stub in
-                            when(stub.populateNews()).thenReturn(Observable.just(mockArtcile))
+                            when(stub.populateNews(withCategory: any())).thenReturn(Observable.just(mockArtcile))
                         })
                     }
                     it("it completed successfully", closure: {
-                        verify(mockGetNewsHandler).populateNews()
+                        verify(mockGetNewsHandler).populateNews(withCategory: any())
                     })
                     it("emits the news list to the UI", closure: {
                         testScheduler.scheduleAt(300, action: {
@@ -59,17 +59,17 @@ class NewsListViewModelTests: QuickSpec {
                             XCTAssert(false, "nil mock value")
                         }
 
-                     })
+                    })
                 })
 
                 context("when get news failed ", {
                     beforeEach {
                         stub(mockGetNewsHandler, block: { stub in
-                            when(stub.populateNews()).thenReturn(Observable.error(RxError.noElements))
+                            when(stub.populateNews(withCategory: any())).thenReturn(Observable.error(mockError))
                         })
                     }
                     it("it completed successfully", closure: {
-                        verify(mockGetNewsHandler).populateNews()
+                        verify(mockGetNewsHandler).populateNews(withCategory: any())
                     })
                     it("emits the news list to the UI", closure: {
                         testScheduler.scheduleAt(300, action: {
