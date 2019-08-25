@@ -17,12 +17,12 @@ import RxSwift
 @testable import NewsArticle
 
 class CategoriesViewModelTests: QuickSpec {
-    
+
     override func spec() {
         var testViewModel: CategoriesViewModel!
         var mockCategoriesHandler: MockCategoriesHandlerProtocol!
         var testScheduler: TestScheduler!
-        let mockCategories = [
+        let mockCategoriesList = [
             "Business",
             "Entertainment",
             "Health",
@@ -30,10 +30,8 @@ class CategoriesViewModelTests: QuickSpec {
             "Sports",
             "Technology"
         ]
-        //     "categories":
-        
-        let mockCategory = CategoriesModel(categories: mockCategories)
-        
+        let mockCategory = CategoriesModel(categories: mockCategoriesList)
+
         describe("CategoriesViewModel") {
             beforeEach {
                 testScheduler = TestScheduler(initialClock: 0)
@@ -43,7 +41,7 @@ class CategoriesViewModelTests: QuickSpec {
                 })
                 testViewModel = CategoriesViewModel(withCategoriesHandler: mockCategoriesHandler)
             }
-            
+
             describe("Get news info on initialization", {
                 context("when get news succeed ", {
                     beforeEach {
@@ -56,7 +54,7 @@ class CategoriesViewModelTests: QuickSpec {
                         verify(mockCategoriesHandler).getCategories()
                     })
                     it("emits the news list to the UI", closure: {
-                        
+
                         let res = testScheduler.start { testViewModel.getCategories().asObservable() }
                         expect(res.events.count).to(equal(2))
                         let correctResult = [Recorded.next(200, mockCategory),
@@ -64,11 +62,8 @@ class CategoriesViewModelTests: QuickSpec {
                         expect(res.events).to(equal(correctResult))
                     })
                 })
-                
-                
+
                 context("when get news failed ", {
-                    let mockError: Error =  RxError.noElements
-                    
                     beforeEach {
                         stub(mockCategoriesHandler, block: { stub in
                             when(stub.getCategories()).thenReturn(Observable.error(mockError))
@@ -81,9 +76,8 @@ class CategoriesViewModelTests: QuickSpec {
                     it("emits the news list to the UI", closure: {
                         let res = testScheduler.start { testViewModel.getCategories().asObservable() }
                         expect(res.events.count).to(equal(1))
-//                        let correctResult = [Recorded.error(200, mockError),
-//                                             Recorded.completed(200)]
-//                        expect(res.events).to(equal(correctResult))
+                        let correctResult = [Recorded.error(200, mockError, CategoriesModel.self)]
+                        expect(res.events).to(equal(correctResult))
                     })
                 })
             })

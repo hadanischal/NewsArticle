@@ -12,7 +12,7 @@ import RxCocoa
 
 struct Resource<T: Decodable> {
     let url: URL
-    let parameter: [String: String]?
+    var parameter: [String: String]?
 }
 
 extension URLRequest {

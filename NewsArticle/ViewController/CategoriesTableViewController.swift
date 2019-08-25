@@ -16,9 +16,15 @@ class CategoriesTableViewController: UITableViewController {
     @IBOutlet weak var doneButton: UIBarButtonItem!
     private var viewModel: CategoriesDataSource!
     private var categoriesList: [String]?
+//    private var selectedCategories: String?
+
+    private let selectedCategoriesSubject = PublishSubject<String>()
+    var selectedCategories: Observable<String>? {
+        return selectedCategoriesSubject.asObserver()
+    }
 
     private let disposeBag = DisposeBag()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
@@ -37,15 +43,23 @@ class CategoriesTableViewController: UITableViewController {
         }).disposed(by: disposeBag)
 
         doneButton.rx.tap.subscribe(onNext: { [weak self] in
-            self?.dismiss(animated: true)
+            let selectedIndexPath = self?.tableView.indexPathForSelectedRow
+            if
+                let row = selectedIndexPath?.row,
+                let selectedValue = self?.categoriesList?[row] {
+                self?.selectedCategoriesSubject.onNext(selectedValue)
+                self?.dismiss(animated: true)
+            } else {
+                self?.showAlertView(withTitle: "Unable to get selected category", andMessage: "Please select the category")
+            }
         }).disposed(by: disposeBag)
 
     }
 
     func setupViewModel() {
-        
+
         self.viewModel = CategoriesViewModel()
-        
+
         viewModel.getCategories()
             .asDriver(onErrorJustReturn: CategoriesModel(categories: nil))
             .drive(onNext: { [weak self] result in
@@ -73,46 +87,17 @@ class CategoriesTableViewController: UITableViewController {
         cell.textLabel?.font = .body2
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .checkmark
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .none
         }
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

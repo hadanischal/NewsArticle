@@ -80,8 +80,19 @@ class NewsListViewController: UITableViewController {
                 fatalError("indexPath not found")
             }
             detailVC.newsInfo = newsList[indexPath.row]
+
+        } else if segue.identifier == "segueCategories" {
+            guard let navC = segue.destination as? UINavigationController,
+                let categoryVC = navC.viewControllers.first as? CategoriesTableViewController else {
+                    fatalError("Segue destination is not found")
+            }
+
+            categoryVC.selectedCategories?.asDriver(onErrorJustReturn: "")
+                .drive(onNext: { [weak self] category in
+                    self?.viewModel.populateNews(withCategory: category)
+                }).disposed(by: disposeBag)
+
         }
 
     }
 }
-///segueCategories

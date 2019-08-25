@@ -10,17 +10,19 @@ import UIKit
 import RxSwift
 
 class GetNewsHandler: GetNewsHandlerProtocol {
-    init() {}
+    private let url = URL.topHeadlinesUrl()!
+    private var param: [String: String] = ["country": ApiKey.countryGB,
+                                   "category": ApiKey.categorySports,
+                                   "apiKey": ApiKey.appId]
+    private var resource: Resource<ArticlesList>!
 
-    var resource: Resource<ArticlesList> = {
-        let url = URL.topHeadlinesUrl()!
-        let param: [String: String] = ["country": ApiKey.countryGB,
-                                       "category": ApiKey.categorySports,
-                                    "apiKey": ApiKey.appId]
-        return Resource(url: url, parameter: param)
-    }()
+    init() {
+        self.resource = Resource(url: url, parameter: param)
+    }
 
-    func populateNews() -> Observable<ArticlesList?> {
+    func populateNews(withCategory category: String = ApiKey.categorySports) -> Observable<ArticlesList?> {
+        resource.parameter?.updateValue(category, forKey: "category")
+
         return URLRequest.load(resource: resource)
             .map { article -> ArticlesList? in
                 return article
@@ -29,3 +31,11 @@ class GetNewsHandler: GetNewsHandlerProtocol {
     }
 
 }
+
+//    var resource1: Resource<ArticlesList> = {
+//        let url = URL.topHeadlinesUrl()!
+//        var param: [String: String] = ["country": ApiKey.countryGB,
+//                                       "category": ApiKey.categorySports,
+//                                    "apiKey": ApiKey.appId]
+//        return Resource(url: url, parameter: param)
+//    }()

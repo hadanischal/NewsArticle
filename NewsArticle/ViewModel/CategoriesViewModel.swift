@@ -11,13 +11,13 @@ import RxSwift
 
 class CategoriesViewModel: CategoriesDataSource {
     private let categoriesHandler: CategoriesHandlerProtocol!
-    
+
     init(withCategoriesHandler categoriesHandler: CategoriesHandlerProtocol = CategoriesHandler()) {
         self.categoriesHandler = categoriesHandler
     }
-    
+
     func getCategories() -> Observable<CategoriesModel> {
         return categoriesHandler.getCategories()
     }
-    
+
 }

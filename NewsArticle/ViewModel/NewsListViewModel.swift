@@ -32,12 +32,12 @@ class NewsListViewModel: NewsListViewModelProtocol {
          }.disposed(by: disposeBag)
     }
 
-    func populateNews() {
-        getNews.populateNews()
+    func populateNews(withCategory category: String) {
+        getNews.populateNews(withCategory: category)
             .subscribe(onNext: { [weak self] result in
                 if let result = result {
                     let articles = result.articles
-                   self?.newsListSubject.onNext(articles)
+                    self?.newsListSubject.onNext(articles)
                 }
             }).disposed(by: disposeBag)
     }
