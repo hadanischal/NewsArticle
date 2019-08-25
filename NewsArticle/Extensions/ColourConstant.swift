@@ -16,6 +16,9 @@ extension UIColor {
     static var addCityViewBackgroundColor: UIColor {
         return UIColor(rgb: 0xEAE8EA)
     }
+    static var tableViewBackgroundColor: UIColor {
+        return UIColor(rgb: 0xEAE8EA)
+    }
     static var barTintColor: UIColor {
         return UIColor(rgb: 0x5c9ac1)
     }
