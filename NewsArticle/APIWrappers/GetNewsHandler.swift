@@ -16,14 +16,17 @@ class GetNewsHandler: GetNewsHandlerProtocol {
                                    "apiKey": ApiKey.appId]
     private var resource: Resource<ArticlesList>!
 
-    init() {
+    private let webService: WebServiceProtocol!
+
+    init(withWebService webService: WebServiceProtocol = WebService()) {
+        self.webService = webService
         self.resource = Resource(url: url, parameter: param)
     }
 
     func populateNews(withCategory category: String = ApiKey.categorySports) -> Observable<ArticlesList?> {
         resource.parameter?.updateValue(category, forKey: "category")
 
-        return URLRequest.load(resource: resource)
+        return self.webService.load(resource: resource)
             .map { article -> ArticlesList? in
                 return article
             }.asObservable()

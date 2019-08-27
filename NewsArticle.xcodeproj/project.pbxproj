@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0416AA1A231524380052EED2 /* GetNewsHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416AA19231524380052EED2 /* GetNewsHandlerTests.swift */; };
 		0425F229230C0E6300D7A44D /* NewsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425F228230C0E6300D7A44D /* NewsListViewModelTests.swift */; };
 		0425F22B230C0E8200D7A44D /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425F22A230C0E8200D7A44D /* GeneratedMocks.swift */; };
 		0425F22D230C0EC300D7A44D /* Cuckoo-GeneratedMocks.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0425F22C230C0EC300D7A44D /* Cuckoo-GeneratedMocks.sh */; };
@@ -24,6 +25,8 @@
 		0425F24B230C19D400D7A44D /* ApexRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0425F248230C19D400D7A44D /* ApexRounded-Book.otf */; };
 		0425F24C230C19D400D7A44D /* ApexRounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0425F249230C19D400D7A44D /* ApexRounded-Medium.otf */; };
 		0425F24D230C19D400D7A44D /* ApexRounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0425F24A230C19D400D7A44D /* ApexRounded-Heavy.otf */; };
+		0435F05323155CE700FE2576 /* WebServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435F05223155CE700FE2576 /* WebServiceProtocol.swift */; };
+		0435F05523155D7500FE2576 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435F05423155D7500FE2576 /* WebService.swift */; };
 		043B3181231220DB0034F098 /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 043B3180231220DB0034F098 /* Categories.json */; };
 		043B3183231226590034F098 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B3182231226590034F098 /* CategoriesModel.swift */; };
 		043B31862312274A0034F098 /* FileManagerHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B31852312274A0034F098 /* FileManagerHandlerProtocol.swift */; };
@@ -90,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0416AA19231524380052EED2 /* GetNewsHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNewsHandlerTests.swift; sourceTree = "<group>"; };
 		0425F228230C0E6300D7A44D /* NewsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModelTests.swift; sourceTree = "<group>"; };
 		0425F22A230C0E8200D7A44D /* GeneratedMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		0425F22C230C0EC300D7A44D /* Cuckoo-GeneratedMocks.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Cuckoo-GeneratedMocks.sh"; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 		0425F248230C19D400D7A44D /* ApexRounded-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ApexRounded-Book.otf"; sourceTree = "<group>"; };
 		0425F249230C19D400D7A44D /* ApexRounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ApexRounded-Medium.otf"; sourceTree = "<group>"; };
 		0425F24A230C19D400D7A44D /* ApexRounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ApexRounded-Heavy.otf"; sourceTree = "<group>"; };
+		0435F05223155CE700FE2576 /* WebServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceProtocol.swift; sourceTree = "<group>"; };
+		0435F05423155D7500FE2576 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		043B3180231220DB0034F098 /* Categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
 		043B3182231226590034F098 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
 		043B31852312274A0034F098 /* FileManagerHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHandlerProtocol.swift; sourceTree = "<group>"; };
@@ -214,6 +220,16 @@
 				0425F24A230C19D400D7A44D /* ApexRounded-Heavy.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0435F05123155CCC00FE2576 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0435F05223155CE700FE2576 /* WebServiceProtocol.swift */,
+				0435F05423155D7500FE2576 /* WebService.swift */,
+				AFC9725E22AE4CA0006BE3DB /* URLRequest+Extensions.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		043B3184231226B90034F098 /* FileManagerHandler */ = {
@@ -326,6 +342,7 @@
 				043B319B2312A2DB0034F098 /* Utility */,
 				043B3184231226B90034F098 /* FileManagerHandler */,
 				AFAA5C8822B91FB600C3B885 /* APIWrappers */,
+				0435F05123155CCC00FE2576 /* Networking */,
 				AFC9725D22AE4C88006BE3DB /* Extensions */,
 				AFC9725322AE3FA7006BE3DB /* Cells */,
 				AFC9725222AE3F98006BE3DB /* Models */,
@@ -353,6 +370,7 @@
 				04D33FC8231017970012C11F /* DetailViewModelTests.swift */,
 				043B3194231235AB0034F098 /* CategoriesViewModelTests.swift */,
 				043B3199231287F00034F098 /* CategoriesHandlerTests.swift */,
+				0416AA19231524380052EED2 /* GetNewsHandlerTests.swift */,
 				AFC9723922AE3ECF006BE3DB /* NewsArticleTests.swift */,
 				AFC9723B22AE3ECF006BE3DB /* Info.plist */,
 			);
@@ -414,7 +432,6 @@
 				0425F236230C178400D7A44D /* UITableView+Extensions.swift */,
 				0425F232230C178400D7A44D /* UIViewControllerExtension.swift */,
 				0425F233230C178400D7A44D /* URL+Extensions.swift */,
-				AFC9725E22AE4CA0006BE3DB /* URLRequest+Extensions.swift */,
 				04435875230D4CD7005923BD /* String+Extension .swift */,
 			);
 			path = Extensions;
@@ -717,6 +734,7 @@
 				0425F243230C178500D7A44D /* BundleExtension.swift in Sources */,
 				043B3183231226590034F098 /* CategoriesModel.swift in Sources */,
 				AFAA5C8622B918C300C3B885 /* NewsListViewModelProtocol.swift in Sources */,
+				0435F05523155D7500FE2576 /* WebService.swift in Sources */,
 				04D0212523115C140083E100 /* CategoriesTableViewCell.swift in Sources */,
 				0425F23D230C178500D7A44D /* UIViewControllerExtension.swift in Sources */,
 				AFAA5C8D22B9206B00C3B885 /* GetNewsHandlerProtocol.swift in Sources */,
@@ -740,6 +758,7 @@
 				0425F239230C178500D7A44D /* FontExtension.swift in Sources */,
 				0443587A230D5D7C005923BD /* DetailTableViewController.swift in Sources */,
 				AFC9725822AE4053006BE3DB /* NewsModel.swift in Sources */,
+				0435F05323155CE700FE2576 /* WebServiceProtocol.swift in Sources */,
 				04435874230D4AA6005923BD /* SourceModel.swift in Sources */,
 				043B319123122EBF0034F098 /* CategoriesViewModel.swift in Sources */,
 				0425F23B230C178500D7A44D /* UIAlertControllerExtension.swift in Sources */,
@@ -750,6 +769,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0416AA1A231524380052EED2 /* GetNewsHandlerTests.swift in Sources */,
 				043B3195231235AB0034F098 /* CategoriesViewModelTests.swift in Sources */,
 				AFC9723A22AE3ECF006BE3DB /* NewsArticleTests.swift in Sources */,
 				04D33FC9231017970012C11F /* DetailViewModelTests.swift in Sources */,

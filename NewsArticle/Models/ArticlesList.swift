@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ArticlesList: Decodable {
+struct ArticlesList: Decodable, Equatable {
     let articles: [NewsModel]
     let totalResults: Int?
 }
