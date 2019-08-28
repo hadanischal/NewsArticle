@@ -43,6 +43,8 @@
 		0443587A230D5D7C005923BD /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04435879230D5D7C005923BD /* DetailTableViewController.swift */; };
 		0443587D230D6541005923BD /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443587C230D6541005923BD /* DetailsTableViewCell.swift */; };
 		0443587F230D69B8005923BD /* ReadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443587E230D69B8005923BD /* ReadMoreTableViewCell.swift */; };
+		04A0AB5D23167FD6005DE4FB /* Endpoints.json in Resources */ = {isa = PBXBuildFile; fileRef = 04A0AB5C23167FD6005DE4FB /* Endpoints.json */; };
+		04A0AB5F231684EA005DE4FB /* EndpointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0AB5E231684EA005DE4FB /* EndpointsModel.swift */; };
 		04B2C350230F513900E33F64 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2C34F230F513900E33F64 /* DetailViewModel.swift */; };
 		04B2C352230F514C00E33F64 /* DetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2C351230F514C00E33F64 /* DetailDataSource.swift */; };
 		04D0212323115B7A0083E100 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0212223115B7A0083E100 /* CategoriesTableViewController.swift */; };
@@ -129,6 +131,8 @@
 		04435879230D5D7C005923BD /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		0443587C230D6541005923BD /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		0443587E230D69B8005923BD /* ReadMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMoreTableViewCell.swift; sourceTree = "<group>"; };
+		04A0AB5C23167FD6005DE4FB /* Endpoints.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Endpoints.json; sourceTree = "<group>"; };
+		04A0AB5E231684EA005DE4FB /* EndpointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointsModel.swift; sourceTree = "<group>"; };
 		04B2C34F230F513900E33F64 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		04B2C351230F514C00E33F64 /* DetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataSource.swift; sourceTree = "<group>"; };
 		04D0212223115B7A0083E100 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				0425F247230C19D400D7A44D /* Fonts */,
 				04D021272311632B0083E100 /* Countries.json */,
 				043B3180231220DB0034F098 /* Categories.json */,
+				04A0AB5C23167FD6005DE4FB /* Endpoints.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				AFC9725722AE4053006BE3DB /* NewsModel.swift */,
 				04435873230D4AA6005923BD /* SourceModel.swift */,
 				043B3182231226590034F098 /* CategoriesModel.swift */,
+				04A0AB5E231684EA005DE4FB /* EndpointsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -552,6 +558,7 @@
 				AFC9726422AE500D006BE3DB /* .swiftlint.yml in Resources */,
 				AFC9725C22AE424A006BE3DB /* .gitignore in Resources */,
 				AFC9722F22AE3ECF006BE3DB /* LaunchScreen.storyboard in Resources */,
+				04A0AB5D23167FD6005DE4FB /* Endpoints.json in Resources */,
 				AFC9722C22AE3ECE006BE3DB /* Assets.xcassets in Resources */,
 				0425F24D230C19D400D7A44D /* ApexRounded-Heavy.otf in Resources */,
 				0425F24B230C19D400D7A44D /* ApexRounded-Book.otf in Resources */,
@@ -735,6 +742,7 @@
 				043B3183231226590034F098 /* CategoriesModel.swift in Sources */,
 				AFAA5C8622B918C300C3B885 /* NewsListViewModelProtocol.swift in Sources */,
 				0435F05523155D7500FE2576 /* WebService.swift in Sources */,
+				04A0AB5F231684EA005DE4FB /* EndpointsModel.swift in Sources */,
 				04D0212523115C140083E100 /* CategoriesTableViewCell.swift in Sources */,
 				0425F23D230C178500D7A44D /* UIViewControllerExtension.swift in Sources */,
 				AFAA5C8D22B9206B00C3B885 /* GetNewsHandlerProtocol.swift in Sources */,

@@ -13,7 +13,7 @@ import RxCocoa
 class CategoriesHandler: CategoriesHandlerProtocol {
 
     private let fileManagerHandler: FileManagerHandlerProtocol!
-    private let resource: FileManagerResource<CategoriesModel>!
+    private var resource: FileManagerResource<CategoriesModel>!
 
     init(withFileManagerHandler fileManagerHandler: FileManagerHandlerProtocol = FileManagerHandler()) {
         self.fileManagerHandler = fileManagerHandler
@@ -23,6 +23,12 @@ class CategoriesHandler: CategoriesHandlerProtocol {
     func getCategories() -> Observable<CategoriesModel> {
        return fileManagerHandler.load(resource: resource)
     }
+    
+    func getEndpoint() -> Observable<EndpointsModel> {
+        let resource: FileManagerResource<EndpointsModel> = FileManagerResource(fileName: "Endpoints")
+        return fileManagerHandler.load(resource: resource)
+    }
+
 
 }
 

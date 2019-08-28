@@ -10,6 +10,7 @@ target 'NewsArticle' do
   pod 'RxCocoa', '~> 5'
   pod 'Kingfisher', '~> 5.0'
   pod 'SwiftLint'
+  pod 'Segmentio'
 
   target 'NewsArticleTests' do
     inherit! :search_paths
