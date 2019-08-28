@@ -10,4 +10,5 @@ import RxSwift
 
 protocol CategoriesHandlerProtocol {
     func getCategories() -> Observable<CategoriesModel>
+    func getEndpoint() -> Observable<EndpointsModel>
 }
