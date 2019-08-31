@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 struct Resource<T: Decodable> {
-    let url: URL
+    var url: URL
     var parameter: [String: String]?
 }
 

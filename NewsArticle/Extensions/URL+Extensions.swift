@@ -13,6 +13,12 @@ extension URL {
         return URL(string: ApiConstant.baseServerURL + ApiConstant.topHeadlines)
         //(string: "https://newsapi.org/v2/top-headlines?country=au&apiKey=\(ApiKey.appId)")
     }
+    static func selectedAPIUrl(withUrl url: String) -> URL? {
+        return URL(string: ApiConstant.baseServerURL + url)
+    }
+    static func sourcesUrl() -> URL? {
+        return URL(string: ApiConstant.baseServerURL + ApiConstant.sources)
+    }
 }
 
 struct ApiKey {
@@ -23,7 +29,8 @@ struct ApiKey {
 }
 
 struct ApiConstant {
-    static let baseServerURL = "https://newsapi.org/v2/"
-    static let topHeadlines = "top-headlines"
+    static let baseServerURL = "https://newsapi.org"
+    static let topHeadlines = "/v2/top-headlines/"
+    static let sources = "/v2/sources"
 }
 //https://newsapi.org/v2/top-headlines?country=gb&category=sports&apiKey=API_KEY

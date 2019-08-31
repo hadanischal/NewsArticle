@@ -13,7 +13,6 @@ struct EndpointsModel: Decodable, Equatable {
     let totalResults: Int?
 }
 
-
 struct EndpointSourcesModel: Decodable, Equatable {
     let id: Int?
     let name: String?
