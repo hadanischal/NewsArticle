@@ -23,12 +23,11 @@ class CategoriesHandler: CategoriesHandlerProtocol {
     func getCategories() -> Observable<CategoriesModel> {
        return fileManagerHandler.load(resource: resource)
     }
-    
+
     func getEndpoint() -> Observable<EndpointsModel> {
         let resource: FileManagerResource<EndpointsModel> = FileManagerResource(fileName: "Endpoints")
         return fileManagerHandler.load(resource: resource)
     }
-
 
 }
 

@@ -47,6 +47,13 @@
 		04A0AB5F231684EA005DE4FB /* EndpointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0AB5E231684EA005DE4FB /* EndpointsModel.swift */; };
 		04B2C350230F513900E33F64 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2C34F230F513900E33F64 /* DetailViewModel.swift */; };
 		04B2C352230F514C00E33F64 /* DetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2C351230F514C00E33F64 /* DetailDataSource.swift */; };
+		04C886C5231A4CBE003E6B1F /* SourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C886C4231A4CBE003E6B1F /* SourcesTableViewController.swift */; };
+		04C886C9231A4EA7003E6B1F /* SourcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C886C8231A4EA7003E6B1F /* SourcesViewModel.swift */; };
+		04C886CB231A4EBD003E6B1F /* SourcesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C886CA231A4EBD003E6B1F /* SourcesDataSource.swift */; };
+		04C886CD231A4F74003E6B1F /* GetSourcesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C886CC231A4F74003E6B1F /* GetSourcesHandler.swift */; };
+		04C886CF231A4F90003E6B1F /* GetSourcesHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C886CE231A4F90003E6B1F /* GetSourcesHandlerProtocol.swift */; };
+		04C886D1231A518C003E6B1F /* SourceListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C886D0231A518C003E6B1F /* SourceListModel.swift */; };
+		04C886D3231A57BC003E6B1F /* SourcesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C886D2231A57BC003E6B1F /* SourcesTableViewCell.swift */; };
 		04D0212323115B7A0083E100 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0212223115B7A0083E100 /* CategoriesTableViewController.swift */; };
 		04D0212523115C140083E100 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0212423115C140083E100 /* CategoriesTableViewCell.swift */; };
 		04D021282311632B0083E100 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 04D021272311632B0083E100 /* Countries.json */; };
@@ -135,6 +142,13 @@
 		04A0AB5E231684EA005DE4FB /* EndpointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointsModel.swift; sourceTree = "<group>"; };
 		04B2C34F230F513900E33F64 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		04B2C351230F514C00E33F64 /* DetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataSource.swift; sourceTree = "<group>"; };
+		04C886C4231A4CBE003E6B1F /* SourcesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesTableViewController.swift; sourceTree = "<group>"; };
+		04C886C8231A4EA7003E6B1F /* SourcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesViewModel.swift; sourceTree = "<group>"; };
+		04C886CA231A4EBD003E6B1F /* SourcesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesDataSource.swift; sourceTree = "<group>"; };
+		04C886CC231A4F74003E6B1F /* GetSourcesHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSourcesHandler.swift; sourceTree = "<group>"; };
+		04C886CE231A4F90003E6B1F /* GetSourcesHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSourcesHandlerProtocol.swift; sourceTree = "<group>"; };
+		04C886D0231A518C003E6B1F /* SourceListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceListModel.swift; sourceTree = "<group>"; };
+		04C886D2231A57BC003E6B1F /* SourcesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesTableViewCell.swift; sourceTree = "<group>"; };
 		04D0212223115B7A0083E100 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		04D0212423115C140083E100 /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		04D021272311632B0083E100 /* Countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
@@ -273,6 +287,15 @@
 			name = DetailView;
 			sourceTree = "<group>";
 		};
+		04C886C6231A4E79003E6B1F /* SourcesViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04C886CA231A4EBD003E6B1F /* SourcesDataSource.swift */,
+				04C886C8231A4EA7003E6B1F /* SourcesViewModel.swift */,
+			);
+			name = SourcesViewModel;
+			sourceTree = "<group>";
+		};
 		3BABA9396F7F585A09EFAE09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +322,7 @@
 		AFAA5C8222B9169F00C3B885 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				04C886C6231A4E79003E6B1F /* SourcesViewModel */,
 				043B318F23122E9D0034F098 /* CategoriesViewModel */,
 				0443587B230D6053005923BD /* DetailView */,
 				AFAA5C8522B918C300C3B885 /* NewsListViewModelProtocol.swift */,
@@ -312,6 +336,8 @@
 			children = (
 				AFAA5C8C22B9206B00C3B885 /* GetNewsHandlerProtocol.swift */,
 				AFAA5C8A22B9202C00C3B885 /* GetNewsHandler.swift */,
+				04C886CE231A4F90003E6B1F /* GetSourcesHandlerProtocol.swift */,
+				04C886CC231A4F74003E6B1F /* GetSourcesHandler.swift */,
 			);
 			path = APIWrappers;
 			sourceTree = "<group>";
@@ -399,6 +425,7 @@
 				04435873230D4AA6005923BD /* SourceModel.swift */,
 				043B3182231226590034F098 /* CategoriesModel.swift */,
 				04A0AB5E231684EA005DE4FB /* EndpointsModel.swift */,
+				04C886D0231A518C003E6B1F /* SourceListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -410,6 +437,7 @@
 				0443587C230D6541005923BD /* DetailsTableViewCell.swift */,
 				0443587E230D69B8005923BD /* ReadMoreTableViewCell.swift */,
 				04D0212423115C140083E100 /* CategoriesTableViewCell.swift */,
+				04C886D2231A57BC003E6B1F /* SourcesTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -420,6 +448,7 @@
 				AFC9725522AE403E006BE3DB /* NewsListViewController.swift */,
 				04435879230D5D7C005923BD /* DetailTableViewController.swift */,
 				04D0212223115B7A0083E100 /* CategoriesTableViewController.swift */,
+				04C886C4231A4CBE003E6B1F /* SourcesTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -730,6 +759,8 @@
 			files = (
 				AFC9726122AE4F08006BE3DB /* ArticlesList.swift in Sources */,
 				AFC9722422AE3ECD006BE3DB /* ViewController.swift in Sources */,
+				04C886D1231A518C003E6B1F /* SourceListModel.swift in Sources */,
+				04C886D3231A57BC003E6B1F /* SourcesTableViewCell.swift in Sources */,
 				043B319323122ED30034F098 /* CategoriesDataSource.swift in Sources */,
 				04B2C350230F513900E33F64 /* DetailViewModel.swift in Sources */,
 				04B2C352230F514C00E33F64 /* DetailDataSource.swift in Sources */,
@@ -742,9 +773,11 @@
 				043B3183231226590034F098 /* CategoriesModel.swift in Sources */,
 				AFAA5C8622B918C300C3B885 /* NewsListViewModelProtocol.swift in Sources */,
 				0435F05523155D7500FE2576 /* WebService.swift in Sources */,
+				04C886CD231A4F74003E6B1F /* GetSourcesHandler.swift in Sources */,
 				04A0AB5F231684EA005DE4FB /* EndpointsModel.swift in Sources */,
 				04D0212523115C140083E100 /* CategoriesTableViewCell.swift in Sources */,
 				0425F23D230C178500D7A44D /* UIViewControllerExtension.swift in Sources */,
+				04C886C5231A4CBE003E6B1F /* SourcesTableViewController.swift in Sources */,
 				AFAA5C8D22B9206B00C3B885 /* GetNewsHandlerProtocol.swift in Sources */,
 				AFC9722A22AE3ECD006BE3DB /* NewsArticle.xcdatamodeld in Sources */,
 				AFC9725A22AE4066006BE3DB /* NewsTableViewCell.swift in Sources */,
@@ -753,9 +786,11 @@
 				AFC9722222AE3ECD006BE3DB /* AppDelegate.swift in Sources */,
 				04D0212323115B7A0083E100 /* CategoriesTableViewController.swift in Sources */,
 				043B318E2312299C0034F098 /* CategoriesHandler.swift in Sources */,
+				04C886CF231A4F90003E6B1F /* GetSourcesHandlerProtocol.swift in Sources */,
 				0425F23C230C178500D7A44D /* DateExtension.swift in Sources */,
 				AFAA5C8B22B9202C00C3B885 /* GetNewsHandler.swift in Sources */,
 				043B31882312275A0034F098 /* FileManagerHandler.swift in Sources */,
+				04C886C9231A4EA7003E6B1F /* SourcesViewModel.swift in Sources */,
 				0425F23F230C178500D7A44D /* NavigationControllerExtension.swift in Sources */,
 				AFC9725F22AE4CA0006BE3DB /* URLRequest+Extensions.swift in Sources */,
 				0425F241230C178500D7A44D /* UITableView+Extensions.swift in Sources */,
@@ -765,6 +800,7 @@
 				043B31862312274A0034F098 /* FileManagerHandlerProtocol.swift in Sources */,
 				0425F239230C178500D7A44D /* FontExtension.swift in Sources */,
 				0443587A230D5D7C005923BD /* DetailTableViewController.swift in Sources */,
+				04C886CB231A4EBD003E6B1F /* SourcesDataSource.swift in Sources */,
 				AFC9725822AE4053006BE3DB /* NewsModel.swift in Sources */,
 				0435F05323155CE700FE2576 /* WebServiceProtocol.swift in Sources */,
 				04435874230D4AA6005923BD /* SourceModel.swift in Sources */,

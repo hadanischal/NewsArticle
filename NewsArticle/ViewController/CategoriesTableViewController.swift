@@ -16,7 +16,6 @@ class CategoriesTableViewController: UITableViewController {
     @IBOutlet weak var doneButton: UIBarButtonItem!
     private var viewModel: CategoriesDataSource!
     private var categoriesList: [String]?
-//    private var selectedCategories: String?
 
     private let selectedCategoriesSubject = PublishSubject<String>()
     var selectedCategories: Observable<String>? {
