@@ -12,6 +12,7 @@ import RxSwift
 protocol NewsListViewModelProtocol {
     var newsList: Observable<[NewsModel]> { get }
     func populateNews(withCategory category: String)
+    func populateNews(withSource source: SourceModel)
 }
 
 extension NewsListViewModelProtocol {

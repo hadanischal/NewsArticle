@@ -13,12 +13,13 @@ import RxCocoa
 class SourcesTableViewController: UITableViewController {
 
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     private var viewModel: SourcesDataSource!
     private var sourceModelList: [SourceModel]!
 
-    private let selectedCategoriesSubject = PublishSubject<String>()
-    var selectedCategories: Observable<String>? {
-        return selectedCategoriesSubject.asObserver()
+    private let selectedSourceSubject = PublishSubject<SourceModel>()
+    var selectedSource: Observable<SourceModel>? {
+        return selectedSourceSubject.asObserver()
     }
 
     private let disposeBag = DisposeBag()
@@ -30,7 +31,6 @@ class SourcesTableViewController: UITableViewController {
     }
 
     func setUpUI() {
-        title = "Select Sources"
         view.backgroundColor = UIColor.viewBackgroundColor
         tableView.backgroundColor = UIColor.tableViewBackgroundColor
         tableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -40,11 +40,24 @@ class SourcesTableViewController: UITableViewController {
             self?.dismiss(animated: true)
         }).disposed(by: disposeBag)
 
+        doneButton.rx.tap.subscribe(onNext: { [weak self] in
+            let selectedIndexPath = self?.tableView.indexPathForSelectedRow
+            if
+                let row = selectedIndexPath?.row,
+                let selectedValue = self?.sourceModelList?[row] {
+                self?.selectedSourceSubject.onNext(selectedValue)
+                self?.dismiss(animated: true)
+            } else {
+                self?.showAlertView(withTitle: "Unable to get selected category", andMessage: "Please select the category")
+            }
+        }).disposed(by: disposeBag)
+
     }
 
     func setupViewModel() {
 
         self.viewModel = SourcesViewModel()
+        viewModel.title.bind(to: self.navigationItem.rx.title).disposed(by: disposeBag)
 
         viewModel.newsList
             .observeOn(MainScheduler.instance)
@@ -75,4 +88,15 @@ class SourcesTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .checkmark
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .none
+        }
+    }
 }

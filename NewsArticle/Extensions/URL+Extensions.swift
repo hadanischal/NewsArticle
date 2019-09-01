@@ -17,7 +17,7 @@ extension URL {
         return URL(string: ApiConstant.baseServerURL + url)
     }
     static func sourcesUrl() -> URL? {
-        return URL(string: ApiConstant.baseServerURL + ApiConstant.sources)
+        return URL(string: ApiConstant.baseServerURL + ApiConstant.getSources)
     }
 }
 
@@ -26,11 +26,12 @@ struct ApiKey {
     static let country = "au"
     static let countryGB = "gb"
     static let categorySports = "sports"
+    static let sources = "sources"
 }
 
 struct ApiConstant {
     static let baseServerURL = "https://newsapi.org"
-    static let topHeadlines = "/v2/top-headlines/"
-    static let sources = "/v2/sources"
+    static let topHeadlines = "/v2/top-headlines"
+    static let getSources = "/v2/sources"
 }
 //https://newsapi.org/v2/top-headlines?country=gb&category=sports&apiKey=API_KEY

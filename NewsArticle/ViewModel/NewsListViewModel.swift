@@ -41,4 +41,15 @@ class NewsListViewModel: NewsListViewModelProtocol {
                 }
             }).disposed(by: disposeBag)
     }
+
+    func populateNews(withSource source: SourceModel) {
+        getNews.populateNews(withSource: source)
+            .subscribe(onNext: { [weak self] result in
+                if let result = result {
+                    let articles = result.articles
+                    self?.newsListSubject.onNext(articles)
+                }
+            }).disposed(by: disposeBag)
+    }
+
 }
