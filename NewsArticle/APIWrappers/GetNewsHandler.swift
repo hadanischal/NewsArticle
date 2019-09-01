@@ -33,6 +33,18 @@ class GetNewsHandler: GetNewsHandlerProtocol {
             .retry(2)
     }
 
+    func populateNews(withSource source: SourceModel) -> Observable<ArticlesList?> {
+        // TODO: Update properly
+        self.resource.parameter?.removeValue(forKey: "country")
+        self.resource.parameter?.removeValue(forKey: "category")
+        self.resource.parameter?.updateValue(source.id ?? "", forKey: ApiKey.sources)
+        return self.webService.load(resource: resource)
+            .map { article -> ArticlesList? in
+                return article
+            }.asObservable()
+            .retry(2)
+    }
+
 }
 
 //    var resource1: Resource<ArticlesList> = {

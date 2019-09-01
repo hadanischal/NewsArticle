@@ -121,7 +121,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="iconsSource" id="0kO-VO-P6s">
                             <connections>
-                                <segue destination="fZz-Ye-e1e" kind="showDetail" id="oeR-9m-QAD"/>
+                                <segue destination="fZz-Ye-e1e" kind="showDetail" identifier="segueSources" id="oeR-9m-QAD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -355,10 +355,12 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="q9f-uX-zmG">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="cancel" id="qm2-J1-Til"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="done" id="I0G-kC-YnN"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cancelButton" destination="qm2-J1-Til" id="mtE-GK-Dni"/>
+                        <outlet property="doneButton" destination="I0G-kC-YnN" id="dTv-ib-qQU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5p-fj-qTG" userLabel="First Responder" sceneMemberID="firstResponder"/>

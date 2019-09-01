@@ -11,4 +11,5 @@ import RxSwift
 protocol SourcesDataSource {
     func getSources()
     var newsList: Observable<[SourceModel]> { get }
+    var title: Observable<String> { get }
 }

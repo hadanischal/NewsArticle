@@ -92,6 +92,16 @@ class NewsListViewController: UITableViewController {
                     self?.viewModel.populateNews(withCategory: category)
                 }).disposed(by: disposeBag)
 
+        } else if segue.identifier == "segueSources" {
+            guard let navC = segue.destination as? UINavigationController,
+                let sourcesVC = navC.viewControllers.first as? SourcesTableViewController else {
+                    fatalError("Segue destination is not found")
+            }
+            sourcesVC.selectedSource?
+                .subscribe(onNext: { [weak self] source in
+                    self?.viewModel.populateNews(withSource: source)
+//                    self?.viewModel.populateNews(withCategory: category)
+            }).disposed(by: disposeBag)
         }
 
     }

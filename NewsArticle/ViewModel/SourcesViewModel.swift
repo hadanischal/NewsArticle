@@ -21,6 +21,10 @@ class SourcesViewModel: SourcesDataSource {
         self.newsList = newsListSubject.asObserver()
     }
 
+    var title: Observable<String> {
+        return Observable.just("Select Sources")
+    }
+
     func getSources() {
         sourcesHandler.getSources()
             .subscribe(onNext: { [weak self] newsResult in
