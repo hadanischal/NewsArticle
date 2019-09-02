@@ -33,16 +33,18 @@ class NewsListViewController: UITableViewController {
     }
 
     func setupViewModel() {
+        viewModel.title.bind(to: navigationItem.rx.title).disposed(by: disposeBag)
         viewModel.newsList
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] chores in
                 self?.newsList = chores
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
+                self?.tableView.reloadData()
+                }, onError: { error in
+                    self.showAlertView(withTitle: "error", andMessage: error.localizedDescription)
             })
             .disposed(by: disposeBag)
 
-        viewModel.populateNews()
+//        viewModel.getTopHeadlines(withParameter: nil)
 
     }
     // MARK: - Table view data source
@@ -89,7 +91,7 @@ class NewsListViewController: UITableViewController {
 
             categoryVC.selectedCategories?.asDriver(onErrorJustReturn: "")
                 .drive(onNext: { [weak self] category in
-                    self?.viewModel.populateNews(withCategory: category)
+                    self?.viewModel.updateNews(withCategory: category)
                 }).disposed(by: disposeBag)
 
         } else if segue.identifier == "segueSources" {
@@ -99,9 +101,8 @@ class NewsListViewController: UITableViewController {
             }
             sourcesVC.selectedSource?
                 .subscribe(onNext: { [weak self] source in
-                    self?.viewModel.populateNews(withSource: source)
-//                    self?.viewModel.populateNews(withCategory: category)
-            }).disposed(by: disposeBag)
+                    self?.viewModel.updateNews(withSource: source)
+                }).disposed(by: disposeBag)
         }
 
     }

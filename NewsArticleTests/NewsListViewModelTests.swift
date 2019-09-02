@@ -15,7 +15,7 @@ import RxBlocking
 import RxSwift
 
 @testable import NewsArticle
-
+// TODO: Cover edge case
 class NewsListViewModelTests: QuickSpec {
 
     override func spec() {
@@ -30,7 +30,7 @@ class NewsListViewModelTests: QuickSpec {
                 testScheduler = TestScheduler(initialClock: 0)
                 mockGetNewsHandler = MockGetNewsHandlerProtocol()
                 stub(mockGetNewsHandler, block: { stub in
-                    when(stub.populateNews(withCategory: any())).thenReturn(Observable.empty())
+                    when(stub.getTopHeadlines(withParameter: any())).thenReturn(Observable.empty())
                 })
                 testViewModel = NewsListViewModel(withGetNews: mockGetNewsHandler)
             }
@@ -40,15 +40,15 @@ class NewsListViewModelTests: QuickSpec {
                 context("when get news succeed ", {
                     beforeEach {
                         stub(mockGetNewsHandler, block: { stub in
-                            when(stub.populateNews(withCategory: any())).thenReturn(Observable.just(mockArtcile))
+                            when(stub.getTopHeadlines(withParameter: any())).thenReturn(Observable.just(mockArtcile))
                         })
                     }
                     it("it completed successfully", closure: {
-                        verify(mockGetNewsHandler).populateNews(withCategory: any())
+                        verify(mockGetNewsHandler).getTopHeadlines(withParameter: any())
                     })
                     it("emits the news list to the UI", closure: {
                         testScheduler.scheduleAt(300, action: {
-                            testViewModel.populateNews()
+                            testViewModel.getTopHeadlines(withParameter: nil)
                         })
                         let res = testScheduler.start { testViewModel.newsList.asObservable() }
                         expect(res.events.count).to(equal(1))
@@ -65,19 +65,21 @@ class NewsListViewModelTests: QuickSpec {
                 context("when get news failed ", {
                     beforeEach {
                         stub(mockGetNewsHandler, block: { stub in
-                            when(stub.populateNews(withCategory: any())).thenReturn(Observable.error(mockError))
+                            when(stub.getTopHeadlines(withParameter: any())).thenReturn(Observable.error(mockError))
                         })
                     }
                     it("it completed successfully", closure: {
-                        verify(mockGetNewsHandler).populateNews(withCategory: any())
+                        verify(mockGetNewsHandler).getTopHeadlines(withParameter: any())
                     })
                     it("emits the news list to the UI", closure: {
                         testScheduler.scheduleAt(300, action: {
-                            testViewModel.populateNews()
+                            testViewModel.getTopHeadlines(withParameter: nil)
                         })
                         let res = testScheduler.start { testViewModel.newsList.asObservable() }
                         expect(res.events).toNot(beNil())
-                        expect(res.events.count).to(equal(0))
+                        expect(res.events.count).to(equal(1))
+                        let correctResult = [Recorded.error(300, mockError, [NewsModel].self)]
+                        expect(res.events).to(equal(correctResult))
                     })
                 })
             })

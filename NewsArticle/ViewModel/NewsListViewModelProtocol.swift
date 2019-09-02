@@ -10,13 +10,9 @@ import UIKit
 import RxSwift
 
 protocol NewsListViewModelProtocol {
+    var title: Observable<String> { get }
     var newsList: Observable<[NewsModel]> { get }
-    func populateNews(withCategory category: String)
-    func populateNews(withSource source: SourceModel)
-}
-
-extension NewsListViewModelProtocol {
-    func populateNews(withCategory category: String = ApiKey.categorySports) {
-        populateNews(withCategory: category)
-    }
+    func getTopHeadlines(withParameter param: [String: String]?)
+    func updateNews(withCategory category: String)
+    func updateNews(withSource source: SourceModel)
 }
