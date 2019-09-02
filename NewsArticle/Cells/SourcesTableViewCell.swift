@@ -24,7 +24,7 @@ class SourcesTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.titleLabel.font = .body1
-        self.descriptionLabel.font = .body2
+        self.titleLabel.font = .body2
+        self.descriptionLabel.font = .body3
     }
 }

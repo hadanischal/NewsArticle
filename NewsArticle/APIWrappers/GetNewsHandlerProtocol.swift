@@ -9,6 +9,5 @@
 import RxSwift
 
 protocol GetNewsHandlerProtocol {
-    func populateNews(withCategory category: String) -> Observable<ArticlesList?>
-    func populateNews(withSource source: SourceModel) -> Observable<ArticlesList?>
+    func getTopHeadlines(withParameter param: [String: String]?) -> Observable<ArticlesList?>
 }

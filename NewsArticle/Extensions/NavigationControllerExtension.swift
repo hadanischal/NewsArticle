@@ -36,6 +36,7 @@ extension UINavigationController {
 
         view.backgroundColor = .barTintColor
         navigationBar.barStyle = .black
+        navigationBar.prefersLargeTitles = true
 
     }
 }

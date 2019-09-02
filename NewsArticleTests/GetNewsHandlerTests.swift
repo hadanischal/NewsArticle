@@ -43,11 +43,11 @@ class GetNewsHandlerTests: QuickSpec {
                         })
                     }
                     it("it completed successfully", closure: {
-                        _ = testHandler.populateNews()
+                        _ = testHandler.getTopHeadlines(withParameter: nil)
                         verify(mockWebService).load(resource: any(Resource<ArticlesList>.self))
                     })
                     it("emits the news list to the UI", closure: {
-                        let observable = testHandler.populateNews().asObservable()
+                        let observable = testHandler.getTopHeadlines(withParameter: nil).asObservable()
 
                         let res = testScheduler.start { observable }
                         expect(res.events.count).to(equal(2))
@@ -65,11 +65,11 @@ class GetNewsHandlerTests: QuickSpec {
                         })
                     }
                     it("it completed successfully", closure: {
-                        _ = testHandler.populateNews().asObservable()
+                        _ = testHandler.getTopHeadlines(withParameter: nil).asObservable()
                         verify(mockWebService).load(resource: any(Resource<ArticlesList>.self))
                     })
                     it("emits the news list to the UI", closure: {
-                        let observable = testHandler.populateNews().asObservable()
+                        let observable = testHandler.getTopHeadlines(withParameter: nil).asObservable()
 
                         let res = testScheduler.start { observable }
                         expect(res.events.count).to(equal(1))

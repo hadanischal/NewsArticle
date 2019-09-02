@@ -11,33 +11,23 @@ import RxSwift
 
 class GetNewsHandler: GetNewsHandlerProtocol {
     private let url = URL.topHeadlinesUrl()!
-    private var param: [String: String] = ["country": ApiKey.countryGB,
-                                   "category": ApiKey.categorySports,
-                                   "apiKey": ApiKey.appId]
+    private let defaultParam: [String: String] = ["country": ApiKey.countryGB,
+                                                  "category": ApiKey.categorySports]
     private var resource: Resource<ArticlesList>!
-
     private let webService: WebServiceProtocol!
 
     init(withWebService webService: WebServiceProtocol = WebService()) {
         self.webService = webService
-        self.resource = Resource(url: url, parameter: param)
     }
 
-    func populateNews(withCategory category: String = ApiKey.categorySports) -> Observable<ArticlesList?> {
-        resource.parameter?.updateValue(category, forKey: "category")
+    func getTopHeadlines(withParameter param: [String: String]?) -> Observable<ArticlesList?> {
+        var parameter = ["apiKey": ApiKey.appId]
+        parameter.merge(param ?? defaultParam) { (current, _) -> String in
+            current
+        }
 
-        return self.webService.load(resource: resource)
-            .map { article -> ArticlesList? in
-                return article
-            }.asObservable()
-            .retry(2)
-    }
+        self.resource = Resource(url: url, parameter: parameter)
 
-    func populateNews(withSource source: SourceModel) -> Observable<ArticlesList?> {
-        // TODO: Update properly
-        self.resource.parameter?.removeValue(forKey: "country")
-        self.resource.parameter?.removeValue(forKey: "category")
-        self.resource.parameter?.updateValue(source.id ?? "", forKey: ApiKey.sources)
         return self.webService.load(resource: resource)
             .map { article -> ArticlesList? in
                 return article

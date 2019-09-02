@@ -22,7 +22,7 @@ extension UIFont {
 
 extension UIFont {
     static var navigationBarTitle: UIFont {
-        return .regularFont(size: 24)
+        return .regularFont(size: 22)
     }
     static var navigationBarButtonItem: UIFont {
         return .lightFont(size: 20)
@@ -40,7 +40,7 @@ extension UIFont {
         return .lightFont(size: 20)
     }
     static var body3: UIFont {
-        return .regularFont(size: 18)
+        return .lightFont(size: 18)
     }
     static var detailTitle: UIFont {
         return .lightFont(size: 16)
