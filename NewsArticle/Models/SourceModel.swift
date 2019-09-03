@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SourceModel: Codable {
+struct SourceModel: Codable, Equatable {
     let id: String?
     let name: String?
     let description: String?

@@ -17,7 +17,9 @@ ${PODS_ROOT}/Cuckoo/run generate --testable "${PROJECT_NAME}" \
 --output "${OUTPUT_FILE}" \
 "$INPUT_DIR/APIWrappers/GetNewsHandlerProtocol.swift" \
 "$INPUT_DIR/APIWrappers/GetNewsHandler.swift" \
+"$INPUT_DIR/APIWrappers/GetSourcesHandlerProtocol.swift" \
 "$INPUT_DIR/FileManagerHandler/CategoriesHandlerProtocol.swift" \
 "$INPUT_DIR/FileManagerHandler/FileManagerHandlerProtocol.swift" \
 "$INPUT_DIR/Networking/WebServiceProtocol.swift"
+
 # ... and so forth

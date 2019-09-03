@@ -36,7 +36,7 @@ class GetNewsHandlerTests: QuickSpec {
             }
 
             describe("Get news info on initialization", {
-                context("when get news succeed ", {
+                context("when getTopHeadlines succeed ", {
                     beforeEach {
                         stub(mockWebService, block: { stub in
                             when(stub.load(resource: any(Resource<ArticlesList>.self))).thenReturn(Observable.just(mockArticlesList!))

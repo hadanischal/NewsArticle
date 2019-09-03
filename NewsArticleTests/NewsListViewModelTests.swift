@@ -15,7 +15,7 @@ import RxBlocking
 import RxSwift
 
 @testable import NewsArticle
-// TODO: Cover edge case
+
 class NewsListViewModelTests: QuickSpec {
 
     override func spec() {
@@ -46,7 +46,7 @@ class NewsListViewModelTests: QuickSpec {
                     it("it completed successfully", closure: {
                         verify(mockGetNewsHandler).getTopHeadlines(withParameter: any())
                     })
-                    it("emits the news list to the UI", closure: {
+                    it("emits the news list to the UI for getTopHeadlines", closure: {
                         testScheduler.scheduleAt(300, action: {
                             testViewModel.getTopHeadlines(withParameter: nil)
                         })
@@ -58,7 +58,32 @@ class NewsListViewModelTests: QuickSpec {
                         } else {
                             XCTAssert(false, "nil mock value")
                         }
-
+                    })
+                    it("emits the news list to the UI for updateNews withCategory", closure: {
+                        testScheduler.scheduleAt(300, action: {
+                            testViewModel.updateNews(withCategory: "MockCategory")
+                        })
+                        let res = testScheduler.start { testViewModel.newsList.asObservable() }
+                        expect(res.events.count).to(equal(1))
+                        if let articles = mockNews {
+                            let correctResult = [Recorded.next(300, articles)]
+                            expect(res.events).to(equal(correctResult))
+                        } else {
+                            XCTAssert(false, "nil mock value")
+                        }
+                    })
+                    it("emits the news list to the UI for updateNews withSource", closure: {
+                        testScheduler.scheduleAt(300, action: {
+                            testViewModel.updateNews(withCategory: "MockSource")
+                        })
+                        let res = testScheduler.start { testViewModel.newsList.asObservable() }
+                        expect(res.events.count).to(equal(1))
+                        if let articles = mockNews {
+                            let correctResult = [Recorded.next(300, articles)]
+                            expect(res.events).to(equal(correctResult))
+                        } else {
+                            XCTAssert(false, "nil mock value")
+                        }
                     })
                 })
 
