@@ -16,7 +16,7 @@ class SourcesViewModel: SourcesDataSource {
     private let newsListSubject = PublishSubject<[SourceModel]>()
     private let disposeBag = DisposeBag()
 
-    init(withCategoriesHandler sourcesHandler: GetSourcesHandlerProtocol = GetSourcesHandler()) {
+    init(withSourcesHandler sourcesHandler: GetSourcesHandlerProtocol = GetSourcesHandler()) {
         self.sourcesHandler = sourcesHandler
         self.newsList = newsListSubject.asObserver()
     }

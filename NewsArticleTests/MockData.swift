@@ -28,6 +28,22 @@ class MockData {
         }
     }
 
+    func stubSourceListModel() -> SourceListModel? {
+
+        guard let data = self.readJson(forResource: "sources") else {
+            XCTAssert(false, "Can't get data from sources.json")
+            return nil
+        }
+
+        let decoder = JSONDecoder()
+        if let result = try? decoder.decode(SourceListModel.self, from: data) {
+            return result
+        } else {
+            XCTAssert(false, "Unable to parse ArticlesList results")
+            return nil
+        }
+    }
+
     func readJson(forResource fileName: String ) -> Data? {
         let bundle = Bundle(for: type(of: self))
         guard let url = bundle.url(forResource: fileName, withExtension: "json") else {
