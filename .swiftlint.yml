@@ -2,3 +2,8 @@ excluded:
     - Pods
     - Pods/
     - SwiftLint/Common/3rdPartyLib
+    - NewsArticleTests/GeneratedMocks.swift
+
+line_length:
+    - 300 # warning
+    - 400 # error
