@@ -62,6 +62,12 @@
 		04D33FC423100FC20012C11F /* MockNewsList.json in Resources */ = {isa = PBXBuildFile; fileRef = 04D33FC323100FC20012C11F /* MockNewsList.json */; };
 		04D33FC623100FF70012C11F /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D33FC523100FF70012C11F /* MockData.swift */; };
 		04D33FC9231017970012C11F /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D33FC8231017970012C11F /* DetailViewModelTests.swift */; };
+		04D8C46C2328EF6F0062279E /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8C46B2328EF6F0062279E /* Coordinatable.swift */; };
+		04D8C46E2328EF820062279E /* CoordinatorBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8C46D2328EF820062279E /* CoordinatorBuilding.swift */; };
+		04D8C4702328EF920062279E /* SingleActionCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8C46F2328EF910062279E /* SingleActionCoordinating.swift */; };
+		04D8C4732328F0580062279E /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8C4722328F0580062279E /* DashboardBuilder.swift */; };
+		04D8C4752328F09A0062279E /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8C4742328F09A0062279E /* DashboardCoordinator.swift */; };
+		04D8C4772328F0C60062279E /* DashboardRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8C4762328F0C60062279E /* DashboardRoute.swift */; };
 		38E3CA25A4D8434017F2C7EF /* Pods_NewsArticleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF021286C87F4E018247CB6 /* Pods_NewsArticleUITests.framework */; };
 		5835BECDCDB48FF9080B5732 /* Pods_NewsArticle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54741232D6DB8A32A755BD01 /* Pods_NewsArticle.framework */; };
 		AFAA5C8422B9188200C3B885 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAA5C8322B9188200C3B885 /* NewsListViewModel.swift */; };
@@ -159,6 +165,12 @@
 		04D33FC323100FC20012C11F /* MockNewsList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockNewsList.json; sourceTree = "<group>"; };
 		04D33FC523100FF70012C11F /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		04D33FC8231017970012C11F /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		04D8C46B2328EF6F0062279E /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
+		04D8C46D2328EF820062279E /* CoordinatorBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorBuilding.swift; sourceTree = "<group>"; };
+		04D8C46F2328EF910062279E /* SingleActionCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleActionCoordinating.swift; sourceTree = "<group>"; };
+		04D8C4722328F0580062279E /* DashboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBuilder.swift; sourceTree = "<group>"; };
+		04D8C4742328F09A0062279E /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
+		04D8C4762328F0C60062279E /* DashboardRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRoute.swift; sourceTree = "<group>"; };
 		087F2601A2528A0BF956D39B /* Pods-NewsArticleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsArticleUITests.debug.xcconfig"; path = "Target Support Files/Pods-NewsArticleUITests/Pods-NewsArticleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		54741232D6DB8A32A755BD01 /* Pods_NewsArticle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsArticle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A185FAE8E8F6A10BD97768 /* Pods-NewsArticleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsArticleTests.debug.xcconfig"; path = "Target Support Files/Pods-NewsArticleTests/Pods-NewsArticleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -278,6 +290,7 @@
 		043B319B2312A2DB0034F098 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				04D8C46A2328EF580062279E /* BaseCoordinator */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -298,6 +311,26 @@
 				04C886C8231A4EA7003E6B1F /* SourcesViewModel.swift */,
 			);
 			name = SourcesViewModel;
+			sourceTree = "<group>";
+		};
+		04D8C46A2328EF580062279E /* BaseCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				04D8C46B2328EF6F0062279E /* Coordinatable.swift */,
+				04D8C46D2328EF820062279E /* CoordinatorBuilding.swift */,
+				04D8C46F2328EF910062279E /* SingleActionCoordinating.swift */,
+			);
+			path = BaseCoordinator;
+			sourceTree = "<group>";
+		};
+		04D8C4712328EFF40062279E /* DashboardCoordinating */ = {
+			isa = PBXGroup;
+			children = (
+				04D8C4722328F0580062279E /* DashboardBuilder.swift */,
+				04D8C4742328F09A0062279E /* DashboardCoordinator.swift */,
+				04D8C4762328F0C60062279E /* DashboardRoute.swift */,
+			);
+			path = DashboardCoordinating;
 			sourceTree = "<group>";
 		};
 		3BABA9396F7F585A09EFAE09 /* Frameworks */ = {
@@ -381,6 +414,7 @@
 				AFC9725D22AE4C88006BE3DB /* Extensions */,
 				AFC9725322AE3FA7006BE3DB /* Cells */,
 				AFC9725222AE3F98006BE3DB /* Models */,
+				04D8C4712328EFF40062279E /* DashboardCoordinating */,
 				AFAA5C8222B9169F00C3B885 /* ViewModel */,
 				AFC9725422AE3FFE006BE3DB /* ViewController */,
 				0425F246230C19CB00D7A44D /* Resources */,
@@ -793,6 +827,7 @@
 				0425F240230C178500D7A44D /* ImageViewExtension.swift in Sources */,
 				0425F245230C18F900D7A44D /* AlertAction.swift in Sources */,
 				0443587F230D69B8005923BD /* ReadMoreTableViewCell.swift in Sources */,
+				04D8C4702328EF920062279E /* SingleActionCoordinating.swift in Sources */,
 				AFAA5C8422B9188200C3B885 /* NewsListViewModel.swift in Sources */,
 				043B318C231229900034F098 /* CategoriesHandlerProtocol.swift in Sources */,
 				0425F243230C178500D7A44D /* BundleExtension.swift in Sources */,
@@ -808,6 +843,7 @@
 				AFC9722A22AE3ECD006BE3DB /* NewsArticle.xcdatamodeld in Sources */,
 				AFC9725A22AE4066006BE3DB /* NewsTableViewCell.swift in Sources */,
 				0425F23A230C178500D7A44D /* ColourConstant.swift in Sources */,
+				04D8C4732328F0580062279E /* DashboardBuilder.swift in Sources */,
 				04435876230D4CD7005923BD /* String+Extension .swift in Sources */,
 				AFC9722222AE3ECD006BE3DB /* AppDelegate.swift in Sources */,
 				04D0212323115B7A0083E100 /* CategoriesTableViewController.swift in Sources */,
@@ -817,19 +853,23 @@
 				AFAA5C8B22B9202C00C3B885 /* GetNewsHandler.swift in Sources */,
 				043B31882312275A0034F098 /* FileManagerHandler.swift in Sources */,
 				04C886C9231A4EA7003E6B1F /* SourcesViewModel.swift in Sources */,
+				04D8C46E2328EF820062279E /* CoordinatorBuilding.swift in Sources */,
 				0425F23F230C178500D7A44D /* NavigationControllerExtension.swift in Sources */,
 				AFC9725F22AE4CA0006BE3DB /* URLRequest+Extensions.swift in Sources */,
 				0425F241230C178500D7A44D /* UITableView+Extensions.swift in Sources */,
 				0425F23E230C178500D7A44D /* URL+Extensions.swift in Sources */,
 				AFC9725622AE403E006BE3DB /* NewsListViewController.swift in Sources */,
 				0443587D230D6541005923BD /* DetailsTableViewCell.swift in Sources */,
+				04D8C4752328F09A0062279E /* DashboardCoordinator.swift in Sources */,
 				043B31862312274A0034F098 /* FileManagerHandlerProtocol.swift in Sources */,
 				0425F239230C178500D7A44D /* FontExtension.swift in Sources */,
 				0443587A230D5D7C005923BD /* DetailTableViewController.swift in Sources */,
 				04C886CB231A4EBD003E6B1F /* SourcesDataSource.swift in Sources */,
 				AFC9725822AE4053006BE3DB /* NewsModel.swift in Sources */,
 				0435F05323155CE700FE2576 /* WebServiceProtocol.swift in Sources */,
+				04D8C4772328F0C60062279E /* DashboardRoute.swift in Sources */,
 				04435874230D4AA6005923BD /* SourceModel.swift in Sources */,
+				04D8C46C2328EF6F0062279E /* Coordinatable.swift in Sources */,
 				043B319123122EBF0034F098 /* CategoriesViewModel.swift in Sources */,
 				0425F23B230C178500D7A44D /* UIAlertControllerExtension.swift in Sources */,
 			);
