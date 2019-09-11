@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DashboardRoute {
+enum DashboardRoute: Equatable {
     case newsList
     case detail
     case categories
