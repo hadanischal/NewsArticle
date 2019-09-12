@@ -17,13 +17,17 @@ class NewsListViewModel: NewsListViewModelProtocol {
     var title: Observable<String> {
         return titleSubject.asObservable()
     }
+    var isDone: Observable<DashboardRoute>
 
     private let newsListSubject = PublishSubject<[NewsModel]>()
     private let titleSubject = BehaviorRelay<String>(value: "News")
+    private let isDoneSubject = PublishSubject<DashboardRoute>()
 
     init(withGetNews getNews: GetNewsHandlerProtocol = GetNewsHandler()) {
         self.getNews = getNews
         self.newsList = newsListSubject.asObserver()
+        self.isDone = isDoneSubject.asObserver()
+
         self.getTopHeadlines(withParameter: nil)
         self.addScheduler()
     }
@@ -66,6 +70,19 @@ class NewsListViewModel: NewsListViewModelProtocol {
                     self?.newsListSubject.onError(error)
             })
             .disposed(by: disposeBag)
+    }
+
+    func getRoute(withCategoriesButtonTap categoriesButtonTap: Observable<Void>,
+                  withSourcesButtonTap sourcesButtonTap: Observable<Void>) {
+        categoriesButtonTap
+            .subscribe(onNext: { [weak self] _ in
+                self?.isDoneSubject.onNext(.categories)
+            }).disposed(by: disposeBag)
+
+        sourcesButtonTap
+            .subscribe(onNext: { [weak self] _ in
+                self?.isDoneSubject.onNext(.sources)
+            }).disposed(by: disposeBag)
     }
 
 }

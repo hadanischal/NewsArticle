@@ -52,15 +52,34 @@ final class DashboardBuilder: CoordinatorBuilding {
 
 extension DashboardBuilder {
 
-    func routeToNewsList() {}
+    //Initial Screen
+    func routeToNewsList() {
+        let viewModel = self.newsListViewModel ?? NewsListViewModel()
+        guard let newsViewController = self.storyboard.instantiateViewController(withIdentifier: "NewsListViewController") as? NewsListViewController else {
+            assertionFailure("NewsListViewController not found")
+            return
+        }
+        newsViewController.viewModel = viewModel
+        viewModel.isDone
+            .subscribe(onNext: { [weak self] route in
+                //pass route info to Coordinator VM
+                self?.navigator.finished(route: route)
+            }).disposed(by: disposeBag)
+        navController.pushViewController(newsViewController, animated: true)
+    }
 
-    func routeToDetail() {}
+    func routeToDetail() {
+    }
 
     func routeToCategories() {}
 
     func routeToSources() {}
 
-    func updateNews(withCategory category: String) {}
+    func updateNews(withCategory category: String) {
+        newsListViewModel.updateNews(withCategory: category)
+    }
 
-    func updateNews(withSource source: SourceModel) {}
+    func updateNews(withSource source: SourceModel) {
+        newsListViewModel.updateNews(withSource: source)
+    }
 }

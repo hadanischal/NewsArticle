@@ -15,7 +15,7 @@ import RxBlocking
 import RxSwift
 
 @testable import NewsArticle
-
+//swiftlint:disable function_body_length
 class NewsListViewModelTests: QuickSpec {
 
     override func spec() {
@@ -106,6 +106,38 @@ class NewsListViewModelTests: QuickSpec {
                         let correctResult = [Recorded.error(300, mockError, [NewsModel].self)]
                         expect(res.events).to(equal(correctResult))
                     })
+                })
+            })
+
+            context("when button is tapped", {
+                var buttonTapInput: Observable<Void>!
+                var buttonNotTapInput: Observable<Void>!
+                beforeEach {
+                    buttonTapInput = testScheduler.createColdObservable([Recorded.next(300, ())]).asObservable()
+                    buttonNotTapInput = testScheduler.createColdObservable([]).asObservable()
+                }
+
+                it("emits categories DashboardRoute to UI", closure: {
+                    testViewModel.getRoute(withCategoriesButtonTap: buttonTapInput,
+                                           withSourcesButtonTap: buttonNotTapInput)
+                    let testObservable =  testViewModel.isDone
+                    let res = testScheduler.start { testObservable }
+
+                    expect(res.events.count).to(equal(1))
+                    let correctResult = [Recorded.next(300, DashboardRoute.categories)]
+                    expect(res.events).to(equal(correctResult))
+                })
+
+                it("emits sources DashboardRoute to UI", closure: {
+                    testViewModel.getRoute(withCategoriesButtonTap: buttonNotTapInput,
+                                           withSourcesButtonTap: buttonTapInput)
+
+                    let testObservable =  testViewModel.isDone
+                    let res = testScheduler.start { testObservable }
+
+                    expect(res.events.count).to(equal(1))
+                    let correctResult = [Recorded.next(300, DashboardRoute.sources)]
+                    expect(res.events).to(equal(correctResult))
                 })
             })
         }
