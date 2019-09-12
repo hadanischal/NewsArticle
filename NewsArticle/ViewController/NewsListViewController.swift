@@ -12,9 +12,17 @@ import RxCocoa
 
 class NewsListViewController: UITableViewController {
 
+    @IBOutlet weak var categoriesButton: UIBarButtonItem!
+    @IBOutlet weak var sourcesButton: UIBarButtonItem!
+
     private let disposeBag = DisposeBag()
     private var newsList = [NewsModel]()
-    var viewModel: NewsListViewModelProtocol = NewsListViewModel()
+    var viewModel: NewsListViewModelProtocol? // = NewsListViewModel()
+
+    convenience init(datasource: NewsListViewModelProtocol = NewsListViewModel()) {
+        self.init()
+        viewModel = datasource
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +41,10 @@ class NewsListViewController: UITableViewController {
     }
 
     func setupViewModel() {
+        guard let viewModel = viewModel else {
+            return
+        }
+
         viewModel.title.bind(to: navigationItem.rx.title).disposed(by: disposeBag)
         viewModel.newsList
             .observeOn(MainScheduler.instance)
@@ -43,6 +55,12 @@ class NewsListViewController: UITableViewController {
                     self.showAlertView(withTitle: "error", andMessage: error.localizedDescription)
             })
             .disposed(by: disposeBag)
+
+        let categoriesButtonTap = categoriesButton.rx.tap.asObservable()
+        let sourcesButtonTap = sourcesButton.rx.tap.asObservable()
+
+        viewModel.getRoute(withCategoriesButtonTap: categoriesButtonTap,
+                           withSourcesButtonTap: sourcesButtonTap)
 
 //        viewModel.getTopHeadlines(withParameter: nil)
 
@@ -91,7 +109,7 @@ class NewsListViewController: UITableViewController {
 
             categoryVC.selectedCategories?.asDriver(onErrorJustReturn: "")
                 .drive(onNext: { [weak self] category in
-                    self?.viewModel.updateNews(withCategory: category)
+                    self?.viewModel?.updateNews(withCategory: category)
                 }).disposed(by: disposeBag)
 
         } else if segue.identifier == "segueSources" {
@@ -101,7 +119,7 @@ class NewsListViewController: UITableViewController {
             }
             sourcesVC.selectedSource?
                 .subscribe(onNext: { [weak self] source in
-                    self?.viewModel.updateNews(withSource: source)
+                    self?.viewModel?.updateNews(withSource: source)
                 }).disposed(by: disposeBag)
         }
 
