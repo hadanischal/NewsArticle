@@ -15,7 +15,7 @@ import RxBlocking
 import RxSwift
 
 @testable import NewsArticle
-
+//swiftlint:disable function_body_length
 class CategoriesViewModelTests: QuickSpec {
 
     override func spec() {
@@ -80,6 +80,25 @@ class CategoriesViewModelTests: QuickSpec {
                         expect(res.events).to(equal(correctResult))
                     })
                 })
+
+                context("when Categories is selected", {
+
+                    beforeEach {
+                        testScheduler.scheduleAt(300, action: {
+                            testViewModel.updateNews(withCategory: "Business")
+                        })
+                    }
+
+                    it("emits newsCategory with category DashboardRoute to UI", closure: {
+                        let testObservable =  testViewModel.isDone
+                        let res = testScheduler.start { testObservable }
+
+                        expect(res.events.count).to(equal(1))
+                        let correctResult = [Recorded.next(300, DashboardRoute.newsCategory(category: "Business"))]
+                        expect(res.events).to(equal(correctResult))
+                    })
+
+                 })
             })
         }
     }

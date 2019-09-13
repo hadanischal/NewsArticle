@@ -9,5 +9,7 @@
 import RxSwift
 
 protocol CategoriesDataSource {
+    var isDone: Observable<DashboardRoute> { get }
     func getCategories() -> Observable<CategoriesModel>
+    func updateNews(withCategory category: String)
 }
