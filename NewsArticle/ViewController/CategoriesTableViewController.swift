@@ -14,7 +14,7 @@ class CategoriesTableViewController: UITableViewController {
 
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var doneButton: UIBarButtonItem!
-    private var viewModel: CategoriesDataSource!
+    var viewModel: CategoriesDataSource!
     private var categoriesList: [String]?
 
     private let selectedCategoriesSubject = PublishSubject<String>()
@@ -36,28 +36,9 @@ class CategoriesTableViewController: UITableViewController {
         tableView.backgroundColor = UIColor.tableViewBackgroundColor
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         navigationController?.setCustomStyle()
-
-        cancelButton.rx.tap.subscribe(onNext: { [weak self] in
-            self?.dismiss(animated: true)
-        }).disposed(by: disposeBag)
-
-        doneButton.rx.tap.subscribe(onNext: { [weak self] in
-            let selectedIndexPath = self?.tableView.indexPathForSelectedRow
-            if
-                let row = selectedIndexPath?.row,
-                let selectedValue = self?.categoriesList?[row] {
-                self?.selectedCategoriesSubject.onNext(selectedValue)
-                self?.dismiss(animated: true)
-            } else {
-                self?.showAlertView(withTitle: "Unable to get selected category", andMessage: "Please select the category")
-            }
-        }).disposed(by: disposeBag)
-
     }
 
     func setupViewModel() {
-
-        self.viewModel = CategoriesViewModel()
 
         viewModel.getCategories()
             .asDriver(onErrorJustReturn: CategoriesModel(categories: nil))
@@ -66,6 +47,26 @@ class CategoriesTableViewController: UITableViewController {
                     self?.categoriesList = list
                     self?.tableView.reloadData()
                 }
+            })
+            .disposed(by: disposeBag)
+
+        cancelButton.rx.tap.subscribe(onNext: { [weak self] in
+            self?.dismiss(animated: true)
+        }).disposed(by: disposeBag)
+
+        doneButton.rx.tap
+            .flatMapLatest { [weak self] _ -> Observable<String> in
+                if
+                    let row = self?.tableView.indexPathForSelectedRow?.row,
+                    let selectedValue = self?.categoriesList?[row] {
+                    return Observable.just(selectedValue)
+                }
+                return Observable.error(RxError.noElements)
+            }.subscribe(onNext: { [weak self] category in
+                self?.viewModel.updateNews(withCategory: category)
+                self?.dismiss(animated: true)
+                }, onError: { [weak self] _ in
+                    self?.showAlertView(withTitle: "Unable to get selected category", andMessage: "Please select the category")
             })
             .disposed(by: disposeBag)
     }

@@ -14,7 +14,7 @@ class MockData {
 
     func stubArticlesList() -> ArticlesList? {
 
-        guard let data = self.readJson(forResource: "MockNewsList") else {
+        guard let data = self.dataForResource(withName: "MockNewsList") else {
             XCTAssert(false, "Can't get data from MockNewsList.json")
             return nil
         }
@@ -30,7 +30,7 @@ class MockData {
 
     func stubSourceListModel() -> SourceListModel? {
 
-        guard let data = self.readJson(forResource: "sources") else {
+        guard let data = self.dataForResource(withName: "sources") else {
             XCTAssert(false, "Can't get data from sources.json")
             return nil
         }
@@ -44,20 +44,18 @@ class MockData {
         }
     }
 
-    func readJson(forResource fileName: String ) -> Data? {
+     func dataForResource(withName fileName: String, ofType fileType: String = ".json") -> Data? {
         let bundle = Bundle(for: type(of: self))
-        guard let url = bundle.url(forResource: fileName, withExtension: "json") else {
-            XCTFail("Missing file: \(fileName).json")
-            return nil
-        }
-
         do {
-            let data = try Data(contentsOf: url)
-            return data
-        } catch (_) {
+            if let url = bundle.url(forResource: fileName, withExtension: fileType) {
+                let data = try Data(contentsOf: url)
+                return data
+            }
+        } catch {
             XCTFail("unable to read json")
-            return nil
+            print("Unable to load resource \(fileName).\(fileType): \(error)")
         }
+        return nil
     }
 
 }

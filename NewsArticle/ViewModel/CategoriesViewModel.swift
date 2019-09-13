@@ -10,14 +10,21 @@ import Foundation
 import RxSwift
 
 class CategoriesViewModel: CategoriesDataSource {
+    var isDone: Observable<DashboardRoute>
+
     private let categoriesHandler: CategoriesHandlerProtocol!
+    private let isDoneSubject = PublishSubject<DashboardRoute>()
 
     init(withCategoriesHandler categoriesHandler: CategoriesHandlerProtocol = CategoriesHandler()) {
         self.categoriesHandler = categoriesHandler
+        self.isDone = isDoneSubject.asObserver()
     }
 
     func getCategories() -> Observable<CategoriesModel> {
         return categoriesHandler.getCategories()
     }
 
+    func updateNews(withCategory category: String) {
+        isDoneSubject.onNext(.newsCategory(category: category))
+    }
 }

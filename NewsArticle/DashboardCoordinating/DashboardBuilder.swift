@@ -71,7 +71,21 @@ extension DashboardBuilder {
     func routeToDetail() {
     }
 
-    func routeToCategories() {}
+    func routeToCategories() {
+        let categoriesViewModel = CategoriesViewModel()
+        guard let categoriesViewController = self.storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as? CategoriesTableViewController else {
+            assertionFailure("CategoriesTableViewController not found")
+            return
+        }
+        categoriesViewController.viewModel = categoriesViewModel
+        categoriesViewModel.isDone
+            .subscribe(onNext: { [weak self] route in
+                self?.navigator.finished(route: route)
+                categoriesViewController.dismiss(animated: true)
+            }).disposed(by: disposeBag)
+        navController.present(NavigationController(rootViewController: categoriesViewController), animated: true)
+
+    }
 
     func routeToSources() {}
 
