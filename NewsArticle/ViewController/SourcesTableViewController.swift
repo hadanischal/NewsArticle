@@ -14,7 +14,7 @@ class SourcesTableViewController: UITableViewController {
 
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var doneButton: UIBarButtonItem!
-    private var viewModel: SourcesDataSource!
+    var viewModel: SourcesDataSource!
     private var sourceModelList: [SourceModel]!
 
     private let selectedSourceSubject = PublishSubject<SourceModel>()
@@ -35,28 +35,9 @@ class SourcesTableViewController: UITableViewController {
         tableView.backgroundColor = UIColor.tableViewBackgroundColor
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         navigationController?.setCustomStyle()
-
-        cancelButton.rx.tap.subscribe(onNext: { [weak self] in
-            self?.dismiss(animated: true)
-        }).disposed(by: disposeBag)
-
-        doneButton.rx.tap.subscribe(onNext: { [weak self] in
-            let selectedIndexPath = self?.tableView.indexPathForSelectedRow
-            if
-                let row = selectedIndexPath?.row,
-                let selectedValue = self?.sourceModelList?[row] {
-                self?.selectedSourceSubject.onNext(selectedValue)
-                self?.dismiss(animated: true)
-            } else {
-                self?.showAlertView(withTitle: "Unable to get selected category", andMessage: "Please select the category")
-            }
-        }).disposed(by: disposeBag)
-
     }
 
     func setupViewModel() {
-
-        self.viewModel = SourcesViewModel()
         viewModel.title.bind(to: self.navigationItem.rx.title).disposed(by: disposeBag)
 
         viewModel.newsList
@@ -67,7 +48,26 @@ class SourcesTableViewController: UITableViewController {
             }, onError: { [weak self] error in
                 self?.showAlertView(withTitle: "error", andMessage: error.localizedDescription)
             }).disposed(by: disposeBag)
-        viewModel.getSources()
+
+        cancelButton.rx.tap.subscribe(onNext: { [weak self] in
+            self?.dismiss(animated: true)
+        }).disposed(by: disposeBag)
+
+        doneButton.rx.tap
+            .flatMapLatest { [weak self] _ -> Observable<SourceModel> in
+                if
+                    let row = self?.tableView.indexPathForSelectedRow?.row,
+                    let selectedValue = self?.sourceModelList?[row] {
+                    return Observable.just(selectedValue)
+                }
+                return Observable.error(RxError.noElements)
+            }.subscribe(onNext: { [weak self] sourceModel in
+                self?.viewModel.updateNews(withSource: sourceModel)
+                self?.dismiss(animated: true)
+                }, onError: { [weak self] _ in
+                    self?.showAlertView(withTitle: "Unable to get selected source", andMessage: "Please select the source")
+            })
+            .disposed(by: disposeBag)
     }
 
     // MARK: - Table view data source

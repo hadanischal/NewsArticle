@@ -8,8 +8,9 @@
 
 import RxSwift
 
-protocol SourcesDataSource {
+protocol SourcesDataSource: Coordinatable {
     func getSources()
     var newsList: Observable<[SourceModel]> { get }
     var title: Observable<String> { get }
+    func updateNews(withSource source: SourceModel)
 }

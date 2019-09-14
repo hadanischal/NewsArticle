@@ -15,7 +15,7 @@ import RxBlocking
 import RxSwift
 
 @testable import NewsArticle
-
+//swiftlint:disable function_body_length
 class SourcesViewModelTests: QuickSpec {
 
     override func spec() {
@@ -40,7 +40,6 @@ class SourcesViewModelTests: QuickSpec {
                         stub(mockGetSourcesHandler, block: { stub in
                             when(stub.getSources()).thenReturn(Observable.just(mockSourceListModel))
                         })
-                        testViewModel.getSources()
                     }
                     it("it completed successfully", closure: {
                         verify(mockGetSourcesHandler).getSources()
@@ -69,7 +68,6 @@ class SourcesViewModelTests: QuickSpec {
                         })
                     }
                     it("it completed successfully", closure: {
-                        testViewModel.getSources()
                         verify(mockGetSourcesHandler).getSources()
                     })
                     it("emits the news list to the UI", closure: {
