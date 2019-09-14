@@ -87,7 +87,20 @@ extension DashboardBuilder {
 
     }
 
-    func routeToSources() {}
+    func routeToSources() {
+        let viewModel = SourcesViewModel()
+        guard let sourcesViewController = self.storyboard.instantiateViewController(withIdentifier: "SourcesTableViewController") as? SourcesTableViewController else {
+            assertionFailure("SourcesTableViewController not found")
+            return
+        }
+        sourcesViewController.viewModel = viewModel
+        viewModel.isDone
+            .subscribe(onNext: { [weak self] route in
+                //pass route info to Coordinator VM
+                self?.navigator.finished(route: route)
+            }).disposed(by: disposeBag)
+        navController.present(NavigationController(rootViewController: sourcesViewController), animated: true)
+    }
 
     func updateNews(withCategory category: String) {
         newsListViewModel.updateNews(withCategory: category)

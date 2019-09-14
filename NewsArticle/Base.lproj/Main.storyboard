@@ -114,11 +114,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="6mE-ds-Rbv">
-                        <barButtonItem key="leftBarButtonItem" image="settings" id="Ozl-re-msg">
-                            <connections>
-                                <segue destination="nBw-KN-Nap" kind="presentation" identifier="segueCategories" id="C6Y-KO-ksx"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" image="settings" id="Ozl-re-msg"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="iconsSource" id="0kO-VO-P6s">
                             <connections>
                                 <segue destination="fZz-Ye-e1e" kind="showDetail" identifier="segueSources" id="oeR-9m-QAD"/>
@@ -126,7 +122,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoriesButton" destination="Ozl-re-msg" id="j9h-H9-zPJ"/>
+                        <outlet property="sourcesButton" destination="0kO-VO-P6s" id="yZl-e0-dUx"/>
+                        <outlet property="view" destination="j0I-OL-UbC" id="QyY-ge-b6J"/>
                         <segue destination="eEP-FD-brS" kind="show" identifier="segueDetails" id="3wz-V5-gCA"/>
+                        <segue destination="nBw-KN-Nap" kind="presentation" identifier="segueCategories" id="2Ux-fc-b5l"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Wy-xg-iAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
