@@ -18,5 +18,6 @@ protocol NewsListViewModelProtocol {
     func updateNews(withCategory category: String)
     func updateNews(withSource source: SourceModel)
     func getRoute(withCategoriesButtonTap categoriesButtonTap: Observable<Void>,
-                  withSourcesButtonTap sourcesButtonTap: Observable<Void>)
+                  withSourcesButtonTap sourcesButtonTap: Observable<Void>,
+                  withNewsListdidSelectRow didSelectRow: Observable<NewsModel>)
 }

@@ -16,8 +16,6 @@ class DetailTableViewController: UITableViewController {
     private var newsList = [NewsModel]()
     var viewModel: DetailDataSource!
 
-    var newsInfo: NewsModel!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -32,8 +30,6 @@ class DetailTableViewController: UITableViewController {
     }
 
     func setupViewModel() {
-        viewModel = DetailViewModel(withNewsModel: newsInfo)
-
         viewModel.newsList
         .asDriver(onErrorJustReturn: [])
             .drive(onNext: { [weak self] list in
@@ -42,8 +38,8 @@ class DetailTableViewController: UITableViewController {
             }).disposed(by: disposeBag)
 
         viewModel.title.bind(to: navigationItem.rx.title).disposed(by: disposeBag)
-
     }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

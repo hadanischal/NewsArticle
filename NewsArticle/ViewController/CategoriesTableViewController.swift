@@ -16,12 +16,6 @@ class CategoriesTableViewController: UITableViewController {
     @IBOutlet weak var doneButton: UIBarButtonItem!
     var viewModel: CategoriesDataSource!
     private var categoriesList: [String]?
-
-    private let selectedCategoriesSubject = PublishSubject<String>()
-    var selectedCategories: Observable<String>? {
-        return selectedCategoriesSubject.asObserver()
-    }
-
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {

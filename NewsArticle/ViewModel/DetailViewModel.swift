@@ -16,7 +16,7 @@ struct DetailViewModel: DetailDataSource {
     private let newsInfo: NewsModel!
     private let disposeBag = DisposeBag()
 
-    init(withNewsModel newsInfo: NewsModel?) {
+    init(withNewsModel newsInfo: NewsModel) {
         self.newsInfo = newsInfo
         self.newsList = Observable.just([self.newsInfo])
         self.title = Observable.just(self.newsInfo.title ?? "")

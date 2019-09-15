@@ -16,12 +16,6 @@ class SourcesTableViewController: UITableViewController {
     @IBOutlet weak var doneButton: UIBarButtonItem!
     var viewModel: SourcesDataSource!
     private var sourceModelList: [SourceModel]!
-
-    private let selectedSourceSubject = PublishSubject<SourceModel>()
-    var selectedSource: Observable<SourceModel>? {
-        return selectedSourceSubject.asObserver()
-    }
-
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
