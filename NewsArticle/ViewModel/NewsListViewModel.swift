@@ -73,7 +73,8 @@ class NewsListViewModel: NewsListViewModelProtocol {
     }
 
     func getRoute(withCategoriesButtonTap categoriesButtonTap: Observable<Void>,
-                  withSourcesButtonTap sourcesButtonTap: Observable<Void>) {
+                  withSourcesButtonTap sourcesButtonTap: Observable<Void>,
+                  withNewsListdidSelectRow didSelectRow: Observable<NewsModel>) {
         categoriesButtonTap
             .subscribe(onNext: { [weak self] _ in
                 self?.isDoneSubject.onNext(.categories)
@@ -82,6 +83,11 @@ class NewsListViewModel: NewsListViewModelProtocol {
         sourcesButtonTap
             .subscribe(onNext: { [weak self] _ in
                 self?.isDoneSubject.onNext(.sources)
+            }).disposed(by: disposeBag)
+
+        didSelectRow
+            .subscribe(onNext: { [weak self] selctedNews in
+                self?.isDoneSubject.onNext(.detail(selectedNews: selctedNews))
             }).disposed(by: disposeBag)
     }
 

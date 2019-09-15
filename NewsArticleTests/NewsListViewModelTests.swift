@@ -109,35 +109,72 @@ class NewsListViewModelTests: QuickSpec {
                 })
             })
 
-            context("when button is tapped", {
+            describe("When get route", {
                 var buttonTapInput: Observable<Void>!
                 var buttonNotTapInput: Observable<Void>!
+                var didSelectRow: Observable<NewsModel>!
+
                 beforeEach {
                     buttonTapInput = testScheduler.createColdObservable([Recorded.next(300, ())]).asObservable()
                     buttonNotTapInput = testScheduler.createColdObservable([]).asObservable()
+                    didSelectRow = testScheduler.createColdObservable([]).asObservable()
                 }
 
-                it("emits categories DashboardRoute to UI", closure: {
-                    testViewModel.getRoute(withCategoriesButtonTap: buttonTapInput,
-                                           withSourcesButtonTap: buttonNotTapInput)
-                    let testObservable =  testViewModel.isDone
-                    let res = testScheduler.start { testObservable }
+                context("when button categories is tapped", {
 
-                    expect(res.events.count).to(equal(1))
-                    let correctResult = [Recorded.next(300, DashboardRoute.categories)]
-                    expect(res.events).to(equal(correctResult))
+                    it("emits categories DashboardRoute to UI", closure: {
+                        testViewModel.getRoute(withCategoriesButtonTap: buttonTapInput,
+                                               withSourcesButtonTap: buttonNotTapInput,
+                                               withNewsListdidSelectRow: didSelectRow)
+
+                        let testObservable =  testViewModel.isDone
+                        let res = testScheduler.start { testObservable }
+
+                        expect(res.events.count).to(equal(1))
+                        let correctResult = [Recorded.next(300, DashboardRoute.categories)]
+                        expect(res.events).to(equal(correctResult))
+                    })
                 })
 
-                it("emits sources DashboardRoute to UI", closure: {
-                    testViewModel.getRoute(withCategoriesButtonTap: buttonNotTapInput,
-                                           withSourcesButtonTap: buttonTapInput)
+                context("when button Source is tapped", {
+                    it("emits sources DashboardRoute to UI", closure: {
+                        testViewModel.getRoute(withCategoriesButtonTap: buttonNotTapInput,
+                                               withSourcesButtonTap: buttonTapInput,
+                                               withNewsListdidSelectRow: didSelectRow)
 
-                    let testObservable =  testViewModel.isDone
-                    let res = testScheduler.start { testObservable }
+                        let testObservable =  testViewModel.isDone
+                        let res = testScheduler.start { testObservable }
 
-                    expect(res.events.count).to(equal(1))
-                    let correctResult = [Recorded.next(300, DashboardRoute.sources)]
-                    expect(res.events).to(equal(correctResult))
+                        expect(res.events.count).to(equal(1))
+                        let correctResult = [Recorded.next(300, DashboardRoute.sources)]
+                        expect(res.events).to(equal(correctResult))
+                    })
+                })
+
+                context("When news list didSelectRow", {
+                    var mockSelectedNews: NewsModel!
+
+                    beforeEach {
+                        if let selectedModel = MockData().stubArticlesList()?.articles[0] {
+                            mockSelectedNews = selectedModel
+                            didSelectRow = testScheduler.createColdObservable([Recorded.next(300, mockSelectedNews)]).asObservable()
+                        } else {
+                            XCTAssert(false, "nil mock value")
+                        }
+                    }
+
+                    it("emits detail DashboardRoute to UI", closure: {
+                        testViewModel.getRoute(withCategoriesButtonTap: buttonNotTapInput,
+                                               withSourcesButtonTap: buttonNotTapInput,
+                                               withNewsListdidSelectRow: didSelectRow)
+
+                        let testObservable =  testViewModel.isDone
+                        let res = testScheduler.start { testObservable }
+
+                        expect(res.events.count).to(equal(1))
+                        let correctResult = [Recorded.next(300, DashboardRoute.detail(selectedNews: mockSelectedNews))]
+                        expect(res.events).to(equal(correctResult))
+                    })
                 })
             })
         }

@@ -35,8 +35,8 @@ final class DashboardBuilder: CoordinatorBuilding {
         switch route {
         case .newsList:
             routeToNewsList()
-        case .detail:
-            routeToDetail()
+        case .detail(let selectedNews):
+            routeToDetail(withSelectedNews: selectedNews)
         case .categories:
             routeToCategories()
         case .sources:
@@ -68,7 +68,14 @@ extension DashboardBuilder {
         navController.pushViewController(newsViewController, animated: true)
     }
 
-    func routeToDetail() {
+    func routeToDetail(withSelectedNews selectedNews: NewsModel) {
+        let detailViewModel = DetailViewModel(withNewsModel: selectedNews)
+        guard let detailViewController = self.storyboard.instantiateViewController(withIdentifier: "DetailTableViewController") as? DetailTableViewController else {
+            assertionFailure("DetailTableViewController not found")
+            return
+        }
+        detailViewController.viewModel = detailViewModel
+        navController.pushViewController(detailViewController, animated: true)
     }
 
     func routeToCategories() {

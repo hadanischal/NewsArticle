@@ -13,6 +13,7 @@ protocol DashboardCoordinating {
     func getRoute() -> Observable<DashboardRoute>
     func finished(route: DashboardRoute)
 }
+
 // ViewModel implementation for DashboardBuilder
 final class DashboardCoordinator: DashboardCoordinating {
     private let routeSubject = PublishSubject<DashboardRoute>()
@@ -25,8 +26,8 @@ final class DashboardCoordinator: DashboardCoordinating {
         switch route {
         case .newsList:
             routeSubject.onNext(.newsList)
-        case .detail:
-            routeSubject.onNext(.detail)
+        case .detail(let selectedNews):
+            routeSubject.onNext(.detail(selectedNews: selectedNews))
         case .categories:
             routeSubject.onNext(.categories)
         case .sources:

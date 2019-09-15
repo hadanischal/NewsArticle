@@ -21,9 +21,15 @@ class DashboardCoordinatorTests: QuickSpec {
             var coordinator: DashboardCoordinator!
             var testScheduler: TestScheduler!
             let mockSourceListModel = MockData().stubSourceListModel()
+            var mockSelectedNews: NewsModel!
 
             beforeEach {
                 testScheduler = TestScheduler(initialClock: 0)
+                if let selectedModel = MockData().stubArticlesList()?.articles[0] {
+                    mockSelectedNews = selectedModel
+                } else {
+                    XCTAssert(false, "nil mock value")
+                }
                 coordinator = DashboardCoordinator()
             }
             describe("routing behaviour") {
@@ -34,11 +40,11 @@ class DashboardCoordinatorTests: QuickSpec {
                 }
                 it("routes to detail after newsList") {
                     testScheduler.scheduleAt(300) {
-                        coordinator.finished(route: .detail)
+                        coordinator.finished(route: .detail(selectedNews: mockSelectedNews))
                     }
                     let result = testScheduler.start { coordinator.getRoute() }
                     let expectedResult = [Recorded.next(200, DashboardRoute.newsList),
-                                          Recorded.next(300, DashboardRoute.detail)]
+                                          Recorded.next(300, DashboardRoute.detail(selectedNews: mockSelectedNews))]
                     expect(result.events).to(equal(expectedResult))
                 }
                 it("routes to categories after newsList") {

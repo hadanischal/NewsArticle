@@ -17,7 +17,12 @@ class NewsListViewController: UITableViewController {
 
     private let disposeBag = DisposeBag()
     private var newsList = [NewsModel]()
-    var viewModel: NewsListViewModelProtocol? // = NewsListViewModel()
+    var viewModel: NewsListViewModelProtocol?
+
+    private let selectedNewsSubject = PublishSubject<NewsModel>()
+    var selectedNews: Observable<NewsModel> {
+        return selectedNewsSubject.asObserver()
+    }
 
     convenience init(datasource: NewsListViewModelProtocol = NewsListViewModel()) {
         self.init()
@@ -60,9 +65,8 @@ class NewsListViewController: UITableViewController {
         let sourcesButtonTap = sourcesButton.rx.tap.asObservable()
 
         viewModel.getRoute(withCategoriesButtonTap: categoriesButtonTap,
-                           withSourcesButtonTap: sourcesButtonTap)
-
-//        viewModel.getTopHeadlines(withParameter: nil)
+                           withSourcesButtonTap: sourcesButtonTap,
+                           withNewsListdidSelectRow: selectedNews)
 
     }
     // MARK: - Table view data source
@@ -84,44 +88,6 @@ class NewsListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "segueDetails", sender: indexPath)
-    }
-
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == "segueDetails" {
-
-            guard let detailVC = segue.destination as? DetailTableViewController else {
-                fatalError("Segue destination is not found")
-            }
-            guard let indexPath = sender as? IndexPath else {
-                fatalError("indexPath not found")
-            }
-            detailVC.newsInfo = newsList[indexPath.row]
-
-        } else if segue.identifier == "segueCategories" {
-            guard let navC = segue.destination as? UINavigationController,
-                let categoryVC = navC.viewControllers.first as? CategoriesTableViewController else {
-                    fatalError("Segue destination is not found")
-            }
-
-            categoryVC.selectedCategories?.asDriver(onErrorJustReturn: "")
-                .drive(onNext: { [weak self] category in
-                    self?.viewModel?.updateNews(withCategory: category)
-                }).disposed(by: disposeBag)
-
-        } else if segue.identifier == "segueSources" {
-            guard let navC = segue.destination as? UINavigationController,
-                let sourcesVC = navC.viewControllers.first as? SourcesTableViewController else {
-                    fatalError("Segue destination is not found")
-            }
-            sourcesVC.selectedSource?
-                .subscribe(onNext: { [weak self] source in
-                    self?.viewModel?.updateNews(withSource: source)
-                }).disposed(by: disposeBag)
-        }
-
+        self.selectedNewsSubject.onNext(newsList[indexPath.row])
     }
 }

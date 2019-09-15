@@ -10,7 +10,7 @@ import Foundation
 
 enum DashboardRoute: Equatable {
     case newsList
-    case detail
+    case detail(selectedNews: NewsModel)
     case categories
     case sources
     case newsCategory(category: String)
