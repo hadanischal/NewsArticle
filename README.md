@@ -13,3 +13,8 @@ This is a simple Demo project which aims to display weather information using MV
 * The demo uses the [News API](https://newsapi.org) since it is well-maintained API which returns information in a JSON format.
 * The goal is to create a News Feed app which gives a user regularly-updated news from the internet related to a particular topic, person, or location.
 * Use of UITableViewController to display News information.
+
+## Instructions:
+* On `master` branch there is a basic app, and on 
+* On `features/MVVM+C+RxSwift` branch there is a MVVM with coordinator app, and on 
+* On `features/MVVM+RxSwift` branch there is basic MVVM app.
