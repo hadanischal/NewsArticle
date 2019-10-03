@@ -24,7 +24,7 @@ class GetNewsHandlerTests: QuickSpec {
         var testScheduler: TestScheduler!
         let mockArticlesList = MockData().stubArticlesList()
 
-        describe("CategoriesHandler") {
+        describe("GetNewsHandler") {
             beforeEach {
                 testScheduler = TestScheduler(initialClock: 0)
                 mockWebService = MockWebServiceProtocol()

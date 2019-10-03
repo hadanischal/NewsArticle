@@ -10,8 +10,11 @@ import Foundation
 import RxSwift
 
 class SourcesViewModel: SourcesDataSource {
-    private let sourcesHandler: GetSourcesHandlerProtocol!
+    //output
     let newsList: Observable<[SourceModel]>
+
+    //input
+    private let sourcesHandler: GetSourcesHandlerProtocol!
 
     private let newsListSubject = PublishSubject<[SourceModel]>()
     private let disposeBag = DisposeBag()

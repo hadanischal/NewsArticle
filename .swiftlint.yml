@@ -4,6 +4,14 @@ excluded:
     - SwiftLint/Common/3rdPartyLib
     - NewsArticleTests/GeneratedMocks.swift
 
+
+
 line_length:
     - 300 # warning
     - 400 # error
+
+identifier_name:
+    excluded: # excluded via string array
+        - id
+        - URL
+        - GlobalAPIKey
