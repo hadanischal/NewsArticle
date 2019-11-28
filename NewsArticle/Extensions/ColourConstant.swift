@@ -10,19 +10,17 @@ import UIKit
 
 extension UIColor {
     static var viewBackgroundColor: UIColor {
-        return UIColor(rgb: 0x5c9ac1)
+        return ColorName.moderateCyan.color
     }
-
     static var addCityViewBackgroundColor: UIColor {
-        return UIColor(rgb: 0xEAE8EA)
+        return ColorName.lightGrayishMagenta.color
     }
     static var tableViewBackgroundColor: UIColor {
-        return UIColor(rgb: 0xEAE8EA)
+        return ColorName.lightGrayishMagenta.color
     }
     static var barTintColor: UIColor {
-        return UIColor(rgb: 0x5c9ac1)
+        return ColorName.moderateCyan.color
     }
-
     static var titleTintColor: UIColor {
         return UIColor.white
     }
