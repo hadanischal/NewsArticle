@@ -11,6 +11,7 @@ target 'NewsArticle' do
   pod 'Kingfisher', '~> 5.0'
   pod 'SwiftLint'
   pod 'Segmentio'
+  pod 'SwiftGen', '~> 6.0'
 
   target 'NewsArticleTests' do
     inherit! :search_paths

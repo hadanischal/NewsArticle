@@ -84,6 +84,6 @@ build
 !*.xcodeproj/project.pbxproj
 !*.xcworkspace/contents.xcworkspacedata
 
-
+Generated/
 
 
