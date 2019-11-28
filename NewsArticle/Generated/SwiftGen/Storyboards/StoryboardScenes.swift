@@ -22,15 +22,15 @@ internal enum StoryboardScene {
 
     internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Main.self)
 
-    internal static let categoriesTableViewController = SceneType<CategoriesTableViewController>(storyboard: Main.self, identifier: "CategoriesTableViewController")
+    internal static let categoriesTableViewController = SceneType<NewsArticle.CategoriesTableViewController>(storyboard: Main.self, identifier: "CategoriesTableViewController")
 
-    internal static let detailTableViewController = SceneType<DetailTableViewController>(storyboard: Main.self, identifier: "DetailTableViewController")
+    internal static let detailTableViewController = SceneType<NewsArticle.DetailTableViewController>(storyboard: Main.self, identifier: "DetailTableViewController")
 
-    internal static let newsListViewController = SceneType<NewsListViewController>(storyboard: Main.self, identifier: "NewsListViewController")
+    internal static let newsListViewController = SceneType<NewsArticle.NewsListViewController>(storyboard: Main.self, identifier: "NewsListViewController")
 
-    internal static let sourcesTableViewController = SceneType<SourcesTableViewController>(storyboard: Main.self, identifier: "SourcesTableViewController")
+    internal static let sourcesTableViewController = SceneType<NewsArticle.SourcesTableViewController>(storyboard: Main.self, identifier: "SourcesTableViewController")
 
-    internal static let viewController = SceneType<ViewController>(storyboard: Main.self, identifier: "ViewController")
+    internal static let viewController = SceneType<NewsArticle.ViewController>(storyboard: Main.self, identifier: "ViewController")
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name

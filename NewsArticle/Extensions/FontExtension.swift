@@ -10,13 +10,13 @@ import UIKit
 
 extension UIFont {
     static func boldFont(size: CGFloat) -> UIFont {
-        return UIFont(font: FontFamily.ApexRounded.bold, size: size)
+        return UIFont(font: FontFamily.ApexRounded.heavy, size: size)
     }
     static func regularFont(size: CGFloat) -> UIFont {
-        return UIFont(font: FontFamily.ApexRounded.regular, size: size)
+        return UIFont(font: FontFamily.ApexRounded.medium, size: size)
     }
     static func lightFont(size: CGFloat) -> UIFont {
-        return UIFont(font: FontFamily.ApexRounded.light, size: size)
+        return UIFont(font: FontFamily.ApexRounded.book, size: size)
     }
 }
 
