@@ -24,12 +24,29 @@
 		0425F241230C178500D7A44D /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425F236230C178400D7A44D /* UITableView+Extensions.swift */; };
 		0425F243230C178500D7A44D /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425F238230C178500D7A44D /* BundleExtension.swift */; };
 		0425F245230C18F900D7A44D /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425F244230C18F900D7A44D /* AlertAction.swift */; };
-		0425F24B230C19D400D7A44D /* ApexRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0425F248230C19D400D7A44D /* ApexRounded-Book.otf */; };
-		0425F24C230C19D400D7A44D /* ApexRounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0425F249230C19D400D7A44D /* ApexRounded-Medium.otf */; };
-		0425F24D230C19D400D7A44D /* ApexRounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0425F24A230C19D400D7A44D /* ApexRounded-Heavy.otf */; };
 		0435F05323155CE700FE2576 /* WebServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435F05223155CE700FE2576 /* WebServiceProtocol.swift */; };
 		0435F05523155D7500FE2576 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435F05423155D7500FE2576 /* WebService.swift */; };
-		043B3181231220DB0034F098 /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 043B3180231220DB0034F098 /* Categories.json */; };
+		04389EE7238FDB0C00455C95 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 04389EE5238FDB0B00455C95 /* swiftgen.yml */; };
+		04389EE8238FDB0C00455C95 /* generate-swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 04389EE6238FDB0B00455C95 /* generate-swiftgen.sh */; };
+		04389EFB238FDB5800455C95 /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EED238FDB5700455C95 /* StoryboardSegues.swift */; };
+		04389EFC238FDB5800455C95 /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EEE238FDB5700455C95 /* StoryboardScenes.swift */; };
+		04389EFD238FDB5800455C95 /* GeneratedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EF0238FDB5700455C95 /* GeneratedStrings.swift */; };
+		04389EFE238FDB5800455C95 /* GeneratedCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EF2238FDB5700455C95 /* GeneratedCoreData.swift */; };
+		04389EFF238FDB5800455C95 /* GeneratedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EF4238FDB5700455C95 /* GeneratedColors.swift */; };
+		04389F00238FDB5800455C95 /* GeneratedFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EF6238FDB5700455C95 /* GeneratedFonts.swift */; };
+		04389F01238FDB5800455C95 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EF8238FDB5700455C95 /* Assets.swift */; };
+		04389F02238FDB5800455C95 /* GeneratedJSONFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EFA238FDB5700455C95 /* GeneratedJSONFiles.swift */; };
+		04389F14238FDB6500455C95 /* DashBoard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04389F05238FDB6400455C95 /* DashBoard.strings */; };
+		04389F15238FDB6500455C95 /* Mock.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04389F06238FDB6400455C95 /* Mock.strings */; };
+		04389F16238FDB6500455C95 /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 04389F08238FDB6400455C95 /* Categories.json */; };
+		04389F17238FDB6500455C95 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 04389F09238FDB6400455C95 /* Countries.json */; };
+		04389F18238FDB6500455C95 /* Endpoints.json in Resources */ = {isa = PBXBuildFile; fileRef = 04389F0A238FDB6400455C95 /* Endpoints.json */; };
+		04389F19238FDB6500455C95 /* StandardColors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04389F0C238FDB6400455C95 /* StandardColors.txt */; };
+		04389F1A238FDB6500455C95 /* ApexRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04389F0E238FDB6400455C95 /* ApexRounded-Book.otf */; };
+		04389F1B238FDB6500455C95 /* ApexRounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04389F0F238FDB6400455C95 /* ApexRounded-Medium.otf */; };
+		04389F1C238FDB6500455C95 /* ApexRounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04389F10238FDB6400455C95 /* ApexRounded-Heavy.otf */; };
+		04389F1D238FDB6500455C95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04389F12238FDB6400455C95 /* Assets.xcassets */; };
+		04389F1E238FDB6500455C95 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04389F13238FDB6400455C95 /* Icons.xcassets */; };
 		043B3183231226590034F098 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B3182231226590034F098 /* CategoriesModel.swift */; };
 		043B31862312274A0034F098 /* FileManagerHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B31852312274A0034F098 /* FileManagerHandlerProtocol.swift */; };
 		043B31882312275A0034F098 /* FileManagerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B31872312275A0034F098 /* FileManagerHandler.swift */; };
@@ -45,7 +62,6 @@
 		0443587A230D5D7C005923BD /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04435879230D5D7C005923BD /* DetailTableViewController.swift */; };
 		0443587D230D6541005923BD /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443587C230D6541005923BD /* DetailsTableViewCell.swift */; };
 		0443587F230D69B8005923BD /* ReadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443587E230D69B8005923BD /* ReadMoreTableViewCell.swift */; };
-		04A0AB5D23167FD6005DE4FB /* Endpoints.json in Resources */ = {isa = PBXBuildFile; fileRef = 04A0AB5C23167FD6005DE4FB /* Endpoints.json */; };
 		04A0AB5F231684EA005DE4FB /* EndpointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0AB5E231684EA005DE4FB /* EndpointsModel.swift */; };
 		04B2C350230F513900E33F64 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2C34F230F513900E33F64 /* DetailViewModel.swift */; };
 		04B2C352230F514C00E33F64 /* DetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2C351230F514C00E33F64 /* DetailDataSource.swift */; };
@@ -58,7 +74,6 @@
 		04C886D3231A57BC003E6B1F /* SourcesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C886D2231A57BC003E6B1F /* SourcesTableViewCell.swift */; };
 		04D0212323115B7A0083E100 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0212223115B7A0083E100 /* CategoriesTableViewController.swift */; };
 		04D0212523115C140083E100 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0212423115C140083E100 /* CategoriesTableViewCell.swift */; };
-		04D021282311632B0083E100 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 04D021272311632B0083E100 /* Countries.json */; };
 		04D33FC423100FC20012C11F /* MockNewsList.json in Resources */ = {isa = PBXBuildFile; fileRef = 04D33FC323100FC20012C11F /* MockNewsList.json */; };
 		04D33FC623100FF70012C11F /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D33FC523100FF70012C11F /* MockData.swift */; };
 		04D33FC9231017970012C11F /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D33FC8231017970012C11F /* DetailViewModelTests.swift */; };
@@ -79,7 +94,6 @@
 		AFC9722422AE3ECD006BE3DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9722322AE3ECD006BE3DB /* ViewController.swift */; };
 		AFC9722722AE3ECD006BE3DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC9722522AE3ECD006BE3DB /* Main.storyboard */; };
 		AFC9722A22AE3ECD006BE3DB /* NewsArticle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFC9722822AE3ECD006BE3DB /* NewsArticle.xcdatamodeld */; };
-		AFC9722C22AE3ECE006BE3DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC9722B22AE3ECE006BE3DB /* Assets.xcassets */; };
 		AFC9722F22AE3ECF006BE3DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC9722D22AE3ECF006BE3DB /* LaunchScreen.storyboard */; };
 		AFC9723A22AE3ECF006BE3DB /* NewsArticleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9723922AE3ECF006BE3DB /* NewsArticleTests.swift */; };
 		AFC9724522AE3ECF006BE3DB /* NewsArticleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9724422AE3ECF006BE3DB /* NewsArticleUITests.swift */; };
@@ -128,12 +142,29 @@
 		0425F236230C178400D7A44D /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		0425F238230C178500D7A44D /* BundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		0425F244230C18F900D7A44D /* AlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
-		0425F248230C19D400D7A44D /* ApexRounded-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ApexRounded-Book.otf"; sourceTree = "<group>"; };
-		0425F249230C19D400D7A44D /* ApexRounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ApexRounded-Medium.otf"; sourceTree = "<group>"; };
-		0425F24A230C19D400D7A44D /* ApexRounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ApexRounded-Heavy.otf"; sourceTree = "<group>"; };
 		0435F05223155CE700FE2576 /* WebServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceProtocol.swift; sourceTree = "<group>"; };
 		0435F05423155D7500FE2576 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
-		043B3180231220DB0034F098 /* Categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
+		04389EE5238FDB0B00455C95 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		04389EE6238FDB0B00455C95 /* generate-swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "generate-swiftgen.sh"; sourceTree = "<group>"; };
+		04389EED238FDB5700455C95 /* StoryboardSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSegues.swift; sourceTree = "<group>"; };
+		04389EEE238FDB5700455C95 /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardScenes.swift; sourceTree = "<group>"; };
+		04389EF0238FDB5700455C95 /* GeneratedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedStrings.swift; sourceTree = "<group>"; };
+		04389EF2238FDB5700455C95 /* GeneratedCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedCoreData.swift; sourceTree = "<group>"; };
+		04389EF4238FDB5700455C95 /* GeneratedColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedColors.swift; sourceTree = "<group>"; };
+		04389EF6238FDB5700455C95 /* GeneratedFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedFonts.swift; sourceTree = "<group>"; };
+		04389EF8238FDB5700455C95 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		04389EFA238FDB5700455C95 /* GeneratedJSONFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedJSONFiles.swift; sourceTree = "<group>"; };
+		04389F05238FDB6400455C95 /* DashBoard.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = DashBoard.strings; sourceTree = "<group>"; };
+		04389F06238FDB6400455C95 /* Mock.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Mock.strings; sourceTree = "<group>"; };
+		04389F08238FDB6400455C95 /* Categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
+		04389F09238FDB6400455C95 /* Countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
+		04389F0A238FDB6400455C95 /* Endpoints.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Endpoints.json; sourceTree = "<group>"; };
+		04389F0C238FDB6400455C95 /* StandardColors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StandardColors.txt; sourceTree = "<group>"; };
+		04389F0E238FDB6400455C95 /* ApexRounded-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ApexRounded-Book.otf"; sourceTree = "<group>"; };
+		04389F0F238FDB6400455C95 /* ApexRounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ApexRounded-Medium.otf"; sourceTree = "<group>"; };
+		04389F10238FDB6400455C95 /* ApexRounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ApexRounded-Heavy.otf"; sourceTree = "<group>"; };
+		04389F12238FDB6400455C95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04389F13238FDB6400455C95 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		043B3182231226590034F098 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
 		043B31852312274A0034F098 /* FileManagerHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHandlerProtocol.swift; sourceTree = "<group>"; };
 		043B31872312275A0034F098 /* FileManagerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHandler.swift; sourceTree = "<group>"; };
@@ -149,7 +180,6 @@
 		04435879230D5D7C005923BD /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		0443587C230D6541005923BD /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		0443587E230D69B8005923BD /* ReadMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMoreTableViewCell.swift; sourceTree = "<group>"; };
-		04A0AB5C23167FD6005DE4FB /* Endpoints.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Endpoints.json; sourceTree = "<group>"; };
 		04A0AB5E231684EA005DE4FB /* EndpointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointsModel.swift; sourceTree = "<group>"; };
 		04B2C34F230F513900E33F64 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		04B2C351230F514C00E33F64 /* DetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataSource.swift; sourceTree = "<group>"; };
@@ -162,7 +192,6 @@
 		04C886D2231A57BC003E6B1F /* SourcesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesTableViewCell.swift; sourceTree = "<group>"; };
 		04D0212223115B7A0083E100 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		04D0212423115C140083E100 /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
-		04D021272311632B0083E100 /* Countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
 		04D33FC323100FC20012C11F /* MockNewsList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockNewsList.json; sourceTree = "<group>"; };
 		04D33FC523100FF70012C11F /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		04D33FC8231017970012C11F /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
@@ -189,7 +218,6 @@
 		AFC9722322AE3ECD006BE3DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AFC9722622AE3ECD006BE3DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFC9722922AE3ECD006BE3DB /* NewsArticle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsArticle.xcdatamodel; sourceTree = "<group>"; };
-		AFC9722B22AE3ECE006BE3DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFC9722E22AE3ECF006BE3DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFC9723022AE3ECF006BE3DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFC9723522AE3ECF006BE3DB /* NewsArticleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsArticleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,28 +265,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0425F246230C19CB00D7A44D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				AFC9722B22AE3ECE006BE3DB /* Assets.xcassets */,
-				0425F247230C19D400D7A44D /* Fonts */,
-				04D021272311632B0083E100 /* Countries.json */,
-				043B3180231220DB0034F098 /* Categories.json */,
-				04A0AB5C23167FD6005DE4FB /* Endpoints.json */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		0425F247230C19D400D7A44D /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				0425F248230C19D400D7A44D /* ApexRounded-Book.otf */,
-				0425F249230C19D400D7A44D /* ApexRounded-Medium.otf */,
-				0425F24A230C19D400D7A44D /* ApexRounded-Heavy.otf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		0435F05123155CCC00FE2576 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +273,154 @@
 				AFC9725E22AE4CA0006BE3DB /* URLRequest+Extensions.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		04389EE9238FDB1C00455C95 /* Build scripts */ = {
+			isa = PBXGroup;
+			children = (
+				AFC9726322AE500D006BE3DB /* .swiftlint.yml */,
+				04389EE6238FDB0B00455C95 /* generate-swiftgen.sh */,
+				04389EE5238FDB0B00455C95 /* swiftgen.yml */,
+				0425F22C230C0EC300D7A44D /* Cuckoo-GeneratedMocks.sh */,
+			);
+			name = "Build scripts";
+			sourceTree = "<group>";
+		};
+		04389EEA238FDB5700455C95 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				04389EEB238FDB5700455C95 /* SwiftGen */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		04389EEB238FDB5700455C95 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				04389EEC238FDB5700455C95 /* Storyboards */,
+				04389EEF238FDB5700455C95 /* Strings */,
+				04389EF1238FDB5700455C95 /* CoreData */,
+				04389EF3238FDB5700455C95 /* Colors */,
+				04389EF5238FDB5700455C95 /* Fonts */,
+				04389EF7238FDB5700455C95 /* Assets */,
+				04389EF9238FDB5700455C95 /* JSONFiles */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		04389EEC238FDB5700455C95 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				04389EED238FDB5700455C95 /* StoryboardSegues.swift */,
+				04389EEE238FDB5700455C95 /* StoryboardScenes.swift */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		04389EEF238FDB5700455C95 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				04389EF0238FDB5700455C95 /* GeneratedStrings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		04389EF1238FDB5700455C95 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				04389EF2238FDB5700455C95 /* GeneratedCoreData.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		04389EF3238FDB5700455C95 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				04389EF4238FDB5700455C95 /* GeneratedColors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		04389EF5238FDB5700455C95 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				04389EF6238FDB5700455C95 /* GeneratedFonts.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		04389EF7238FDB5700455C95 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				04389EF8238FDB5700455C95 /* Assets.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		04389EF9238FDB5700455C95 /* JSONFiles */ = {
+			isa = PBXGroup;
+			children = (
+				04389EFA238FDB5700455C95 /* GeneratedJSONFiles.swift */,
+			);
+			path = JSONFiles;
+			sourceTree = "<group>";
+		};
+		04389F03238FDB6400455C95 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04389F04238FDB6400455C95 /* Strings */,
+				04389F07238FDB6400455C95 /* JsonFIle */,
+				04389F0B238FDB6400455C95 /* Colors */,
+				04389F0D238FDB6400455C95 /* Fonts */,
+				04389F11238FDB6400455C95 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		04389F04238FDB6400455C95 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				04389F05238FDB6400455C95 /* DashBoard.strings */,
+				04389F06238FDB6400455C95 /* Mock.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		04389F07238FDB6400455C95 /* JsonFIle */ = {
+			isa = PBXGroup;
+			children = (
+				04389F08238FDB6400455C95 /* Categories.json */,
+				04389F09238FDB6400455C95 /* Countries.json */,
+				04389F0A238FDB6400455C95 /* Endpoints.json */,
+			);
+			path = JsonFIle;
+			sourceTree = "<group>";
+		};
+		04389F0B238FDB6400455C95 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				04389F0C238FDB6400455C95 /* StandardColors.txt */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		04389F0D238FDB6400455C95 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				04389F0E238FDB6400455C95 /* ApexRounded-Book.otf */,
+				04389F0F238FDB6400455C95 /* ApexRounded-Medium.otf */,
+				04389F10238FDB6400455C95 /* ApexRounded-Heavy.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		04389F11238FDB6400455C95 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				04389F12238FDB6400455C95 /* Assets.xcassets */,
+				04389F13238FDB6400455C95 /* Icons.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		043B3184231226B90034F098 /* FileManagerHandler */ = {
@@ -385,8 +539,7 @@
 			isa = PBXGroup;
 			children = (
 				AFC9725B22AE424A006BE3DB /* .gitignore */,
-				AFC9726322AE500D006BE3DB /* .swiftlint.yml */,
-				0425F22C230C0EC300D7A44D /* Cuckoo-GeneratedMocks.sh */,
+				04389EE9238FDB1C00455C95 /* Build scripts */,
 				AFC9722022AE3ECD006BE3DB /* NewsArticle */,
 				AFC9723822AE3ECF006BE3DB /* NewsArticleTests */,
 				AFC9724322AE3ECF006BE3DB /* NewsArticleUITests */,
@@ -419,7 +572,8 @@
 				04D8C4712328EFF40062279E /* DashboardCoordinating */,
 				AFAA5C8222B9169F00C3B885 /* ViewModel */,
 				AFC9725422AE3FFE006BE3DB /* ViewController */,
-				0425F246230C19CB00D7A44D /* Resources */,
+				04389F03238FDB6400455C95 /* Resources */,
+				04389EEA238FDB5700455C95 /* Generated */,
 				AFC9722122AE3ECD006BE3DB /* AppDelegate.swift */,
 				AFC9722322AE3ECD006BE3DB /* ViewController.swift */,
 				AFC9722522AE3ECD006BE3DB /* Main.storyboard */,
@@ -528,6 +682,7 @@
 				AFC9721C22AE3ECD006BE3DB /* Resources */,
 				F4C7731F28A5549CC8216728 /* [CP] Embed Pods Frameworks */,
 				0408B53C232134FC0011D268 /* Run SwiftLint Script */,
+				04389F1F238FDC6200455C95 /* Swiftgen Script */,
 			);
 			buildRules = (
 			);
@@ -627,17 +782,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0425F24C230C19D400D7A44D /* ApexRounded-Medium.otf in Resources */,
+				04389F1B238FDB6500455C95 /* ApexRounded-Medium.otf in Resources */,
+				04389F16238FDB6500455C95 /* Categories.json in Resources */,
 				AFC9726422AE500D006BE3DB /* .swiftlint.yml in Resources */,
+				04389EE7238FDB0C00455C95 /* swiftgen.yml in Resources */,
 				AFC9725C22AE424A006BE3DB /* .gitignore in Resources */,
+				04389F18238FDB6500455C95 /* Endpoints.json in Resources */,
 				AFC9722F22AE3ECF006BE3DB /* LaunchScreen.storyboard in Resources */,
-				04A0AB5D23167FD6005DE4FB /* Endpoints.json in Resources */,
-				AFC9722C22AE3ECE006BE3DB /* Assets.xcassets in Resources */,
-				0425F24D230C19D400D7A44D /* ApexRounded-Heavy.otf in Resources */,
-				0425F24B230C19D400D7A44D /* ApexRounded-Book.otf in Resources */,
-				04D021282311632B0083E100 /* Countries.json in Resources */,
+				04389F14238FDB6500455C95 /* DashBoard.strings in Resources */,
+				04389F19238FDB6500455C95 /* StandardColors.txt in Resources */,
+				04389EE8238FDB0C00455C95 /* generate-swiftgen.sh in Resources */,
+				04389F1A238FDB6500455C95 /* ApexRounded-Book.otf in Resources */,
+				04389F15238FDB6500455C95 /* Mock.strings in Resources */,
+				04389F1C238FDB6500455C95 /* ApexRounded-Heavy.otf in Resources */,
+				04389F1E238FDB6500455C95 /* Icons.xcassets in Resources */,
+				04389F17238FDB6500455C95 /* Countries.json in Resources */,
+				04389F1D238FDB6500455C95 /* Assets.xcassets in Resources */,
 				AFC9722722AE3ECD006BE3DB /* Main.storyboard in Resources */,
-				043B3181231220DB0034F098 /* Categories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +839,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		04389F1F238FDC6200455C95 /* Swiftgen Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swiftgen Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
 		};
 		04D33FC7231014210012C11F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -827,18 +1006,21 @@
 				043B319323122ED30034F098 /* CategoriesDataSource.swift in Sources */,
 				04B2C350230F513900E33F64 /* DetailViewModel.swift in Sources */,
 				04B2C352230F514C00E33F64 /* DetailDataSource.swift in Sources */,
+				04389EFF238FDB5800455C95 /* GeneratedColors.swift in Sources */,
 				0425F240230C178500D7A44D /* ImageViewExtension.swift in Sources */,
 				0425F245230C18F900D7A44D /* AlertAction.swift in Sources */,
 				0443587F230D69B8005923BD /* ReadMoreTableViewCell.swift in Sources */,
 				04D8C4702328EF920062279E /* SingleActionCoordinating.swift in Sources */,
 				AFAA5C8422B9188200C3B885 /* NewsListViewModel.swift in Sources */,
 				043B318C231229900034F098 /* CategoriesHandlerProtocol.swift in Sources */,
+				04389EFB238FDB5800455C95 /* StoryboardSegues.swift in Sources */,
 				0425F243230C178500D7A44D /* BundleExtension.swift in Sources */,
 				043B3183231226590034F098 /* CategoriesModel.swift in Sources */,
 				AFAA5C8622B918C300C3B885 /* NewsListViewModelProtocol.swift in Sources */,
 				0435F05523155D7500FE2576 /* WebService.swift in Sources */,
 				04C886CD231A4F74003E6B1F /* GetSourcesHandler.swift in Sources */,
 				04A0AB5F231684EA005DE4FB /* EndpointsModel.swift in Sources */,
+				04389F00238FDB5800455C95 /* GeneratedFonts.swift in Sources */,
 				04D0212523115C140083E100 /* CategoriesTableViewCell.swift in Sources */,
 				0425F23D230C178500D7A44D /* UIViewControllerExtension.swift in Sources */,
 				04C886C5231A4CBE003E6B1F /* SourcesTableViewController.swift in Sources */,
@@ -858,16 +1040,21 @@
 				04C886C9231A4EA7003E6B1F /* SourcesViewModel.swift in Sources */,
 				04D8C46E2328EF820062279E /* CoordinatorBuilding.swift in Sources */,
 				0425F23F230C178500D7A44D /* NavigationControllerExtension.swift in Sources */,
+				04389F02238FDB5800455C95 /* GeneratedJSONFiles.swift in Sources */,
 				AFC9725F22AE4CA0006BE3DB /* URLRequest+Extensions.swift in Sources */,
 				0425F241230C178500D7A44D /* UITableView+Extensions.swift in Sources */,
+				04389EFC238FDB5800455C95 /* StoryboardScenes.swift in Sources */,
 				0425F23E230C178500D7A44D /* URL+Extensions.swift in Sources */,
 				AFC9725622AE403E006BE3DB /* NewsListViewController.swift in Sources */,
 				0443587D230D6541005923BD /* DetailsTableViewCell.swift in Sources */,
 				04D8C4752328F09A0062279E /* DashboardCoordinator.swift in Sources */,
+				04389EFD238FDB5800455C95 /* GeneratedStrings.swift in Sources */,
 				043B31862312274A0034F098 /* FileManagerHandlerProtocol.swift in Sources */,
 				0425F239230C178500D7A44D /* FontExtension.swift in Sources */,
 				0443587A230D5D7C005923BD /* DetailTableViewController.swift in Sources */,
+				04389EFE238FDB5800455C95 /* GeneratedCoreData.swift in Sources */,
 				04C886CB231A4EBD003E6B1F /* SourcesDataSource.swift in Sources */,
+				04389F01238FDB5800455C95 /* Assets.swift in Sources */,
 				AFC9725822AE4053006BE3DB /* NewsModel.swift in Sources */,
 				0435F05323155CE700FE2576 /* WebServiceProtocol.swift in Sources */,
 				04D8C4772328F0C60062279E /* DashboardRoute.swift in Sources */,

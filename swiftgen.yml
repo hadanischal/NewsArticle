@@ -1,0 +1,53 @@
+#run 'swiftgen' in app project (WORKSPACE/App) and it will update the UIColors.swift file
+#Update colors using StandardColors.txt
+
+xcassets:
+  inputs:
+    - ./NewsArticle/Resources/Assets/Assets.xcassets
+    - ./NewsArticle/Resources/Assets/Icons.xcassets
+  outputs:
+    - templateName: swift4
+      output: ./NewsArticle/Generated/SwiftGen/Assets/Assets.swift
+
+fonts:
+  inputs:
+    - ./NewsArticle/Resources/Fonts
+  outputs:
+    - templateName: swift4
+      output: ./NewsArticle/Generated/SwiftGen/Fonts/GeneratedFonts.swift
+      
+ib:
+  inputs:
+    - ./NewsArticle/Base.lproj/LaunchScreen.storyboard
+    - ./NewsArticle/Base.lproj/Main.storyboard
+
+  outputs:
+    - templateName: scenes-swift4
+      output: ./NewsArticle/Generated/SwiftGen/Storyboards/StoryboardScenes.swift
+    - templateName: segues-swift4
+      output: ./NewsArticle/Generated/SwiftGen/Storyboards/StoryboardSegues.swift
+
+colors:
+  inputs:
+    - ./NewsArticle/Resources/Colors/StandardColors.txt
+  outputs:
+    templateName: swift4
+    output: ./NewsArticle/Generated/SwiftGen/Colors/GeneratedColors.swift
+    
+    
+strings:
+  inputs:
+    - ./NewsArticle/Resources/Strings/DashBoard.strings
+    - ./NewsArticle/Resources/Strings/Mock.strings
+  outputs:
+    - templateName: structured-swift4
+      output: ./NewsArticle/Generated/SwiftGen/Strings/GeneratedStrings.swift
+
+json:
+  inputs:
+    - ./NewsArticle/Resources/JsonFile/Categories.json
+    - ./NewsArticle/Resources/JsonFile/Countries.json
+    - ./NewsArticle/Resources/JsonFile/Endpoints.json
+  outputs:
+    - templateName: runtime-swift4
+      output: ./NewsArticle/Generated/SwiftGen/JSONFiles/GeneratedJSONFiles.swift
