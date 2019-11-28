@@ -28,14 +28,6 @@
 		0435F05523155D7500FE2576 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435F05423155D7500FE2576 /* WebService.swift */; };
 		04389EE7238FDB0C00455C95 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 04389EE5238FDB0B00455C95 /* swiftgen.yml */; };
 		04389EE8238FDB0C00455C95 /* generate-swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 04389EE6238FDB0B00455C95 /* generate-swiftgen.sh */; };
-		04389EFB238FDB5800455C95 /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EED238FDB5700455C95 /* StoryboardSegues.swift */; };
-		04389EFC238FDB5800455C95 /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EEE238FDB5700455C95 /* StoryboardScenes.swift */; };
-		04389EFD238FDB5800455C95 /* GeneratedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EF0238FDB5700455C95 /* GeneratedStrings.swift */; };
-		04389EFE238FDB5800455C95 /* GeneratedCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EF2238FDB5700455C95 /* GeneratedCoreData.swift */; };
-		04389EFF238FDB5800455C95 /* GeneratedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EF4238FDB5700455C95 /* GeneratedColors.swift */; };
-		04389F00238FDB5800455C95 /* GeneratedFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EF6238FDB5700455C95 /* GeneratedFonts.swift */; };
-		04389F01238FDB5800455C95 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EF8238FDB5700455C95 /* Assets.swift */; };
-		04389F02238FDB5800455C95 /* GeneratedJSONFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389EFA238FDB5700455C95 /* GeneratedJSONFiles.swift */; };
 		04389F14238FDB6500455C95 /* DashBoard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04389F05238FDB6400455C95 /* DashBoard.strings */; };
 		04389F15238FDB6500455C95 /* Mock.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04389F06238FDB6400455C95 /* Mock.strings */; };
 		04389F16238FDB6500455C95 /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 04389F08238FDB6400455C95 /* Categories.json */; };
@@ -47,6 +39,14 @@
 		04389F1C238FDB6500455C95 /* ApexRounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04389F10238FDB6400455C95 /* ApexRounded-Heavy.otf */; };
 		04389F1D238FDB6500455C95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04389F12238FDB6400455C95 /* Assets.xcassets */; };
 		04389F1E238FDB6500455C95 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04389F13238FDB6400455C95 /* Icons.xcassets */; };
+		04389F49238FF67900455C95 /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389F3B238FF67900455C95 /* StoryboardSegues.swift */; };
+		04389F4A238FF67900455C95 /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389F3C238FF67900455C95 /* StoryboardScenes.swift */; };
+		04389F4B238FF67900455C95 /* GeneratedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389F3E238FF67900455C95 /* GeneratedStrings.swift */; };
+		04389F4C238FF67900455C95 /* GeneratedCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389F40238FF67900455C95 /* GeneratedCoreData.swift */; };
+		04389F4D238FF67900455C95 /* GeneratedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389F42238FF67900455C95 /* GeneratedColors.swift */; };
+		04389F4E238FF67900455C95 /* GeneratedFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389F44238FF67900455C95 /* GeneratedFonts.swift */; };
+		04389F4F238FF67900455C95 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389F46238FF67900455C95 /* Assets.swift */; };
+		04389F50238FF67900455C95 /* GeneratedJSONFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04389F48238FF67900455C95 /* GeneratedJSONFiles.swift */; };
 		043B3183231226590034F098 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B3182231226590034F098 /* CategoriesModel.swift */; };
 		043B31862312274A0034F098 /* FileManagerHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B31852312274A0034F098 /* FileManagerHandlerProtocol.swift */; };
 		043B31882312275A0034F098 /* FileManagerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B31872312275A0034F098 /* FileManagerHandler.swift */; };
@@ -139,14 +139,6 @@
 		0435F05423155D7500FE2576 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		04389EE5238FDB0B00455C95 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		04389EE6238FDB0B00455C95 /* generate-swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "generate-swiftgen.sh"; sourceTree = "<group>"; };
-		04389EED238FDB5700455C95 /* StoryboardSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSegues.swift; sourceTree = "<group>"; };
-		04389EEE238FDB5700455C95 /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardScenes.swift; sourceTree = "<group>"; };
-		04389EF0238FDB5700455C95 /* GeneratedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedStrings.swift; sourceTree = "<group>"; };
-		04389EF2238FDB5700455C95 /* GeneratedCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedCoreData.swift; sourceTree = "<group>"; };
-		04389EF4238FDB5700455C95 /* GeneratedColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedColors.swift; sourceTree = "<group>"; };
-		04389EF6238FDB5700455C95 /* GeneratedFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedFonts.swift; sourceTree = "<group>"; };
-		04389EF8238FDB5700455C95 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
-		04389EFA238FDB5700455C95 /* GeneratedJSONFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedJSONFiles.swift; sourceTree = "<group>"; };
 		04389F05238FDB6400455C95 /* DashBoard.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = DashBoard.strings; sourceTree = "<group>"; };
 		04389F06238FDB6400455C95 /* Mock.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Mock.strings; sourceTree = "<group>"; };
 		04389F08238FDB6400455C95 /* Categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
@@ -158,6 +150,14 @@
 		04389F10238FDB6400455C95 /* ApexRounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ApexRounded-Heavy.otf"; sourceTree = "<group>"; };
 		04389F12238FDB6400455C95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04389F13238FDB6400455C95 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		04389F3B238FF67900455C95 /* StoryboardSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSegues.swift; sourceTree = "<group>"; };
+		04389F3C238FF67900455C95 /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardScenes.swift; sourceTree = "<group>"; };
+		04389F3E238FF67900455C95 /* GeneratedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedStrings.swift; sourceTree = "<group>"; };
+		04389F40238FF67900455C95 /* GeneratedCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedCoreData.swift; sourceTree = "<group>"; };
+		04389F42238FF67900455C95 /* GeneratedColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedColors.swift; sourceTree = "<group>"; };
+		04389F44238FF67900455C95 /* GeneratedFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedFonts.swift; sourceTree = "<group>"; };
+		04389F46238FF67900455C95 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		04389F48238FF67900455C95 /* GeneratedJSONFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedJSONFiles.swift; sourceTree = "<group>"; };
 		043B3182231226590034F098 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
 		043B31852312274A0034F098 /* FileManagerHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHandlerProtocol.swift; sourceTree = "<group>"; };
 		043B31872312275A0034F098 /* FileManagerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHandler.swift; sourceTree = "<group>"; };
@@ -272,85 +272,6 @@
 			name = "Build scripts";
 			sourceTree = "<group>";
 		};
-		04389EEA238FDB5700455C95 /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				04389EEB238FDB5700455C95 /* SwiftGen */,
-			);
-			path = Generated;
-			sourceTree = "<group>";
-		};
-		04389EEB238FDB5700455C95 /* SwiftGen */ = {
-			isa = PBXGroup;
-			children = (
-				04389EEC238FDB5700455C95 /* Storyboards */,
-				04389EEF238FDB5700455C95 /* Strings */,
-				04389EF1238FDB5700455C95 /* CoreData */,
-				04389EF3238FDB5700455C95 /* Colors */,
-				04389EF5238FDB5700455C95 /* Fonts */,
-				04389EF7238FDB5700455C95 /* Assets */,
-				04389EF9238FDB5700455C95 /* JSONFiles */,
-			);
-			path = SwiftGen;
-			sourceTree = "<group>";
-		};
-		04389EEC238FDB5700455C95 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				04389EED238FDB5700455C95 /* StoryboardSegues.swift */,
-				04389EEE238FDB5700455C95 /* StoryboardScenes.swift */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		04389EEF238FDB5700455C95 /* Strings */ = {
-			isa = PBXGroup;
-			children = (
-				04389EF0238FDB5700455C95 /* GeneratedStrings.swift */,
-			);
-			path = Strings;
-			sourceTree = "<group>";
-		};
-		04389EF1238FDB5700455C95 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				04389EF2238FDB5700455C95 /* GeneratedCoreData.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		04389EF3238FDB5700455C95 /* Colors */ = {
-			isa = PBXGroup;
-			children = (
-				04389EF4238FDB5700455C95 /* GeneratedColors.swift */,
-			);
-			path = Colors;
-			sourceTree = "<group>";
-		};
-		04389EF5238FDB5700455C95 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				04389EF6238FDB5700455C95 /* GeneratedFonts.swift */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		04389EF7238FDB5700455C95 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				04389EF8238FDB5700455C95 /* Assets.swift */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		04389EF9238FDB5700455C95 /* JSONFiles */ = {
-			isa = PBXGroup;
-			children = (
-				04389EFA238FDB5700455C95 /* GeneratedJSONFiles.swift */,
-			);
-			path = JSONFiles;
-			sourceTree = "<group>";
-		};
 		04389F03238FDB6400455C95 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +328,85 @@
 				04389F13238FDB6400455C95 /* Icons.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		04389F38238FF67900455C95 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				04389F39238FF67900455C95 /* SwiftGen */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		04389F39238FF67900455C95 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				04389F3A238FF67900455C95 /* Storyboards */,
+				04389F3D238FF67900455C95 /* Strings */,
+				04389F3F238FF67900455C95 /* CoreData */,
+				04389F41238FF67900455C95 /* Colors */,
+				04389F43238FF67900455C95 /* Fonts */,
+				04389F45238FF67900455C95 /* Assets */,
+				04389F47238FF67900455C95 /* JSONFiles */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		04389F3A238FF67900455C95 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				04389F3B238FF67900455C95 /* StoryboardSegues.swift */,
+				04389F3C238FF67900455C95 /* StoryboardScenes.swift */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		04389F3D238FF67900455C95 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				04389F3E238FF67900455C95 /* GeneratedStrings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		04389F3F238FF67900455C95 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				04389F40238FF67900455C95 /* GeneratedCoreData.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		04389F41238FF67900455C95 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				04389F42238FF67900455C95 /* GeneratedColors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		04389F43238FF67900455C95 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				04389F44238FF67900455C95 /* GeneratedFonts.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		04389F45238FF67900455C95 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				04389F46238FF67900455C95 /* Assets.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		04389F47238FF67900455C95 /* JSONFiles */ = {
+			isa = PBXGroup;
+			children = (
+				04389F48238FF67900455C95 /* GeneratedJSONFiles.swift */,
+			);
+			path = JSONFiles;
 			sourceTree = "<group>";
 		};
 		043B3184231226B90034F098 /* FileManagerHandler */ = {
@@ -537,7 +537,7 @@
 				AFAA5C8222B9169F00C3B885 /* ViewModel */,
 				AFC9725422AE3FFE006BE3DB /* ViewController */,
 				04389F03238FDB6400455C95 /* Resources */,
-				04389EEA238FDB5700455C95 /* Generated */,
+				04389F38238FF67900455C95 /* Generated */,
 				AFC9722122AE3ECD006BE3DB /* AppDelegate.swift */,
 				AFC9722322AE3ECD006BE3DB /* ViewController.swift */,
 				AFC9722522AE3ECD006BE3DB /* Main.storyboard */,
@@ -969,20 +969,20 @@
 				043B319323122ED30034F098 /* CategoriesDataSource.swift in Sources */,
 				04B2C350230F513900E33F64 /* DetailViewModel.swift in Sources */,
 				04B2C352230F514C00E33F64 /* DetailDataSource.swift in Sources */,
-				04389EFF238FDB5800455C95 /* GeneratedColors.swift in Sources */,
+				04389F4D238FF67900455C95 /* GeneratedColors.swift in Sources */,
 				0425F240230C178500D7A44D /* ImageViewExtension.swift in Sources */,
 				0425F245230C18F900D7A44D /* AlertAction.swift in Sources */,
 				0443587F230D69B8005923BD /* ReadMoreTableViewCell.swift in Sources */,
 				AFAA5C8422B9188200C3B885 /* NewsListViewModel.swift in Sources */,
 				043B318C231229900034F098 /* CategoriesHandlerProtocol.swift in Sources */,
-				04389EFB238FDB5800455C95 /* StoryboardSegues.swift in Sources */,
+				04389F49238FF67900455C95 /* StoryboardSegues.swift in Sources */,
 				0425F243230C178500D7A44D /* BundleExtension.swift in Sources */,
 				043B3183231226590034F098 /* CategoriesModel.swift in Sources */,
 				AFAA5C8622B918C300C3B885 /* NewsListViewModelProtocol.swift in Sources */,
 				0435F05523155D7500FE2576 /* WebService.swift in Sources */,
 				04C886CD231A4F74003E6B1F /* GetSourcesHandler.swift in Sources */,
 				04A0AB5F231684EA005DE4FB /* EndpointsModel.swift in Sources */,
-				04389F00238FDB5800455C95 /* GeneratedFonts.swift in Sources */,
+				04389F4E238FF67900455C95 /* GeneratedFonts.swift in Sources */,
 				04D0212523115C140083E100 /* CategoriesTableViewCell.swift in Sources */,
 				0425F23D230C178500D7A44D /* UIViewControllerExtension.swift in Sources */,
 				04C886C5231A4CBE003E6B1F /* SourcesTableViewController.swift in Sources */,
@@ -1000,20 +1000,20 @@
 				043B31882312275A0034F098 /* FileManagerHandler.swift in Sources */,
 				04C886C9231A4EA7003E6B1F /* SourcesViewModel.swift in Sources */,
 				0425F23F230C178500D7A44D /* NavigationControllerExtension.swift in Sources */,
-				04389F02238FDB5800455C95 /* GeneratedJSONFiles.swift in Sources */,
+				04389F50238FF67900455C95 /* GeneratedJSONFiles.swift in Sources */,
 				AFC9725F22AE4CA0006BE3DB /* URLRequest+Extensions.swift in Sources */,
 				0425F241230C178500D7A44D /* UITableView+Extensions.swift in Sources */,
-				04389EFC238FDB5800455C95 /* StoryboardScenes.swift in Sources */,
+				04389F4A238FF67900455C95 /* StoryboardScenes.swift in Sources */,
 				0425F23E230C178500D7A44D /* URL+Extensions.swift in Sources */,
 				AFC9725622AE403E006BE3DB /* NewsListViewController.swift in Sources */,
 				0443587D230D6541005923BD /* DetailsTableViewCell.swift in Sources */,
-				04389EFD238FDB5800455C95 /* GeneratedStrings.swift in Sources */,
+				04389F4B238FF67900455C95 /* GeneratedStrings.swift in Sources */,
 				043B31862312274A0034F098 /* FileManagerHandlerProtocol.swift in Sources */,
 				0425F239230C178500D7A44D /* FontExtension.swift in Sources */,
 				0443587A230D5D7C005923BD /* DetailTableViewController.swift in Sources */,
-				04389EFE238FDB5800455C95 /* GeneratedCoreData.swift in Sources */,
+				04389F4C238FF67900455C95 /* GeneratedCoreData.swift in Sources */,
 				04C886CB231A4EBD003E6B1F /* SourcesDataSource.swift in Sources */,
-				04389F01238FDB5800455C95 /* Assets.swift in Sources */,
+				04389F4F238FF67900455C95 /* Assets.swift in Sources */,
 				AFC9725822AE4053006BE3DB /* NewsModel.swift in Sources */,
 				0435F05323155CE700FE2576 /* WebServiceProtocol.swift in Sources */,
 				04435874230D4AA6005923BD /* SourceModel.swift in Sources */,
