@@ -59,16 +59,12 @@ class DetailTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableViewCell", for: indexPath) as? DetailsTableViewCell else {
-                fatalError("DetailsTableViewCell does not exist")
-            }
-            cell.newsInfo = newsList[indexPath.row]
+            let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as DetailsTableViewCell
+            cell.configure(newsList[indexPath.row])
             cell.selectionStyle = .none
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReadMoreTableViewCell", for: indexPath) as? ReadMoreTableViewCell else {
-                fatalError("DetailsTableViewCell does not exist")
-            }
+            let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as ReadMoreTableViewCell
             cell.selectionStyle = .none
             return cell
         }

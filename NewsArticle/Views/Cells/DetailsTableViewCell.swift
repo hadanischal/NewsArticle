@@ -13,21 +13,6 @@ class DetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var thumbnailImage: UIImageView!
 
-    var newsInfo: NewsModel? {
-        didSet {
-            guard let data = newsInfo else {
-                return
-            }
-            titleLabel.text = data.title?.withoutHtml
-            descriptionLabel.text = data.description?.withoutHtml
-            if
-                let urlString = data.urlToImage,
-                let url = URL(string: urlString) {
-                thumbnailImage.setImage(url: url)
-            }
-        }
-    }
-
     override func awakeFromNib() {
         super.awakeFromNib()
         //self.contentView.backgroundColor = .viewBackgroundColor
@@ -35,4 +20,14 @@ class DetailsTableViewCell: UITableViewCell {
         self.descriptionLabel.font = .body2
     }
 
+    func configure(_ newsInfo: NewsModel?) {
+        guard let data = newsInfo else { return }
+        titleLabel.text = data.title?.withoutHtml
+        descriptionLabel.text = data.description?.withoutHtml
+        if
+            let urlString = data.urlToImage,
+            let url = URL(string: urlString) {
+            thumbnailImage.setImage(url: url)
+        }
+    }
 }
