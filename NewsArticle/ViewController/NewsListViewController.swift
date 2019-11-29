@@ -80,10 +80,8 @@ class NewsListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as? NewsTableViewCell else {
-            fatalError("NewsTableViewCell does not exist")
-        }
-        cell.newsInfo = self.newsList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as NewsTableViewCell
+        cell.configure(self.newsList[indexPath.row])
         return cell
     }
 
