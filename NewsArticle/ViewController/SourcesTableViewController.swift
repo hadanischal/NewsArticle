@@ -75,10 +75,8 @@ class SourcesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SourcesTableViewCell", for: indexPath) as? SourcesTableViewCell else {
-            fatalError("SourcesTableViewCell does not exist")
-        }
-        cell.sourcesInfo = self.sourceModelList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as SourcesTableViewCell
+        cell.configure(self.sourceModelList[indexPath.row])
         return cell
     }
 
