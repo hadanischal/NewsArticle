@@ -22,14 +22,7 @@ class CategoriesHandlerTests: QuickSpec {
         var testHandler: CategoriesHandler!
         var mockFileManagerHandler: MockFileManagerHandlerProtocol!
         var testScheduler: TestScheduler!
-        let mockCategoriesList = [
-            "Business",
-            "Entertainment",
-            "Health",
-            "Science",
-            "Sports",
-            "Technology"
-        ]
+        let mockCategoriesList = JSONFiles.Categories.categories
         let mockCategory = CategoriesModel(categories: mockCategoriesList)
 
         describe("CategoriesHandler") {

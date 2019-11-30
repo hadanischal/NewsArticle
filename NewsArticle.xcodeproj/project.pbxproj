@@ -452,6 +452,7 @@
 		043B319B2312A2DB0034F098 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				04D8C4712328EFF40062279E /* DashboardCoordinating */,
 				04D8C46A2328EF580062279E /* BaseCoordinator */,
 			);
 			path = Utility;
@@ -602,16 +603,15 @@
 		AFC9722022AE3ECD006BE3DB /* NewsArticle */ = {
 			isa = PBXGroup;
 			children = (
-				043B319B2312A2DB0034F098 /* Utility */,
 				043B3184231226B90034F098 /* FileManagerHandler */,
 				AFAA5C8822B91FB600C3B885 /* APIWrappers */,
 				0435F05123155CCC00FE2576 /* Networking */,
 				AFC9725D22AE4C88006BE3DB /* Extensions */,
 				04A9AAAD23913EEF0045C79B /* Views */,
 				AFC9725222AE3F98006BE3DB /* Models */,
-				04D8C4712328EFF40062279E /* DashboardCoordinating */,
 				AFAA5C8222B9169F00C3B885 /* ViewModel */,
 				AFC9725422AE3FFE006BE3DB /* ViewController */,
+				043B319B2312A2DB0034F098 /* Utility */,
 				04389F03238FDB6400455C95 /* Resources */,
 				04389EEA238FDB5700455C95 /* Generated */,
 				AFC9722122AE3ECD006BE3DB /* AppDelegate.swift */,

@@ -13,15 +13,13 @@ import RxSwift
 final class DashboardBuilder: CoordinatorBuilding {
     private let navController: UINavigationController
     private let navigator: DashboardCoordinating
-    private let storyboard: UIStoryboard!
-    private let newsListViewModel: NewsListViewModel!
+    private let newsListViewModel: NewsListViewModel
     private let disposeBag = DisposeBag()
 
     init(navController: UINavigationController = NavigationController(),
          navigator: DashboardCoordinating = DashboardCoordinator()) {
         self.navController = navController
         self.navigator = navigator
-        self.storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.newsListViewModel = NewsListViewModel()
 
         navigator.getRoute()
@@ -54,11 +52,8 @@ extension DashboardBuilder {
 
     //Initial Screen
     func routeToNewsList() {
-        let viewModel = self.newsListViewModel ?? NewsListViewModel()
-        guard let newsViewController = self.storyboard.instantiateViewController(withIdentifier: "NewsListViewController") as? NewsListViewController else {
-            assertionFailure("NewsListViewController not found")
-            return
-        }
+        let viewModel = self.newsListViewModel
+        let newsViewController = StoryboardScene.Main.newsListViewController.instantiate()
         newsViewController.viewModel = viewModel
         viewModel.isDone
             .subscribe(onNext: { [weak self] route in
@@ -70,20 +65,14 @@ extension DashboardBuilder {
 
     func routeToDetail(withSelectedNews selectedNews: NewsModel) {
         let detailViewModel = DetailViewModel(withNewsModel: selectedNews)
-        guard let detailViewController = self.storyboard.instantiateViewController(withIdentifier: "DetailTableViewController") as? DetailTableViewController else {
-            assertionFailure("DetailTableViewController not found")
-            return
-        }
+        let detailViewController = StoryboardScene.Main.detailTableViewController.instantiate()
         detailViewController.viewModel = detailViewModel
         navController.pushViewController(detailViewController, animated: true)
     }
 
     func routeToCategories() {
         let categoriesViewModel = CategoriesViewModel()
-        guard let categoriesViewController = self.storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as? CategoriesTableViewController else {
-            assertionFailure("CategoriesTableViewController not found")
-            return
-        }
+        let categoriesViewController = StoryboardScene.Main.categoriesTableViewController.instantiate()
         categoriesViewController.viewModel = categoriesViewModel
         categoriesViewModel.isDone
             .subscribe(onNext: { [weak self] route in
@@ -96,10 +85,7 @@ extension DashboardBuilder {
 
     func routeToSources() {
         let viewModel = SourcesViewModel()
-        guard let sourcesViewController = self.storyboard.instantiateViewController(withIdentifier: "SourcesTableViewController") as? SourcesTableViewController else {
-            assertionFailure("SourcesTableViewController not found")
-            return
-        }
+        let sourcesViewController = StoryboardScene.Main.sourcesTableViewController.instantiate()
         sourcesViewController.viewModel = viewModel
         viewModel.isDone
             .subscribe(onNext: { [weak self] route in

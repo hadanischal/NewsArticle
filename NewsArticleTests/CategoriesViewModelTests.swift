@@ -22,14 +22,7 @@ class CategoriesViewModelTests: QuickSpec {
         var testViewModel: CategoriesViewModel!
         var mockCategoriesHandler: MockCategoriesHandlerProtocol!
         var testScheduler: TestScheduler!
-        let mockCategoriesList = [
-            "Business",
-            "Entertainment",
-            "Health",
-            "Science",
-            "Sports",
-            "Technology"
-        ]
+        let mockCategoriesList = JSONFiles.Categories.categories
         let mockCategory = CategoriesModel(categories: mockCategoriesList)
 
         describe("CategoriesViewModel") {
