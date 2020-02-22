@@ -1,111 +1,4 @@
-// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetNewsHandler.swift at 2019-09-11 08:49:52 +0000
-
-//
-//  GetNewsHandler.swift
-//  NewsArticle
-//
-//  Created by Nischal Hada on 6/18/19.
-//  Copyright © 2019 NischalHada. All rights reserved.
-//
-
-import Cuckoo
-@testable import NewsArticle
-
-import RxSwift
-import UIKit
-
-
- class MockGetNewsHandler: GetNewsHandler, Cuckoo.ClassMock {
-    
-     typealias MocksType = GetNewsHandler
-    
-     typealias Stubbing = __StubbingProxy_GetNewsHandler
-     typealias Verification = __VerificationProxy_GetNewsHandler
-
-     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
-
-    
-    private var __defaultImplStub: GetNewsHandler?
-
-     func enableDefaultImplementation(_ stub: GetNewsHandler) {
-        __defaultImplStub = stub
-        cuckoo_manager.enableDefaultStubImplementation()
-    }
-    
-
-    
-
-    
-
-    
-    
-    
-     override func getTopHeadlines(withParameter param: [String: String]?) -> Observable<ArticlesList?> {
-        
-    return cuckoo_manager.call("getTopHeadlines(withParameter: [String: String]?) -> Observable<ArticlesList?>",
-            parameters: (param),
-            escapingParameters: (param),
-            superclassCall:
-                
-                super.getTopHeadlines(withParameter: param)
-                ,
-            defaultCall: __defaultImplStub!.getTopHeadlines(withParameter: param))
-        
-    }
-    
-
-	 struct __StubbingProxy_GetNewsHandler: Cuckoo.StubbingProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	
-	     init(manager: Cuckoo.MockManager) {
-	        self.cuckoo_manager = manager
-	    }
-	    
-	    
-	    func getTopHeadlines<M1: Cuckoo.OptionalMatchable>(withParameter param: M1) -> Cuckoo.ClassStubFunction<([String: String]?), Observable<ArticlesList?>> where M1.OptionalMatchedType == [String: String] {
-	        let matchers: [Cuckoo.ParameterMatcher<([String: String]?)>] = [wrap(matchable: param) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockGetNewsHandler.self, method: "getTopHeadlines(withParameter: [String: String]?) -> Observable<ArticlesList?>", parameterMatchers: matchers))
-	    }
-	    
-	}
-
-	 struct __VerificationProxy_GetNewsHandler: Cuckoo.VerificationProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	    private let callMatcher: Cuckoo.CallMatcher
-	    private let sourceLocation: Cuckoo.SourceLocation
-	
-	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
-	        self.cuckoo_manager = manager
-	        self.callMatcher = callMatcher
-	        self.sourceLocation = sourceLocation
-	    }
-	
-	    
-	
-	    
-	    @discardableResult
-	    func getTopHeadlines<M1: Cuckoo.OptionalMatchable>(withParameter param: M1) -> Cuckoo.__DoNotUse<([String: String]?), Observable<ArticlesList?>> where M1.OptionalMatchedType == [String: String] {
-	        let matchers: [Cuckoo.ParameterMatcher<([String: String]?)>] = [wrap(matchable: param) { $0 }]
-	        return cuckoo_manager.verify("getTopHeadlines(withParameter: [String: String]?) -> Observable<ArticlesList?>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	}
-}
-
- class GetNewsHandlerStub: GetNewsHandler {
-    
-
-    
-
-    
-     override func getTopHeadlines(withParameter param: [String: String]?) -> Observable<ArticlesList?>  {
-        return DefaultValueRegistry.defaultValue(for: (Observable<ArticlesList?>).self)
-    }
-    
-}
-
-
-// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetNewsHandlerProtocol.swift at 2019-09-11 08:49:52 +0000
+// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetNewsHandlerProtocol.swift at 2020-02-19 07:49:49 +0000
 
 //
 //  GetNewsHandlerProtocol.swift
@@ -211,7 +104,7 @@ import RxSwift
 }
 
 
-// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetSourcesHandlerProtocol.swift at 2019-09-11 08:49:52 +0000
+// MARK: - Mocks generated from file: NewsArticle/APIWrappers/GetSourcesHandlerProtocol.swift at 2020-02-19 07:49:49 +0000
 
 //
 //  GetSourcesHandlerProtocol.swift
@@ -317,7 +210,7 @@ import RxSwift
 }
 
 
-// MARK: - Mocks generated from file: NewsArticle/FileManagerHandler/CategoriesHandlerProtocol.swift at 2019-09-11 08:49:52 +0000
+// MARK: - Mocks generated from file: NewsArticle/FileManagerHandler/CategoriesHandlerProtocol.swift at 2020-02-19 07:49:49 +0000
 
 //
 //  CategoriesHandlerProtocol.swift
@@ -453,7 +346,7 @@ import RxSwift
 }
 
 
-// MARK: - Mocks generated from file: NewsArticle/FileManagerHandler/FileManagerHandlerProtocol.swift at 2019-09-11 08:49:52 +0000
+// MARK: - Mocks generated from file: NewsArticle/FileManagerHandler/FileManagerHandlerProtocol.swift at 2020-02-19 07:49:49 +0000
 
 //
 //  FileManagerHandlerProtocol.swift
@@ -559,7 +452,7 @@ import RxSwift
 }
 
 
-// MARK: - Mocks generated from file: NewsArticle/Networking/WebServiceProtocol.swift at 2019-09-11 08:49:52 +0000
+// MARK: - Mocks generated from file: NewsArticle/Networking/WebServiceProtocol.swift at 2020-02-19 07:49:49 +0000
 
 //
 //  WebServiceProtocol.swift

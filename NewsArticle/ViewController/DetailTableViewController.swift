@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class DetailTableViewController: UITableViewController {
+final class DetailTableViewController: UITableViewController {
 
     private let disposeBag = DisposeBag()
     private var newsList = [NewsModel]()

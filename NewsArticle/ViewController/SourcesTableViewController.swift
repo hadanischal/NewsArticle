@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SourcesTableViewController: UITableViewController {
+final class SourcesTableViewController: UITableViewController {
 
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var doneButton: UIBarButtonItem!

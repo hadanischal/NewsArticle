@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class CategoriesViewModel: CategoriesDataSource {
+final class CategoriesViewModel: CategoriesDataSource {
     var isDone: Observable<DashboardRoute>
 
     private let categoriesHandler: CategoriesHandlerProtocol!

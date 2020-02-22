@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class NewsListViewController: UITableViewController {
+final class NewsListViewController: UITableViewController {
 
     @IBOutlet weak var categoriesButton: UIBarButtonItem!
     @IBOutlet weak var sourcesButton: UIBarButtonItem!

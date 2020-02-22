@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class SourcesViewModel: SourcesDataSource {
+final class SourcesViewModel: SourcesDataSource {
     var isDone: Observable<DashboardRoute>
     let newsList: Observable<[SourceModel]>
 

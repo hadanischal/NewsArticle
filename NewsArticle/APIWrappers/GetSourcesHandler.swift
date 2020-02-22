@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class GetSourcesHandler: GetSourcesHandlerProtocol {
+final class GetSourcesHandler: GetSourcesHandlerProtocol {
     var resource: Resource<SourceListModel> = {
         let url = URL.sourcesUrl()!
         var param: [String: String] = ["apiKey": ApiKey.appId]
