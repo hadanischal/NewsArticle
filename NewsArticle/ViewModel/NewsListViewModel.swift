@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class NewsListViewModel: NewsListViewModelProtocol {
+final class NewsListViewModel: NewsListViewModelProtocol {
     private let getNews: GetNewsHandlerProtocol
     private let disposeBag = DisposeBag()
     var newsList: Observable<[NewsModel]>

@@ -8,7 +8,7 @@
 
 import RxSwift
 
-class WebService: WebServiceProtocol {
+final class WebService: WebServiceProtocol {
     func load<T: Decodable>(resource: Resource<T>) -> Observable<T> {
         return URLRequest.load(resource: resource)
     }

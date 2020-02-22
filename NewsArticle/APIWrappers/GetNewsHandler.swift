@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class GetNewsHandler: GetNewsHandlerProtocol {
+final class GetNewsHandler: GetNewsHandlerProtocol {
     private let url = URL.topHeadlinesUrl()!
     private let defaultParam: [String: String] = ["country": ApiKey.countryGB,
                                                   "category": ApiKey.categorySports]
