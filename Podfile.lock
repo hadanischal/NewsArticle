@@ -1,30 +1,68 @@
 PODS:
-  - RxCocoa (5.0.0):
+  - Cuckoo (1.4.1):
+    - Cuckoo/Swift (= 1.4.1)
+  - Cuckoo/Swift (1.4.1)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
+  - Nimble (8.1.1)
+  - PKHUD (5.3.0)
+  - Quick (3.0.0)
+  - RxBlocking (5.1.1):
+    - RxSwift (~> 5)
+  - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxRelay (5.0.0):
+  - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxSwift (5.0.0)
-  - SwiftLint (0.33.0)
+  - RxSwift (5.1.1)
+  - RxTest (5.1.1):
+    - RxSwift (~> 5)
+  - SwiftGen (6.2.1)
+  - SwiftLint (0.39.2)
 
 DEPENDENCIES:
-  - RxCocoa (~> 5)
-  - RxSwift (~> 5)
+  - Cuckoo (~> 1.4.1)
+  - Kingfisher (~> 5.14.1)
+  - Nimble (~> 8.1.1)
+  - PKHUD (~> 5.0)
+  - Quick (~> 3.0.0)
+  - RxBlocking (~> 5.1.1)
+  - RxCocoa (~> 5.1.1)
+  - RxSwift (~> 5.1.1)
+  - RxTest (~> 5.1.1)
+  - SwiftGen (~> 6.2.1)
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
+    - Cuckoo
+    - Kingfisher
+    - Nimble
+    - PKHUD
+    - Quick
+    - RxBlocking
     - RxCocoa
     - RxRelay
     - RxSwift
+    - RxTest
+    - SwiftGen
     - SwiftLint
 
 SPEC CHECKSUMS:
-  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
-  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
+  Cuckoo: 4625f7f54d9bb880123270e8969898d6c1d036b5
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
+  SwiftGen: 62e69d127507be1538d4263e137b2290cd6ab272
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: 5eb0037c73c5ae9ae8f08bcbb1247a7184e65c7c
+PODFILE CHECKSUM: fdc7c2d0977a57bf7037af6dea0ea1ddb3a5b2e7
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.9.1
