@@ -14,7 +14,6 @@ class NewsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
         contentView.backgroundColor = .viewBackgroundColor
         titleLabel?.font = .body1
         descriptionLabel?.font = .body3
