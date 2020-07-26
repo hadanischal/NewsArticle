@@ -6,8 +6,8 @@
 //  Copyright © 2020 NischalHada. All rights reserved.
 //
 
+import Foundation
 import RxSwift
-import UIKit
 
 struct FileManagerResource<T> {
     let fileName: String
