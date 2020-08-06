@@ -1,0 +1,19 @@
+{
+    "status": "ok",
+    "totalResults": 38,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "Bikeradar.com"
+            },
+            "author": "Jack Luke",
+            "title": "Cheap smartwatch deals",
+            "description": "Up to 24% off  Garmin Forerunner 235, Fitbit Ionic, Fitbit Versa and Fitbit Charge 3 smartwatches in Amazon summer sale",
+            "url": "https://www.bikeradar.com/news/cheap-smartwatch-deals/",
+            "urlToImage": "https://images.immediate.co.uk/production/volatile/sites/21/2019/08/garmin-forerunner-235-186711e.jpg?quality=45&resize=620,413",
+            "publishedAt": "2019-08-23T10:14:00Z",
+            "content": "Amazon has up to 24 percent off of a number of popular smartwatches from Fitbit and Garmin as part of its 2019 Summer sale.\r\nGPS-connected smartwatches are a popular alternative to cycle computers if you dont need navigation functionality and are most interes… [+1493 chars]"
+        }
+    ]
+}
