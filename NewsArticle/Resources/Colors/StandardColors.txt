@@ -1,0 +1,8 @@
+primary            : #4B99E4
+moderateCyan       : #5c9ac1
+black100trans80    : #000000CC
+neon100            : #01FFFF
+redEnergy100       : #D0021B
+rarthGreen100      : #33FF99
+strikingYellow100  : #FFF572
+

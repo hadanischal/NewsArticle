@@ -1,0 +1,12 @@
+
+"SOURCES_NAVIGATION_TITLE" = "Select Sources";
+"CATEGORIES_NAVIGATION_TITLE" = "Select Categories";
+"NEWS_LIST_NAVIGATION_TITLE" = "News";
+"NEWS_DETAIL_NAVIGATION_TITLE" = "News Detail";
+
+"CATEGORIES_NOT_FOUND_MESSAGE" = "Unable to find selected category";
+"CATEGORIES_NOT_FOUND_TITLE" = "Please select the category";
+
+"SOURCE_NOT_FOUND_MESSAGE" = "Unable to get selected source";
+"SOURCE_NOT_FOUND_TITLE" = "Please select the source";
+

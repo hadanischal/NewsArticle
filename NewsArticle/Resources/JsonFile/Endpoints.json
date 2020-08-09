@@ -1,0 +1,22 @@
+{
+    "status": "ok",
+    "totalResults": 3,
+    "endpointList":[
+        {
+            "id": 1,
+            "name": "Top headlines",
+            "endpoint": "/v2/top-headlines"
+        },
+        {
+            "id": 2,
+            "name": "Everything",
+            "endpoint": "/v2/everything"
+        },
+        {
+            "id": 3,
+            "name": "Sources",
+            "endpoint": "/v2/sources"
+        }
+    ]
+}
+
