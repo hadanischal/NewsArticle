@@ -29,8 +29,6 @@ internal enum StoryboardScene {
     internal static let newsListViewController = SceneType<NewsListViewController>(storyboard: Main.self, identifier: "NewsListViewController")
 
     internal static let sourcesTableViewController = SceneType<SourcesTableViewController>(storyboard: Main.self, identifier: "SourcesTableViewController")
-
-    internal static let viewController = SceneType<ViewController>(storyboard: Main.self, identifier: "ViewController")
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
