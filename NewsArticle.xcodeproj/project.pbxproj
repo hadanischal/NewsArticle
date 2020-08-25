@@ -736,6 +736,7 @@
 				AFC9721C22AE3ECD006BE3DB /* Resources */,
 				F4C7731F28A5549CC8216728 /* [CP] Embed Pods Frameworks */,
 				0408B53C232134FC0011D268 /* Run SwiftLint Script */,
+				AFCC756E24F4AF6C00844ADA /* SwiftGen Script */,
 			);
 			buildRules = (
 			);
@@ -976,6 +977,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/NetworkLayer/Core/WebService.swift\" \\\n\"$INPUT_DIR/NetworkLayer/Services/NewsNetworkHandler.swift\" \\\n\"$INPUT_DIR/Utility/FileManagerHandler/FileManagerHandler.swift\" \\\n\"$INPUT_DIR/Utility/FileManagerHandler/CategoriesHandler.swift\" \\\n\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+		};
+		AFCC756E24F4AF6C00844ADA /* SwiftGen Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftGen Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
 		};
 		DBD17F10184CE6B94BC39212 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
