@@ -85,6 +85,7 @@
 		AFC9725C22AE424A006BE3DB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AFC9725B22AE424A006BE3DB /* .gitignore */; };
 		AFC9726122AE4F08006BE3DB /* NewsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9726022AE4F08006BE3DB /* NewsResult.swift */; };
 		AFC9726422AE500D006BE3DB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AFC9726322AE500D006BE3DB /* .swiftlint.yml */; };
+		AFCC757024F4B38F00844ADA /* bitrise.yml in Resources */ = {isa = PBXBuildFile; fileRef = AFCC756F24F4B38F00844ADA /* bitrise.yml */; };
 		AFCFCE5124CBBD5800B543F5 /* MockEndpoints.json in Resources */ = {isa = PBXBuildFile; fileRef = AFCFCE5024CBBD5800B543F5 /* MockEndpoints.json */; };
 		AFE3F39324C5881100407DAF /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE3F38C24C5881100407DAF /* URLRequest+Extensions.swift */; };
 		AFE3F39524C5881100407DAF /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE3F38E24C5881100407DAF /* WebService.swift */; };
@@ -208,6 +209,7 @@
 		AFC9725B22AE424A006BE3DB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		AFC9726022AE4F08006BE3DB /* NewsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResult.swift; sourceTree = "<group>"; };
 		AFC9726322AE500D006BE3DB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		AFCC756F24F4B38F00844ADA /* bitrise.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = bitrise.yml; sourceTree = "<group>"; };
 		AFCFCE5024CBBD5800B543F5 /* MockEndpoints.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockEndpoints.json; sourceTree = "<group>"; };
 		AFE3F38C24C5881100407DAF /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
 		AFE3F38E24C5881100407DAF /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 				AF197E3C24CD5678000B84D7 /* .swiftformat */,
 				AF197E3E24CD5678000B84D7 /* generate-swiftgen.sh */,
 				AF197E3D24CD5678000B84D7 /* swiftgen.yml */,
+				AFCC756F24F4B38F00844ADA /* bitrise.yml */,
 				AF7461C224D96FFF008A5D56 /* setup.sh */,
 				AF197E3B24CD5678000B84D7 /* test.sh */,
 				0425F22C230C0EC300D7A44D /* Cuckoo-GeneratedMocks.sh */,
@@ -843,6 +846,7 @@
 				AFC9726422AE500D006BE3DB /* .swiftlint.yml in Resources */,
 				AFFDD92924CA60C5004C1C99 /* NewsTableViewCell.xib in Resources */,
 				AF197E4024CD5678000B84D7 /* .swiftformat in Resources */,
+				AFCC757024F4B38F00844ADA /* bitrise.yml in Resources */,
 				AF0E508324C710D0004287B0 /* Endpoints.json in Resources */,
 				AF0E508924C710D0004287B0 /* Assets.xcassets in Resources */,
 				AF197E4224CD5678000B84D7 /* generate-swiftgen.sh in Resources */,
